@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DASH — AI 사용량과 메일을 한 화면에</title>
+  <meta name="description" content="DASH는 Claude Code·Codex 사용량 대시보드와 AI 메일 분류 사이드바를 하나로 묶은 iOS 앱입니다.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="./">DASH<span>_</span></a>
+    <nav class="nav-links">
+      <a href="#features">기능</a>
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="terms.html">서비스 약관</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>AI 사용량과 메일을<br><span class="accent" id="typed"></span><span class="caret" id="caret"></span></h1>
+    <p class="sub">DASH는 Claude Code · Codex 사용량 게이지와
+    Gmail 안읽은 메일의 AI 중요도 분류를 한 화면에 담은 iOS 앱입니다.
+    데이터는 기기에만 머뭅니다.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub에서 보기</a>
+      <a class="btn" href="#features">기능 살펴보기</a>
+    </div>
+
+    <div class="terminal" id="terminal">
+      <div class="term-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">DASH — dashboard</span>
+      </div>
+      <div class="term-body">
+        <div class="term-row" data-step="0">
+          <div class="term-label"><b>Claude Code</b><span>5시간 창 · 62%</span></div>
+          <div class="bar"><i data-width="62%"></i></div>
+        </div>
+        <div class="term-row" data-step="1">
+          <div class="term-label"><b>Codex</b><span>주간 · 31%</span></div>
+          <div class="bar"><i class="ok" data-width="31%"></i></div>
+        </div>
+        <div class="term-row" data-step="2">
+          <div class="term-label"><b>Claude Code</b><span>주간 · 87% — 내일 09:00 리셋</span></div>
+          <div class="bar"><i class="warn" data-width="87%"></i></div>
+        </div>
+        <div class="term-row" data-step="3">
+          <div class="term-label"><b>Unread</b><span>중요 3 / 전체 27</span></div>
+          <div class="mail"><span class="tag">중요</span><span class="from">Apple Developer</span><span class="subj">멤버십 갱신 결제가 완료되었습니다</span></div>
+          <div class="mail"><span class="tag">중요</span><span class="from">김OO</span><span class="subj">회의 시간 변경 가능하신가요?</span></div>
+          <div class="mail"><span class="tag dim">광고</span><span class="from">뉴스레터</span><span class="subj">이번 주 추천 아티클 모음</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features wrap" id="features">
+    <h2>기능 <span>// 셋 다 한 화면에</span></h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">▚</div>
+        <h3>사용량 대시보드</h3>
+        <p>Claude Code와 Codex의 세션·주간 한도를 게이지로 표시합니다.
+        지금 속도라면 언제 소진되는지 예측하고, 리셋 시각을 함께 보여줍니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon">▤</div>
+        <h3>Unread 사이드바</h3>
+        <p>Gmail 안읽은 메일을 규칙과 AI가 함께 분류합니다.
+        마감·결제·보안처럼 놓치면 잃는 메일만 남기고, 뉴스레터는 조용히 접습니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon">▣</div>
+        <h3>내 기준으로 학습</h3>
+        <p>"노션 알림은 안 중요해" 한 줄이면 분류 기준이 바뀝니다.
+        자연어 프롬프트가 Gmail 검색 규칙과 의미 기준으로 컴파일됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy-strip wrap">
+    <h2>프라이버시 <span>// 설계부터</span></h2>
+    <div class="strip">
+      <p>DASH는 서버에 사용자 데이터를 저장하지 않습니다.</p>
+      <ul>
+        <li>메일과 사용량 데이터는 기기 안에서만 처리·보관됩니다</li>
+        <li>OAuth 토큰은 iOS Keychain에 암호화 저장됩니다</li>
+        <li>AI 분류에는 발신자·제목·본문 일부만 전송되며, 어디에도 저장되지 않습니다</li>
+        <li>광고·트래킹·분석 SDK가 없습니다</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
+    <span class="links">
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="terms.html">서비스 약관</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+// typing headline
+const phrase = "한 화면에.";
+const typed = document.getElementById("typed");
+let i = 0;
+(function type() {
+  if (i <= phrase.length) {
+    typed.textContent = phrase.slice(0, i++);
+    setTimeout(type, 120);
+  }
+})();
+
+// terminal rows rise in sequence, then bars fill
+const rows = [...document.querySelectorAll(".term-row")];
+const termObserver = new IntersectionObserver((entries) => {
+  if (!entries[0].isIntersecting) return;
+  termObserver.disconnect();
+  rows.forEach((row, n) => {
+    setTimeout(() => {
+      row.classList.add("show");
+      row.querySelectorAll(".bar i").forEach((bar) => {
+        requestAnimationFrame(() =>
+          setTimeout(() => { bar.style.width = bar.dataset.width; }, 150));
+      });
+    }, 350 * n + 300);
+  });
+}, { threshold: 0.3 });
+termObserver.observe(document.getElementById("terminal"));
+
+// feature cards fade up on scroll
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, n) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add("show"), n * 120);
+      cardObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll(".card").forEach((card) => cardObserver.observe(card));
+</script>
+</body>
+</html>
