@@ -95,8 +95,18 @@ header {
 .mail .from { color: var(--text); flex: none; }
 .mail .subj { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+/* demo video */
+.demo { padding: 96px 0 0; border-top: 1px solid var(--line); }
+.demo h2 { font-size: 22px; margin-bottom: 40px; }
+.demo h2 span { color: var(--muted); font-weight: 400; }
+.video-frame {
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  background: var(--bg-soft); box-shadow: 0 24px 80px rgba(0,0,0,.5);
+}
+.video-frame video { display: block; width: 100%; height: auto; }
+
 /* features */
-.features { padding: 96px 0; border-top: 1px solid var(--line); }
+.features { padding: 96px 0; }
 .features h2, .privacy-strip h2 { font-size: 22px; margin-bottom: 40px; }
 .features h2 span, .privacy-strip h2 span { color: var(--muted); font-weight: 400; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
