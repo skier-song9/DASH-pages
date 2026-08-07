@@ -36,7 +36,7 @@
     Gmail 안읽은 메일의 AI 중요도 분류를 한 화면에 담은 iOS 앱입니다.
     데이터는 기기에만 머뭅니다.</p>
     <div class="cta">
-      <a class="btn primary" href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub에서 보기</a>
+      <button class="btn primary" id="appstore-btn" type="button">App Store에서 보기</button>
       <a class="btn" href="#features">기능 살펴보기</a>
     </div>
 
@@ -153,6 +153,7 @@
     </div>
   </section>
 </main>
+<div class="toast" id="toast" role="status">곧 출시 예정입니다</div>
 
 <footer>
   <div class="wrap foot">
@@ -166,6 +167,15 @@
 </footer>
 
 <script>
+// App Store CTA — coming soon toast
+const toast = document.getElementById("toast");
+let toastTimer;
+document.getElementById("appstore-btn").addEventListener("click", () => {
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+});
+
 // typing headline
 const phrase = "한 화면에.";
 const typed = document.getElementById("typed");

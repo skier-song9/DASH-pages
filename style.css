@@ -187,3 +187,14 @@ footer { border-top: 1px solid var(--line); padding: 36px 0 48px; font-size: 12p
   .term-body { font-size: 12px; }
   .mail .subj { display: none; }
 }
+
+/* coming-soon toast */
+.btn.primary { cursor: pointer; font-family: var(--mono); }
+.toast {
+  position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 16px);
+  background: var(--bg-soft); border: 1px solid var(--accent); color: var(--text);
+  padding: 10px 22px; border-radius: 8px; font-size: 13px;
+  opacity: 0; pointer-events: none; z-index: 100;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }

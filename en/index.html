@@ -36,7 +36,7 @@
     AI-triaged Gmail unread mail on a single iOS screen.
     Your data never leaves your device.</p>
     <div class="cta">
-      <a class="btn primary" href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">View on GitHub</a>
+      <button class="btn primary" id="appstore-btn" type="button">View on the App Store</button>
       <a class="btn" href="#features">Explore features</a>
     </div>
 
@@ -157,6 +157,7 @@
     </div>
   </section>
 </main>
+<div class="toast" id="toast" role="status">Coming soon</div>
 
 <footer>
   <div class="wrap foot">
@@ -170,6 +171,14 @@
 </footer>
 
 <script>
+const toast = document.getElementById("toast");
+let toastTimer;
+document.getElementById("appstore-btn").addEventListener("click", () => {
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+});
+
 const phrase = "on one screen.";
 const typed = document.getElementById("typed");
 let i = 0;
