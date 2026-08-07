@@ -100,6 +100,21 @@ header {
 .mail .from { color: var(--text); flex: none; }
 .mail .subj { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+/* about / google data */
+.about { padding: 96px 0 0; border-top: 1px solid var(--line); }
+.about h2 { font-size: 22px; margin-bottom: 40px; }
+.about h2 span { color: var(--muted); font-weight: 400; }
+.about .strip p b { color: var(--text); }
+.about .strip ul { list-style: none; margin-top: 14px; }
+.about .strip li { padding-left: 22px; position: relative; color: var(--muted); font-size: 13px; margin-top: 8px; }
+.about .strip li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0 0; font-size: 13px; }
+.data-table th, .data-table td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; color: #c9c9c9; }
+.data-table th { background: var(--bg); font-weight: 600; color: var(--text); }
+.about .fine { margin-top: 14px; font-size: 12px; color: var(--muted); }
+.about a.inline { color: var(--accent); }
+.about a.inline:hover { text-decoration: underline; }
+
 /* demo video */
 .demo { padding: 96px 0 0; border-top: 1px solid var(--line); }
 .demo h2 { font-size: 22px; margin-bottom: 40px; }

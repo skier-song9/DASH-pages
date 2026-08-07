@@ -64,6 +64,47 @@
     </div>
   </section>
 
+  <section class="about wrap" id="about">
+    <h2>What is DASH? <span>// the app's purpose</span></h2>
+    <div class="strip">
+      <p><b>DASH is a personal productivity dashboard iOS app for developers who use AI coding tools.</b>
+      Developers check two things many times a day — "how much AI tool quota do I
+      have left?" and "did I miss an important email?". DASH's purpose is to
+      reduce both checks to one app, one screen.</p>
+      <ul>
+        <li>Shows session and weekly usage limits of AI coding tools (Claude Code, Codex) as gauges</li>
+        <li>Surfaces only the important unread Gmail, and marks mail you've checked as read</li>
+        <li>A personal tool — no subscription, and no server that stores your data</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about wrap" id="google-data">
+    <h2>Google data use <span>// what and why</span></h2>
+    <div class="strip">
+      <p>DASH requests Google account access only for the purposes below.</p>
+      <table class="data-table">
+        <tr><th>Permission</th><th>Purpose</th></tr>
+        <tr>
+          <td><code>gmail.modify</code></td>
+          <td>Needed to read the sender, subject, and snippet of unread mail to
+          show the list, and to <b>mark mail as read</b> in Gmail when you check
+          it off. The app never sends or deletes mail, and makes no change other
+          than marking as read.</td>
+        </tr>
+        <tr>
+          <td><code>openid</code> · <code>email</code></td>
+          <td>Needed to identify each linked account's email address so multiple
+          accounts can be shown separately.</td>
+        </tr>
+      </table>
+      <p class="fine">Mail data stays on your device. Importance triage transiently
+      processes only the sender, subject, and part of the body — stored nowhere,
+      and never used for advertising or model training.
+      See the <a class="inline" href="privacy.html">Privacy Policy</a> for details.</p>
+    </div>
+  </section>
+
   <section class="demo wrap" id="demo">
     <h2>Demo <span>// DASH in 53 seconds</span></h2>
     <div class="video-frame">
