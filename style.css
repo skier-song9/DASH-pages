@@ -32,8 +32,13 @@ header {
 .nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
 .logo { font-weight: 700; letter-spacing: .08em; }
 .logo span { color: var(--accent); }
-.nav-links { display: flex; gap: 20px; font-size: 13px; color: var(--muted); }
+.nav-links { display: flex; gap: 20px; font-size: 13px; color: var(--muted); align-items: center; }
 .nav-links a:hover { color: var(--text); }
+.nav-links .lang {
+  border: 1px solid var(--line); border-radius: 5px; padding: 2px 10px;
+  font-size: 12px;
+}
+.nav-links .lang:hover { border-color: var(--accent); color: var(--accent); }
 
 /* hero */
 .hero { padding: 96px 0 64px; text-align: center; }

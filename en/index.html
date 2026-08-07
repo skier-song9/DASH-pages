@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DASH — AI usage and mail on one screen</title>
+  <meta name="description" content="DASH is an iOS app that combines a Claude Code · Codex usage dashboard with an AI-powered unread mail sidebar.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="alternate" hreflang="ko" href="https://skier-song9.github.io/DASH-pages/">
+  <link rel="alternate" hreflang="en" href="https://skier-song9.github.io/DASH-pages/en/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="./">DASH<span>_</span></a>
+    <nav class="nav-links">
+      <a href="#demo">Demo</a>
+      <a href="#features">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+      <a class="lang" href="../">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>AI usage and mail,<br><span class="accent" id="typed"></span><span class="caret" id="caret"></span></h1>
+    <p class="sub">DASH puts Claude Code · Codex usage gauges and
+    AI-triaged Gmail unread mail on a single iOS screen.
+    Your data never leaves your device.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">View on GitHub</a>
+      <a class="btn" href="#features">Explore features</a>
+    </div>
+
+    <div class="terminal" id="terminal">
+      <div class="term-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">DASH — dashboard</span>
+      </div>
+      <div class="term-body">
+        <div class="term-row" data-step="0">
+          <div class="term-label"><b>Claude Code</b><span>5-hour window · 62%</span></div>
+          <div class="bar"><i data-width="62%"></i></div>
+        </div>
+        <div class="term-row" data-step="1">
+          <div class="term-label"><b>Codex</b><span>weekly · 31%</span></div>
+          <div class="bar"><i class="ok" data-width="31%"></i></div>
+        </div>
+        <div class="term-row" data-step="2">
+          <div class="term-label"><b>Claude Code</b><span>weekly · 87% — resets tomorrow 09:00</span></div>
+          <div class="bar"><i class="warn" data-width="87%"></i></div>
+        </div>
+        <div class="term-row" data-step="3">
+          <div class="term-label"><b>Unread</b><span>important 3 / total 27</span></div>
+          <div class="mail"><span class="tag">important</span><span class="from">Apple Developer</span><span class="subj">Your membership renewal payment is complete</span></div>
+          <div class="mail"><span class="tag">important</span><span class="from">Kim</span><span class="subj">Could we move the meeting time?</span></div>
+          <div class="mail"><span class="tag dim">promo</span><span class="from">Newsletter</span><span class="subj">This week's recommended articles</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo wrap" id="demo">
+    <h2>Demo <span>// DASH in 53 seconds</span></h2>
+    <div class="video-frame">
+      <video controls playsinline preload="metadata">
+        <source src="../assets/promo.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </section>
+
+  <section class="features wrap" id="features">
+    <h2>Features <span>// all three on one screen</span></h2>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">▚</div>
+        <h3>Usage dashboard</h3>
+        <p>Shows Claude Code and Codex session and weekly limits as gauges.
+        Forecasts when you'll run out at the current pace, alongside reset times.</p>
+      </div>
+      <div class="card">
+        <div class="icon">▤</div>
+        <h3>Unread sidebar</h3>
+        <p>Rules and AI triage your unread Gmail together.
+        Only mail you'd lose something by missing — deadlines, payments, security —
+        stays up front; newsletters fold away quietly.</p>
+      </div>
+      <div class="card">
+        <div class="icon">▣</div>
+        <h3>Learns your criteria</h3>
+        <p>One line like "Notion alerts don't matter" changes how mail is triaged.
+        Natural-language prompts compile into Gmail search rules and semantic criteria.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy-strip wrap">
+    <h2>Privacy <span>// by design</span></h2>
+    <div class="strip">
+      <p>DASH stores no user data on any server.</p>
+      <ul>
+        <li>Mail and usage data are processed and kept on your device only</li>
+        <li>OAuth tokens are stored encrypted in the iOS Keychain</li>
+        <li>AI triage sends only the sender, subject, and a snippet — stored nowhere</li>
+        <li>No ads, no tracking, no analytics SDKs</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
+    <span class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+const phrase = "on one screen.";
+const typed = document.getElementById("typed");
+let i = 0;
+(function type() {
+  if (i <= phrase.length) {
+    typed.textContent = phrase.slice(0, i++);
+    setTimeout(type, 100);
+  }
+})();
+
+const rows = [...document.querySelectorAll(".term-row")];
+const termObserver = new IntersectionObserver((entries) => {
+  if (!entries[0].isIntersecting) return;
+  termObserver.disconnect();
+  rows.forEach((row, n) => {
+    setTimeout(() => {
+      row.classList.add("show");
+      row.querySelectorAll(".bar i").forEach((bar) => {
+        requestAnimationFrame(() =>
+          setTimeout(() => { bar.style.width = bar.dataset.width; }, 150));
+      });
+    }, 350 * n + 300);
+  });
+}, { threshold: 0.3 });
+termObserver.observe(document.getElementById("terminal"));
+
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, n) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add("show"), n * 120);
+      cardObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll(".card").forEach((card) => cardObserver.observe(card));
+</script>
+</body>
+</html>
