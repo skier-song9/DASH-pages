@@ -12,6 +12,17 @@
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DASH",
+    "operatingSystem": "iOS",
+    "applicationCategory": "ProductivityApplication",
+    "description": "DASH is a personal productivity dashboard iOS app showing AI coding tool (Claude Code, Codex) usage limits and AI-triaged unread Gmail on one screen.",
+    "url": "https://dash-worklife.org/en/"
+  }
+  </script>
 </head>
 <body>
 
@@ -31,7 +42,7 @@
 <main>
   <section class="hero wrap">
     <p class="eyebrow">DASH</p>
-    <h1>AI usage and mail,<br><span class="accent" id="typed"></span><span class="caret" id="caret"></span></h1>
+    <h1>DASH<span class="accent"> — </span>AI usage and mail on one screen<span class="caret"></span></h1>
     <p class="sub">DASH puts Claude Code · Codex usage gauges and
     AI-triaged Gmail unread mail on a single iOS screen.
     Your data never leaves your device.</p>
@@ -171,6 +182,8 @@
 </footer>
 
 <script>
+document.documentElement.classList.add("js");
+
 const toast = document.getElementById("toast");
 let toastTimer;
 document.getElementById("appstore-btn").addEventListener("click", () => {
@@ -179,15 +192,6 @@ document.getElementById("appstore-btn").addEventListener("click", () => {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
 });
 
-const phrase = "on one screen.";
-const typed = document.getElementById("typed");
-let i = 0;
-(function type() {
-  if (i <= phrase.length) {
-    typed.textContent = phrase.slice(0, i++);
-    setTimeout(type, 100);
-  }
-})();
 
 const rows = [...document.querySelectorAll(".term-row")];
 const termObserver = new IntersectionObserver((entries) => {

@@ -12,6 +12,17 @@
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DASH",
+    "operatingSystem": "iOS",
+    "applicationCategory": "ProductivityApplication",
+    "description": "DASH는 AI 코딩 도구(Claude Code, Codex)의 사용량 한도와 Gmail 안읽은 메일의 AI 중요도 분류를 한 화면에 보여주는 개인 생산성 대시보드 iOS 앱입니다.",
+    "url": "https://dash-worklife.org/"
+  }
+  </script>
 </head>
 <body>
 
@@ -31,7 +42,7 @@
 <main>
   <section class="hero wrap">
     <p class="eyebrow">DASH</p>
-    <h1>AI 사용량과 메일을<br><span class="accent" id="typed"></span><span class="caret" id="caret"></span></h1>
+    <h1>DASH<span class="accent"> — </span>AI 사용량과 메일을 한 화면에<span class="caret"></span></h1>
     <p class="sub">DASH는 Claude Code · Codex 사용량 게이지와
     Gmail 안읽은 메일의 AI 중요도 분류를 한 화면에 담은 iOS 앱입니다.
     데이터는 기기에만 머뭅니다.</p>
@@ -167,6 +178,8 @@
 </footer>
 
 <script>
+document.documentElement.classList.add("js");
+
 // App Store CTA — coming soon toast
 const toast = document.getElementById("toast");
 let toastTimer;
@@ -176,16 +189,6 @@ document.getElementById("appstore-btn").addEventListener("click", () => {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
 });
 
-// typing headline
-const phrase = "한 화면에.";
-const typed = document.getElementById("typed");
-let i = 0;
-(function type() {
-  if (i <= phrase.length) {
-    typed.textContent = phrase.slice(0, i++);
-    setTimeout(type, 120);
-  }
-})();
 
 // terminal rows rise in sequence, then bars fill
 const rows = [...document.querySelectorAll(".term-row")];
