@@ -8,7 +8,7 @@
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=20260810">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -31,7 +31,15 @@
     <a class="logo" href="./">DASH</a>
     <nav class="nav-links">
       <a href="./#demo">Demo</a>
-      <a href="./#features">Features</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="features/dashboard.html">Usage dashboard</a>
+          <a href="features/unread.html">Unread sidebar</a>
+          <a href="features/learning.html">Learns your criteria</a>
+          <a class="all" href="./#features">All features</a>
+        </div>
+      </div>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a class="lang" href="../">한국어</a>
@@ -133,25 +141,28 @@
   <section class="features wrap" id="features">
     <h2>Features <span>// all three on one screen</span></h2>
     <div class="grid">
-      <div class="card">
-        <div class="icon">▚</div>
+      <a class="card" href="features/dashboard.html">
+        <div class="icon" aria-hidden="true">▚</div>
         <h3>Usage dashboard</h3>
         <p>Shows Claude Code and Codex session and weekly limits as gauges.
         Forecasts when you'll run out at the current pace, alongside reset times.</p>
-      </div>
-      <div class="card">
-        <div class="icon">▤</div>
+        <span class="more">Details →</span>
+      </a>
+      <a class="card" href="features/unread.html">
+        <div class="icon" aria-hidden="true">▤</div>
         <h3>Unread sidebar</h3>
-        <p>Rules and AI triage your unread Gmail together.
-        Only mail you'd lose something by missing — deadlines, payments, security —
-        stays up front; newsletters fold away quietly.</p>
-      </div>
-      <div class="card">
-        <div class="icon">▣</div>
+        <p>Only the unread Gmail you'd lose something by missing —
+        deadlines, payments, security — stays up front;
+        newsletters fold away quietly.</p>
+        <span class="more">Details →</span>
+      </a>
+      <a class="card" href="features/learning.html">
+        <div class="icon" aria-hidden="true">▣</div>
         <h3>Learns your criteria</h3>
         <p>One line like "Notion alerts don't matter" changes how mail is triaged.
-        Natural-language prompts compile into Gmail search rules and semantic criteria.</p>
-      </div>
+        Write a sentence in plain language and the sidebar filters by it.</p>
+        <span class="more">Details →</span>
+      </a>
     </div>
   </section>
 
@@ -181,6 +192,7 @@
   </div>
 </footer>
 
+<script src="../nav.js?v=20260810" defer></script>
 <script>
 document.documentElement.classList.add("js");
 
