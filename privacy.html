@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>개인정보처리방침 — DASH</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260810">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/privacy.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/privacy.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -16,7 +16,15 @@
     <a class="logo" href="./">DASH</a>
     <nav class="nav-links">
       <a href="./#demo">데모</a>
-      <a href="./#features">기능</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="features/dashboard.html">사용량 대시보드</a>
+          <a href="features/unread.html">Unread 사이드바</a>
+          <a href="features/learning.html">내 기준으로 학습</a>
+          <a class="all" href="./#features">기능 전체 보기</a>
+        </div>
+      </div>
       <a href="privacy.html">개인정보처리방침</a>
       <a href="terms.html">서비스 약관</a>
       <a class="lang" href="en/privacy.html">EN</a>
@@ -71,15 +79,14 @@
   </ul>
 
   <h2>3. AI 분류를 위한 일시적 전송</h2>
-  <p>메일 중요도 분류를 위해 다음 정보가 개발자가 운영하는 중계 서버(Cloudflare Workers)를 거쳐
-  외부 LLM(대규모 언어 모델) API로 전송됩니다:</p>
+  <p>메일 중요도 분류를 위해, 아래 정보가 사용자의 기기를 떠나
+  개발자가 운영하는 중계 서버를 거쳐 외부 AI 처리 시스템으로 일시적으로 전송됩니다:</p>
   <ul>
     <li>발신자 이름·주소, 제목, 본문 앞부분(최대 220자), 대량발송 여부 등의 신호</li>
   </ul>
   <p>이 전송은 분류 응답을 받는 동안에만 존재하는 일시적 처리입니다.
   중계 서버는 무상태(stateless)로 어떤 내용도 기록·보관하지 않으며,
-  개발자가 이용하는 LLM 제공사는 상용 API 약관에 따라 API 입력·출력을
-  모델 학습에 사용하지 않습니다.
+  전송된 정보는 저장되지 않고 모델 학습에도 사용되지 않습니다.
   메일 본문 전체나 첨부파일은 전송되지 않습니다.</p>
 
   <h2>4. Google 사용자 데이터에 관한 준수 사항 (Limited Use)</h2>
@@ -109,8 +116,8 @@
   기능 제공을 위한 처리 위탁은 다음과 같습니다:</p>
   <table>
     <tr><th>수탁자</th><th>목적</th><th>내용</th></tr>
-    <tr><td>Cloudflare, Inc.</td><td>API 중계</td><td>분류 요청의 무상태 전달 (저장 없음)</td></tr>
-    <tr><td>LLM API 제공사</td><td>메일 중요도 분류</td><td>3조에 기재된 최소 정보의 일시적 처리</td></tr>
+    <tr><td>클라우드 인프라 제공사</td><td>분류 요청의 무상태 전달 (저장 없음)</td><td>3조에 기재된 최소 정보를 저장하지 않고 전달</td></tr>
+    <tr><td>AI 처리 서비스</td><td>메일 중요도 분류 (일시적 처리)</td><td>3조에 기재된 최소 정보의 일시적 처리, 저장·모델 학습 없음</td></tr>
   </table>
   <p>오류 발생 시 개발자에게 전송되는 오류 알림에는 이메일 주소·토큰 등
   개인정보가 자동으로 마스킹(redaction)됩니다.</p>
@@ -144,5 +151,6 @@
     </span>
   </div>
 </footer>
+<script src="nav.js?v=20260810" defer></script>
 </body>
 </html>

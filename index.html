@@ -8,7 +8,7 @@
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260810">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -31,7 +31,15 @@
     <a class="logo" href="./">DASH</a>
     <nav class="nav-links">
       <a href="./#demo">데모</a>
-      <a href="./#features">기능</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="features/dashboard.html">사용량 대시보드</a>
+          <a href="features/unread.html">Unread 사이드바</a>
+          <a href="features/learning.html">내 기준으로 학습</a>
+          <a class="all" href="./#features">기능 전체 보기</a>
+        </div>
+      </div>
       <a href="privacy.html">개인정보처리방침</a>
       <a href="terms.html">서비스 약관</a>
       <a class="lang" href="en/">EN</a>
@@ -130,24 +138,27 @@
   <section class="features wrap" id="features">
     <h2>기능 <span>// 셋 다 한 화면에</span></h2>
     <div class="grid">
-      <div class="card">
-        <div class="icon">▚</div>
+      <a class="card" href="features/dashboard.html">
+        <div class="icon" aria-hidden="true">▚</div>
         <h3>사용량 대시보드</h3>
         <p>Claude Code와 Codex의 세션·주간 한도를 게이지로 표시합니다.
         지금 속도라면 언제 소진되는지 예측하고, 리셋 시각을 함께 보여줍니다.</p>
-      </div>
-      <div class="card">
-        <div class="icon">▤</div>
+        <span class="more">자세히 →</span>
+      </a>
+      <a class="card" href="features/unread.html">
+        <div class="icon" aria-hidden="true">▤</div>
         <h3>Unread 사이드바</h3>
-        <p>Gmail 안읽은 메일을 규칙과 AI가 함께 분류합니다.
-        마감·결제·보안처럼 놓치면 잃는 메일만 남기고, 뉴스레터는 조용히 접습니다.</p>
-      </div>
-      <div class="card">
-        <div class="icon">▣</div>
+        <p>Gmail 안읽은 메일 중 놓치면 잃는 것만 앞에 남깁니다.
+        마감·결제·보안은 남기고, 뉴스레터는 조용히 접습니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
+      <a class="card" href="features/learning.html">
+        <div class="icon" aria-hidden="true">▣</div>
         <h3>내 기준으로 학습</h3>
         <p>"노션 알림은 안 중요해" 한 줄이면 분류 기준이 바뀝니다.
-        자연어 프롬프트가 Gmail 검색 규칙과 의미 기준으로 컴파일됩니다.</p>
-      </div>
+        평소 말로 한 줄 쓰면, 그 기준대로 사이드바가 걸러집니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
     </div>
   </section>
 
@@ -177,6 +188,7 @@
   </div>
 </footer>
 
+<script src="nav.js?v=20260810" defer></script>
 <script>
 document.documentElement.classList.add("js");
 

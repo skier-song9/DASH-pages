@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>서비스 약관 — DASH</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260810">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/terms.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/terms.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -16,7 +16,15 @@
     <a class="logo" href="./">DASH</a>
     <nav class="nav-links">
       <a href="./#demo">데모</a>
-      <a href="./#features">기능</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="features/dashboard.html">사용량 대시보드</a>
+          <a href="features/unread.html">Unread 사이드바</a>
+          <a href="features/learning.html">내 기준으로 학습</a>
+          <a class="all" href="./#features">기능 전체 보기</a>
+        </div>
+      </div>
       <a href="privacy.html">개인정보처리방침</a>
       <a href="terms.html">서비스 약관</a>
       <a class="lang" href="en/terms.html">EN</a>
@@ -95,5 +103,6 @@
     </span>
   </div>
 </footer>
+<script src="nav.js?v=20260810" defer></script>
 </body>
 </html>

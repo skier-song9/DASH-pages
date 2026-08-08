@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>사용량 대시보드 — DASH</title>
+  <meta name="description" content="Claude Code와 Codex의 세션·주간 한도를 눈금 게이지로 보여줍니다. 사용량과 잔여량을 바꿔 볼 수 있고, 지금 속도라면 언제 소진되는지 예상치로 알려줍니다.">
+  <meta property="og:site_name" content="DASH">
+  <meta property="og:title" content="사용량 대시보드 — DASH">
+  <link rel="stylesheet" href="../style.css?v=20260810">
+  <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
+  <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../">DASH</a>
+    <nav class="nav-links">
+      <a href="../#demo">데모</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="dashboard.html">사용량 대시보드</a>
+          <a href="unread.html">Unread 사이드바</a>
+          <a href="learning.html">내 기준으로 학습</a>
+          <a class="all" href="../#features">기능 전체 보기</a>
+        </div>
+      </div>
+      <a href="../privacy.html">개인정보처리방침</a>
+      <a href="../terms.html">서비스 약관</a>
+      <a class="lang" href="../en/features/dashboard.html">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="../">홈</a><span>/</span><a href="../#features">기능</a><span>/</span>사용량 대시보드</p>
+  </div>
+
+  <section class="fhero wrap">
+    <p class="eyebrow">기능 01</p>
+    <h1>사용량 대시보드</h1>
+    <p class="sub">Claude Code와 Codex의 한도를 도구별 카드로 나눠 보여줍니다.
+    창(window)마다 한 줄, 줄마다 눈금 게이지 하나. 숫자를 읽지 않아도
+    막대 색만 보면 지금 여유가 있는지 알 수 있습니다.</p>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>화면 <span>// 도구 하나에 카드 하나</span></h2>
+    <p>카드 제목은 측정 대상인 도구 이름입니다. 오른쪽 위 범례는 백분율 열이 무엇을
+    가리키는지 알려줍니다. 한 줄은 <b>창 이름 · 게이지 · 백분율 · 초기화/소진 시각</b>
+    순서로 읽습니다.</p>
+
+    <div class="panel">
+      <div class="ctrlbar">
+        <span class="ctrl-label" id="gauge-mode-label">게이지 표시</span>
+        <fieldset class="seg">
+          <legend class="sr-only">게이지 표시 방식</legend>
+          <input type="radio" name="gmode" id="gmode-used" value="used" checked>
+          <label for="gmode-used">사용량</label>
+          <input type="radio" name="gmode" id="gmode-rem" value="rem">
+          <label for="gmode-rem">잔여량</label>
+        </fieldset>
+      </div>
+
+      <div id="usage-cards">
+        <div class="ucard">
+          <div class="ucard-head">
+            <h3>Claude Code</h3>
+            <span class="ulegend" data-legend>% 사용</span>
+          </div>
+          <div class="urow" data-used="68" data-fc="32">
+            <span class="uwin">5시간</span>
+            <span class="gauge" role="img" data-gauge aria-label="5시간 창, 68% 사용">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>68%</span>
+            <span class="ustat urgent">1시간 6분 후 소진</span>
+          </div>
+          <div class="urow" data-used="61" data-fc="0">
+            <span class="uwin">1주</span>
+            <span class="gauge" role="img" data-gauge aria-label="1주 창, 61% 사용">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>61%</span>
+            <span class="ustat">2일 10시간 후 초기화</span>
+          </div>
+          <div class="urow" data-used="18" data-fc="0">
+            <span class="uwin">Fable</span>
+            <span class="gauge" role="img" data-gauge aria-label="Fable 창, 18% 사용">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>18%</span>
+            <span class="ustat">9시간 7분 후 초기화</span>
+          </div>
+        </div>
+
+        <div class="ucard">
+          <div class="ucard-head">
+            <h3>Codex</h3>
+            <span class="ulegend" data-legend>% 사용</span>
+          </div>
+          <div class="urow" data-used="25" data-fc="0">
+            <span class="uwin">1주</span>
+            <span class="gauge" role="img" data-gauge aria-label="1주 창, 25% 사용">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>25%</span>
+            <span class="ustat">5일 2시간 후 초기화</span>
+          </div>
+        </div>
+      </div>
+      <p class="caption">위 토글은 실제로 동작합니다. 앱의 설정 화면에 있는 것과 같은 항목입니다.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>눈금 게이지</b> — 매끈한 막대 대신 30칸으로 끊어 그립니다. 한 칸이 대략 3%라
+      "얼마나 남았나"를 눈금 수로 셀 수 있습니다.</li>
+      <li><b>색</b> — 남은 양에 따라 초록 → 연두 → 노랑 → 주황 → 연빨강 → 빨강으로 내려갑니다.
+      숫자를 읽기 전에 색이 먼저 보입니다.</li>
+      <li><b>창 이름</b> — <code>5시간</code>, <code>1주</code>처럼 한도가 걸리는 단위 그대로 쓰고,
+      모델별 한도는 모델 이름(<code>Fable</code>)으로 표시합니다.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>사용량 / 잔여량 <span>// 백분율 열을 뒤집기</span></h2>
+    <p>기본값은 <b>사용량</b>입니다. 쓴 만큼 막대가 차오르고, 차오를수록 빨간색에 가까워집니다.
+    남은 쪽이 더 자연스럽다면 설정(톱니바퀴)에서 <b>잔여량</b>으로 바꿉니다.
+    그러면 백분율 열과 막대가 남은 값 기준으로 바뀝니다 — 막대는 똑같이 왼쪽부터
+    채워지고, 막대가 길다는 것이 곧 "여유가 있다"는 뜻이 됩니다.</p>
+
+    <div class="panel">
+      <p class="panel-note" style="margin-top:0">
+        위 카드의 토글을 바꾸면 <b>68% ↔ 32%</b>처럼 백분율과 막대 길이가 함께 뒤집힙니다.
+        색은 어느 쪽 표시에서도 "남은 양" 기준을 유지하므로, 표시를 바꿔도 위험도 판단은 흔들리지 않습니다.
+      </p>
+      <ul class="klist">
+        <li><b>사용량</b> — 쓴 만큼 채워집니다. 많이 쓸수록 막대가 길어지고 빨간색으로 바뀝니다.</li>
+        <li><b>잔여량</b> — 남은 만큼 채워집니다. 잔여량이 충분하면 길고 초록색, 바닥나면 짧고 빨간색입니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>예상치 <span>// 지금 속도라면 언제 바닥나는가</span></h2>
+    <p>게이지에 반투명하게 덧칠된 구간이 <b>예상치</b>입니다.
+    지금까지의 소비 속도를 그대로 창의 끝까지 밀어 보고, 그 속도로 갔을 때 도달할 지점을 표시합니다.
+    이 구간은 <b>초기화보다 먼저 소진될 것으로 보일 때만</b> 나타납니다.
+    여유 있게 끝날 창은 굳이 겁주지 않고, 초기화 시각만 조용히 보여줍니다.</p>
+
+    <div class="panel">
+      <div class="fcgrid">
+        <div class="fccase">
+          <h4>소진이 먼저 오는 경우</h4>
+          <p>지금 속도를 유지하면 초기화 전에 한도를 다 씁니다 → 예상 구간이 나타나고,
+          오른쪽 글자가 "후 초기화" 대신 <b>"후 소진"</b>으로 바뀌며 빨갛게 표시됩니다.</p>
+          <div class="fcnow" style="--at:68%"><i>지금</i></div>
+          <div class="urow">
+            <span class="uwin">5시간</span>
+            <span class="gauge" role="img" aria-label="5시간 창, 68% 사용, 예상 소진 100%">
+              <span class="gauge-track">
+                <span class="gauge-fill" style="--pct:68%;--band:#FF9F0A"></span>
+                <span class="gauge-fc" style="--pct:68%;--fc:32%"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct">68%</span>
+            <span class="ustat urgent">1시간 6분 후 소진</span>
+          </div>
+          <div class="fcpath" style="--from:68%;--len:30%"><i></i><b>100%</b></div>
+        </div>
+
+        <div class="fccase">
+          <h4>초기화가 먼저 오는 경우</h4>
+          <p>같은 속도로 써도 창이 먼저 초기화됩니다 → 예상 구간을 그리지 않고,
+          초기화까지 남은 시간만 보여줍니다.</p>
+          <div class="fcnow" style="--at:25%"><i>지금</i></div>
+          <div class="urow">
+            <span class="uwin">1주</span>
+            <span class="gauge" role="img" aria-label="1주 창, 25% 사용">
+              <span class="gauge-track">
+                <span class="gauge-fill" style="--pct:25%;--band:#A3E635"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct">25%</span>
+            <span class="ustat">5일 2시간 후 초기화</span>
+          </div>
+          <div class="fcpath"><b style="color:#6f6f6f">예상 구간 없음</b></div>
+        </div>
+      </div>
+      <p class="caption">예상치는 설정에서 끌 수 있습니다. 꺼도 옆의 카운트다운은 그대로 남습니다.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>예측이지 약속이 아닙니다.</b> 속도가 바뀌면 예상 지점도 같이 움직입니다.</li>
+      <li>예상 구간은 반투명하게, 실제 사용량은 불투명하게 그려 <b>측정값과 추정값을 섞지 않습니다.</b></li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>한눈 경고 <span>// 화면을 보지 않아도 알아채도록</span></h2>
+    <p>DASH는 옆에 세워 두고 곁눈으로 보는 화면입니다. 그래서 잔여량이 일정 수준 아래로
+    내려가면 <b>화면 가장자리가 경고색으로 다섯 번 은은하게 빛났다가 사라집니다.</b>
+    글자를 읽지 않아도, 시야 구석의 색만으로 "슬슬 아껴 써야 한다"를 알 수 있습니다.</p>
+    <p>기준은 남은 양입니다. 여러 도구·창 가운데 <b>가장 급한 창 하나</b>가 전체 경고 수준을 정합니다.</p>
+
+    <div class="panel">
+      <div class="ctrlbar">
+        <span class="ctrl-label">경고 단계 미리 보기</span>
+        <div class="glance-btns" role="group" aria-label="경고 단계 미리 보기">
+          <button type="button" data-glance="caution">잔여 50% 이하</button>
+          <button type="button" data-glance="severe">잔여 30% 이하</button>
+          <button type="button" data-glance="critical">잔여 5% 이하</button>
+        </div>
+      </div>
+
+      <!-- 가로로 눕힌 아이폰: DASH는 가로 전용 앱이라 실제 사용 모습 그대로 -->
+      <div class="phone" id="glance-frame">
+        <span class="phone-island" aria-hidden="true"></span>
+        <div class="phone-screen">
+          <div class="glance-glow" id="glance-glow" aria-hidden="true"></div>
+          <div class="phone-status" aria-hidden="true">
+            <span class="batt">82%</span><span>11:20 오후</span><span class="dim">토, 8월 8</span>
+          </div>
+          <div class="glance-screen">
+            <div class="glance-card">
+              <b>Claude Code</b>
+              <div class="urow">
+                <span class="uwin">5시간</span>
+                <span class="gauge" role="img" aria-label="5시간 창, 잔여 4%">
+                  <span class="gauge-track">
+                    <span class="gauge-fill" style="--pct:96%;--band:#FF3B30"></span>
+                    <span class="gauge-ticks"></span>
+                  </span>
+                </span>
+                <span class="upct">96%</span>
+              </div>
+            </div>
+            <div class="glance-card">
+              <b>Codex</b>
+              <div class="urow">
+                <span class="uwin">1주</span>
+                <span class="gauge" role="img" aria-label="1주 창, 잔여 75%">
+                  <span class="gauge-track">
+                    <span class="gauge-fill" style="--pct:25%;--band:#A3E635"></span>
+                    <span class="gauge-ticks"></span>
+                  </span>
+                </span>
+                <span class="upct">25%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="caption" role="status" id="glance-caption">버튼을 누르면 해당 단계의 경고가 재생됩니다.
+      앱에서와 같이 다섯 번 깜빡인 뒤 사라집니다.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>잔여 50% 이하</b> — 노란색. 절반을 썼습니다. 알아둘 만하지만 멈출 일은 아닙니다.</li>
+      <li><b>잔여 30% 이하</b> — 주황색. 마지막 3분의 1입니다. 속도 조절을 시작할 때입니다.</li>
+      <li><b>잔여 5% 이하</b> — 빨간색. 사실상 소진입니다.</li>
+      <li>경고는 가장자리에서 안쪽으로 번지는 빛이라 <b>가운데의 게이지를 가리지 않고</b>,
+      다섯 번 깜빡인 뒤에는 완전히 사라져 눈을 피로하게 하지 않습니다.</li>
+    </ul>
+  </section>
+
+  <section class="fend wrap">
+    <h2>다른 기능</h2>
+    <div class="grid">
+      <a class="card" href="unread.html">
+        <div class="icon" aria-hidden="true">▤</div>
+        <h3>Unread 사이드바</h3>
+        <p>안읽은 메일 중 놓치면 손해인 것만 남기고, 나머지는 조용히 접습니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
+      <a class="card" href="learning.html">
+        <div class="icon" aria-hidden="true">▣</div>
+        <h3>내 기준으로 학습</h3>
+        <p>한 줄로 기준을 쓰면 그대로 걸러지고, 반복되는 발신자는 스스로 후보로 올라옵니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
+    <span class="links">
+      <a href="../privacy.html">개인정보처리방침</a>
+      <a href="../terms.html">서비스 약관</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../nav.js?v=20260810" defer></script>
+<script>
+(function () {
+  // Band colour is keyed to how much is LEFT, exactly as the app does it,
+  // so flipping the percent column never changes the risk reading.
+  function band(remaining) {
+    if (remaining >= 90) return "#34C759";
+    if (remaining >= 70) return "#A3E635";
+    if (remaining >= 50) return "#FFD60A";
+    if (remaining >= 30) return "#FF9F0A";
+    if (remaining >= 10) return "#FF6B6B";
+    return "#FF3B30";
+  }
+
+  var root = document.getElementById("usage-cards");
+  var rows = [].slice.call(root.querySelectorAll(".urow[data-used]"));
+  var legends = [].slice.call(root.querySelectorAll("[data-legend]"));
+  var radios = [].slice.call(document.querySelectorAll('input[name="gmode"]'));
+
+  function render(mode) {
+    var showUsed = mode === "used";
+    legends.forEach(function (el) { el.textContent = showUsed ? "% 사용" : "% 잔여"; });
+
+    rows.forEach(function (row) {
+      var used = Number(row.dataset.used);
+      var fc = Number(row.dataset.fc);
+      var remaining = 100 - used;
+      var shown = showUsed ? used : remaining;
+
+      var gauge = row.querySelector("[data-gauge]");
+      var fill = gauge.querySelector(".gauge-fill");
+      var fcEl = gauge.querySelector(".gauge-fc");
+
+      // Both modes fill from the left, exactly like the app — only the value
+      // changes. The forecast band sits after the used fill in 사용량, and on
+      // the tail of what's left in 잔여량 (the part you're projected to lose).
+      fill.style.setProperty("--pct", shown + "%");
+      fill.style.setProperty("--band", band(remaining));
+      if (fcEl) {
+        var start = showUsed ? used : Math.max(0, remaining - fc);
+        fcEl.style.setProperty("--fcstart", start + "%");
+        fcEl.style.setProperty("--fclen", Math.min(fc, showUsed ? 100 - used : remaining) + "%");
+      }
+      row.querySelector("[data-pct]").textContent = shown + "%";
+      gauge.setAttribute("aria-label",
+        row.querySelector(".uwin").textContent + " 창, " + shown + "% " + (showUsed ? "사용" : "잔여"));
+    });
+  }
+
+  radios.forEach(function (r) {
+    r.addEventListener("change", function () { if (r.checked) render(r.value); });
+  });
+  render("used");
+})();
+
+(function () {
+  // Same palette as the app's edge glow: deliberately dimmer than the gauge
+  // ramp, because a band across the whole edge throws far more light than the
+  // same colour inside a 14pt bar.
+  var COLORS = { caution: "#CCA600", severe: "#D97805", critical: "#FF3B30" };
+  var LABELS = {
+    caution: "잔여 50% 이하 — 노란색 경고",
+    severe: "잔여 30% 이하 — 주황색 경고",
+    critical: "잔여 5% 이하 — 빨간색 경고"
+  };
+  var glow = document.getElementById("glance-glow");
+  var caption = document.getElementById("glance-caption");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var timer;
+
+  [].slice.call(document.querySelectorAll("[data-glance]")).forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var level = btn.dataset.glance;
+      glow.style.setProperty("--glow", COLORS[level]);
+      caption.textContent = LABELS[level] + (reduced ? " (모션 최소화: 잠시 켜졌다 꺼집니다)" : " — 다섯 번 깜빡인 뒤 사라집니다");
+      clearTimeout(timer);
+      glow.classList.remove("pulsing", "steady");
+      // restart the animation from scratch on every press
+      void glow.offsetWidth;
+      if (reduced) {
+        glow.classList.add("steady");
+        timer = setTimeout(function () { glow.classList.remove("steady"); }, 2200);
+      } else {
+        glow.classList.add("pulsing");
+        timer = setTimeout(function () { glow.classList.remove("pulsing"); }, 5700);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
