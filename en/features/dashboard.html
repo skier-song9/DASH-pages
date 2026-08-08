@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usage dashboard — DASH</title>
+  <meta name="description" content="Session and weekly limits for Claude Code and Codex, drawn as ticked gauges. Flip between usage and remaining, and see when you'll run out at your current pace.">
+  <meta property="og:site_name" content="DASH">
+  <meta property="og:title" content="Usage dashboard — DASH">
+  <link rel="stylesheet" href="../../style.css?v=20260810">
+  <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
+  <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../">DASH</a>
+    <nav class="nav-links">
+      <a href="../#demo">Demo</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="dashboard.html">Usage dashboard</a>
+          <a href="unread.html">Unread sidebar</a>
+          <a href="learning.html">Learns your criteria</a>
+          <a class="all" href="../#features">All features</a>
+        </div>
+      </div>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a class="lang" href="../../features/dashboard.html">한국어</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="../">Home</a><span>/</span><a href="../#features">Features</a><span>/</span>Usage dashboard</p>
+  </div>
+
+  <section class="fhero wrap">
+    <p class="eyebrow">Feature 01</p>
+    <h1>Usage dashboard</h1>
+    <p class="sub">Claude Code and Codex limits, split into one card per tool.
+    One line per window, one ticked gauge per line. You don't have to read the
+    numbers — the colour of the bar already tells you whether you have room.</p>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>The screen <span>// one card per tool</span></h2>
+    <p>The card title is the tool being measured. The legend in the top right says what
+    the percent column refers to. Read a line left to right as
+    <b>window name · gauge · percent · reset or run-out time</b>.</p>
+
+    <div class="panel">
+      <div class="ctrlbar">
+        <span class="ctrl-label" id="gauge-mode-label">Gauge shows</span>
+        <fieldset class="seg">
+          <legend class="sr-only">What the gauge shows</legend>
+          <input type="radio" name="gmode" id="gmode-used" value="used" checked>
+          <label for="gmode-used">Usage</label>
+          <input type="radio" name="gmode" id="gmode-rem" value="rem">
+          <label for="gmode-rem">Remaining</label>
+        </fieldset>
+      </div>
+
+      <div id="usage-cards">
+        <div class="ucard">
+          <div class="ucard-head">
+            <h3>Claude Code</h3>
+            <span class="ulegend" data-legend>% used</span>
+          </div>
+          <div class="urow" data-used="68" data-fc="32">
+            <span class="uwin">5 hours</span>
+            <span class="gauge" role="img" data-gauge aria-label="5 hours window, 68% used">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>68%</span>
+            <span class="ustat urgent">runs out in 1h 6m</span>
+          </div>
+          <div class="urow" data-used="61" data-fc="0">
+            <span class="uwin">1 week</span>
+            <span class="gauge" role="img" data-gauge aria-label="1 week window, 61% used">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>61%</span>
+            <span class="ustat">resets in 2d 10h</span>
+          </div>
+          <div class="urow" data-used="18" data-fc="0">
+            <span class="uwin">Fable</span>
+            <span class="gauge" role="img" data-gauge aria-label="Fable window, 18% used">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>18%</span>
+            <span class="ustat">resets in 9h 7m</span>
+          </div>
+        </div>
+
+        <div class="ucard">
+          <div class="ucard-head">
+            <h3>Codex</h3>
+            <span class="ulegend" data-legend>% used</span>
+          </div>
+          <div class="urow" data-used="25" data-fc="0">
+            <span class="uwin">1 week</span>
+            <span class="gauge" role="img" data-gauge aria-label="1 week window, 25% used">
+              <span class="gauge-track">
+                <span class="gauge-fill"></span>
+                <span class="gauge-fc"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct" data-pct>25%</span>
+            <span class="ustat">resets in 5d 2h</span>
+          </div>
+        </div>
+      </div>
+      <p class="caption">The toggle above really works. It is the same setting you'll find in the app.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>Ticked gauge</b> — drawn as 30 segments instead of one smooth bar. A tick is
+      roughly 3%, so "how much is left" is something you can count.</li>
+      <li><b>Colour</b> — steps down with what's left: green → lime → yellow → orange →
+      light red → red. You see the colour before you read the number.</li>
+      <li><b>Window name</b> — the unit the limit actually applies to, written plainly
+      (<code>5 hours</code>, <code>1 week</code>); per-model limits are labelled with the
+      model name (<code>Fable</code>).</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>Usage / Remaining <span>// flipping the percent column</span></h2>
+    <p><b>Usage</b> is the default. The bar fills as you spend, and the more it fills the
+    closer it gets to red. If thinking in terms of what's left suits you better, switch to
+    <b>Remaining</b> in settings (the gear). The percent column and the bar then both
+    count what's left — the bar still fills from the left, and a long bar simply means
+    "you have room".</p>
+
+    <div class="panel">
+      <p class="panel-note" style="margin-top:0">
+        Flip the toggle on the cards above and the percent and bar length flip together,
+        <b>68% ↔ 32%</b>. The colour stays keyed to what's <i>left</i> in either mode, so
+        changing the display never changes how risky the line looks.
+      </p>
+      <ul class="klist">
+        <li><b>Usage</b> — fills with what you've spent. The more you use, the longer and redder the bar.</li>
+        <li><b>Remaining</b> — fills with what's left. Plenty left is long and green; nearly empty is short and red.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>Forecast <span>// when you run out at this pace</span></h2>
+    <p>The translucent stretch painted onto the gauge is the <b>forecast</b>.
+    It takes the pace you've been burning at, carries it to the end of the window, and
+    marks where you'd land. This stretch appears <b>only when you look likely to run out
+    before the reset</b>. A window that will comfortably survive isn't dressed up as a
+    scare — it just shows its reset time.</p>
+
+    <div class="panel">
+      <div class="fcgrid">
+        <div class="fccase">
+          <h4>Running out comes first</h4>
+          <p>Keep this pace and the limit is gone before the reset → the forecast stretch
+          appears, and the text on the right switches from "resets in" to
+          <b>"runs out in"</b>, in red.</p>
+          <div class="fcnow" style="--at:68%"><i>now</i></div>
+          <div class="urow">
+            <span class="uwin">5 hours</span>
+            <span class="gauge" role="img" aria-label="5 hours window, 68% used, forecast to reach 100%">
+              <span class="gauge-track">
+                <span class="gauge-fill" style="--pct:68%;--band:#FF9F0A"></span>
+                <span class="gauge-fc" style="--pct:68%;--fc:32%"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct">68%</span>
+            <span class="ustat urgent">runs out in 1h 6m</span>
+          </div>
+          <div class="fcpath" style="--from:68%;--len:30%"><i></i><b>100%</b></div>
+        </div>
+
+        <div class="fccase">
+          <h4>The reset comes first</h4>
+          <p>At the same pace the window resets before you get there → no forecast stretch
+          is drawn, just the time left until the reset.</p>
+          <div class="fcnow" style="--at:25%"><i>now</i></div>
+          <div class="urow">
+            <span class="uwin">1 week</span>
+            <span class="gauge" role="img" aria-label="1 week window, 25% used">
+              <span class="gauge-track">
+                <span class="gauge-fill" style="--pct:25%;--band:#A3E635"></span>
+                <span class="gauge-ticks"></span>
+              </span>
+            </span>
+            <span class="upct">25%</span>
+            <span class="ustat">resets in 5d 2h</span>
+          </div>
+          <div class="fcpath"><b style="color:#6f6f6f">no forecast</b></div>
+        </div>
+      </div>
+      <p class="caption">The forecast can be turned off in settings. The countdown next to it stays either way.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>It's a projection, not a promise.</b> Change pace and the projected point moves with you.</li>
+      <li>The forecast is drawn translucent and real usage opaque, so
+      <b>measured and estimated never blur together.</b></li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>At-a-glance warning <span>// noticing without looking</span></h2>
+    <p>DASH is a screen you stand up beside you and catch out of the corner of your eye.
+    So when what's left drops below a threshold, <b>the edge of the screen glows softly in
+    a warning colour five times, then fades.</b> Without reading a word, the colour at the
+    edge of your vision says "time to start rationing".</p>
+    <p>The threshold is based on what's left. Across every tool and window, <b>the single
+    most urgent window</b> sets the overall warning level.</p>
+
+    <div class="panel">
+      <div class="ctrlbar">
+        <span class="ctrl-label">Preview warning levels</span>
+        <div class="glance-btns" role="group" aria-label="Preview warning levels">
+          <button type="button" data-glance="caution">≤50% left</button>
+          <button type="button" data-glance="severe">≤30% left</button>
+          <button type="button" data-glance="critical">≤5% left</button>
+        </div>
+      </div>
+
+      <!-- iPhone on its side: DASH is landscape-only, so this is how it's really used -->
+      <div class="phone" id="glance-frame">
+        <span class="phone-island" aria-hidden="true"></span>
+        <div class="phone-screen">
+          <div class="glance-glow" id="glance-glow" aria-hidden="true"></div>
+          <div class="phone-status" aria-hidden="true">
+            <span class="batt">82%</span><span>11:20 PM</span><span class="dim">Sat, Aug 8</span>
+          </div>
+          <div class="glance-screen">
+            <div class="glance-card">
+              <b>Claude Code</b>
+              <div class="urow">
+                <span class="uwin">5 hours</span>
+                <span class="gauge" role="img" aria-label="5 hours window, 4% left">
+                  <span class="gauge-track">
+                    <span class="gauge-fill" style="--pct:96%;--band:#FF3B30"></span>
+                    <span class="gauge-ticks"></span>
+                  </span>
+                </span>
+                <span class="upct">96%</span>
+              </div>
+            </div>
+            <div class="glance-card">
+              <b>Codex</b>
+              <div class="urow">
+                <span class="uwin">1 week</span>
+                <span class="gauge" role="img" aria-label="1 week window, 75% left">
+                  <span class="gauge-track">
+                    <span class="gauge-fill" style="--pct:25%;--band:#A3E635"></span>
+                    <span class="gauge-ticks"></span>
+                  </span>
+                </span>
+                <span class="upct">25%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="caption" role="status" id="glance-caption">Press a button to play that level's warning.
+      Just like in the app, it pulses five times and then fades.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>≤50% left</b> — yellow. Half gone. Worth knowing, not worth stopping for.</li>
+      <li><b>≤30% left</b> — orange. The last third. Time to ease off.</li>
+      <li><b>≤5% left</b> — red. Effectively empty.</li>
+      <li>The warning is light bleeding inward from the edges, so it
+      <b>never covers the gauges in the middle</b>, and it disappears completely after five
+      pulses instead of sitting there tiring your eyes.</li>
+    </ul>
+  </section>
+
+  <section class="fend wrap">
+    <h2>Other features</h2>
+    <div class="grid">
+      <a class="card" href="unread.html">
+        <div class="icon" aria-hidden="true">▤</div>
+        <h3>Unread sidebar</h3>
+        <p>Keeps the unread mail you'd lose something by missing, and quietly folds the rest away.</p>
+        <span class="more">Details →</span>
+      </a>
+      <a class="card" href="learning.html">
+        <div class="icon" aria-hidden="true">▣</div>
+        <h3>Learns your criteria</h3>
+        <p>Write one line and mail is filtered by it; senders that keep repeating come up as candidates on their own.</p>
+        <span class="more">Details →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
+    <span class="links">
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../../nav.js?v=20260810" defer></script>
+<script>
+(function () {
+  // Band colour is keyed to how much is LEFT, exactly as the app does it,
+  // so flipping the percent column never changes the risk reading.
+  function band(remaining) {
+    if (remaining >= 90) return "#34C759";
+    if (remaining >= 70) return "#A3E635";
+    if (remaining >= 50) return "#FFD60A";
+    if (remaining >= 30) return "#FF9F0A";
+    if (remaining >= 10) return "#FF6B6B";
+    return "#FF3B30";
+  }
+
+  var root = document.getElementById("usage-cards");
+  var rows = [].slice.call(root.querySelectorAll(".urow[data-used]"));
+  var legends = [].slice.call(root.querySelectorAll("[data-legend]"));
+  var radios = [].slice.call(document.querySelectorAll('input[name="gmode"]'));
+
+  function render(mode) {
+    var showUsed = mode === "used";
+    legends.forEach(function (el) { el.textContent = showUsed ? "% used" : "% left"; });
+
+    rows.forEach(function (row) {
+      var used = Number(row.dataset.used);
+      var fc = Number(row.dataset.fc);
+      var remaining = 100 - used;
+      var shown = showUsed ? used : remaining;
+
+      var gauge = row.querySelector("[data-gauge]");
+      var fill = gauge.querySelector(".gauge-fill");
+      var fcEl = gauge.querySelector(".gauge-fc");
+
+      // Both modes fill from the left, exactly like the app — only the value
+      // changes. The forecast band sits after the used fill in Usage, and on
+      // the tail of what's left in Remaining (the part you're projected to lose).
+      fill.style.setProperty("--pct", shown + "%");
+      fill.style.setProperty("--band", band(remaining));
+      if (fcEl) {
+        var start = showUsed ? used : Math.max(0, remaining - fc);
+        fcEl.style.setProperty("--fcstart", start + "%");
+        fcEl.style.setProperty("--fclen", Math.min(fc, showUsed ? 100 - used : remaining) + "%");
+      }
+      row.querySelector("[data-pct]").textContent = shown + "%";
+      gauge.setAttribute("aria-label",
+        row.querySelector(".uwin").textContent + " window, " + shown + "% " + (showUsed ? "used" : "left"));
+    });
+  }
+
+  radios.forEach(function (r) {
+    r.addEventListener("change", function () { if (r.checked) render(r.value); });
+  });
+  render("used");
+})();
+
+(function () {
+  // Same palette as the app's edge glow: deliberately dimmer than the gauge
+  // ramp, because a band across the whole edge throws far more light than the
+  // same colour inside a 14pt bar.
+  var COLORS = { caution: "#CCA600", severe: "#D97805", critical: "#FF3B30" };
+  var LABELS = {
+    caution: "≤50% left — yellow warning",
+    severe: "≤30% left — orange warning",
+    critical: "≤5% left — red warning"
+  };
+  var glow = document.getElementById("glance-glow");
+  var caption = document.getElementById("glance-caption");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var timer;
+
+  [].slice.call(document.querySelectorAll("[data-glance]")).forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var level = btn.dataset.glance;
+      glow.style.setProperty("--glow", COLORS[level]);
+      caption.textContent = LABELS[level] + (reduced ? " (reduced motion: it turns on briefly, then off)" : " — pulses five times, then fades");
+      clearTimeout(timer);
+      glow.classList.remove("pulsing", "steady");
+      // restart the animation from scratch on every press
+      void glow.offsetWidth;
+      if (reduced) {
+        glow.classList.add("steady");
+        timer = setTimeout(function () { glow.classList.remove("steady"); }, 2200);
+      } else {
+        glow.classList.add("pulsing");
+        timer = setTimeout(function () { glow.classList.remove("pulsing"); }, 5700);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

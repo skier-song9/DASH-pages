@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — DASH</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css?v=20260810">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/privacy.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/privacy.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -16,7 +16,15 @@
     <a class="logo" href="./">DASH</a>
     <nav class="nav-links">
       <a href="./#demo">Demo</a>
-      <a href="./#features">Features</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="features/dashboard.html">Usage dashboard</a>
+          <a href="features/unread.html">Unread sidebar</a>
+          <a href="features/learning.html">Learns your criteria</a>
+          <a class="all" href="./#features">All features</a>
+        </div>
+      </div>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a class="lang" href="../privacy.html">한국어</a>
@@ -75,17 +83,16 @@
   </ul>
 
   <h2>3. Transient transmission for AI triage</h2>
-  <p>To classify mail importance, the following information is sent through a relay
-  server operated by the Developer (Cloudflare Workers) to an external
-  LLM (large language model) API:</p>
+  <p>To classify mail importance, the following information leaves your device and
+  is sent transiently, through a relay server operated by the Developer, to an
+  external AI processing system:</p>
   <ul>
     <li>Sender name and address, subject, the beginning of the body (up to 220
     characters), and signals such as bulk-mail markers</li>
   </ul>
   <p>This transmission is transient — it exists only while the classification
   response is produced. The relay server is stateless and records nothing, and
-  the LLM provider the Developer uses does not train models on API inputs or
-  outputs under its commercial API terms.
+  the transmitted information is not stored and is not used to train models.
   Full mail bodies and attachments are never transmitted.</p>
 
   <h2>4. Compliance for Google user data (Limited Use)</h2>
@@ -116,8 +123,8 @@
   Processing delegated to provide features:</p>
   <table>
     <tr><th>Processor</th><th>Purpose</th><th>Scope</th></tr>
-    <tr><td>Cloudflare, Inc.</td><td>API relay</td><td>Stateless forwarding of triage requests (nothing stored)</td></tr>
-    <tr><td>LLM API provider</td><td>Mail importance triage</td><td>Transient processing of the minimum information in Section 3</td></tr>
+    <tr><td>Cloud infrastructure provider</td><td>Stateless forwarding of triage requests (nothing stored)</td><td>Forwards the minimum information in Section 3 without storing it</td></tr>
+    <tr><td>AI processing service</td><td>Mail importance triage (transient processing)</td><td>Transient processing of the minimum information in Section 3; nothing stored, no model training</td></tr>
   </table>
   <p>Error reports sent to the Developer automatically redact personal
   information such as email addresses and tokens.</p>
@@ -150,5 +157,6 @@
     </span>
   </div>
 </footer>
+<script src="../nav.js?v=20260810" defer></script>
 </body>
 </html>
