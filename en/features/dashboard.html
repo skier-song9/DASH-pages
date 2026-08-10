@@ -7,17 +7,18 @@
   <meta name="description" content="Session and weekly limits for Claude Code and Codex, drawn as ticked gauges. Flip between usage and remaining, and see when you'll run out at your current pace.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="Usage dashboard — DASH">
-  <link rel="stylesheet" href="../../style.css?v=20260810">
+  <link rel="stylesheet" href="../../style.css?v=20260811">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
     <a class="logo" href="../">DASH</a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="site-nav">
       <a href="../#demo">Demo</a>
       <div class="navdrop">
         <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
@@ -32,6 +33,10 @@
       <a href="../terms.html">Terms</a>
       <a class="lang" href="../../features/dashboard.html">한국어</a>
     </nav>
+    <button class="navtoggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="navtoggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Open menu</span>
+    </button>
   </div>
 </header>
 
@@ -325,7 +330,7 @@
   </div>
 </footer>
 
-<script src="../../nav.js?v=20260810" defer></script>
+<script src="../../nav.js?v=20260811" defer></script>
 <script>
 (function () {
   // Band colour is keyed to how much is LEFT, exactly as the app does it,

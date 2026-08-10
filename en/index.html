@@ -8,7 +8,7 @@
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
-  <link rel="stylesheet" href="../style.css?v=20260810">
+  <link rel="stylesheet" href="../style.css?v=20260811">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -23,13 +23,14 @@
     "url": "https://dash-worklife.org/en/"
   }
   </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
     <a class="logo" href="./">DASH</a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="site-nav">
       <a href="./#demo">Demo</a>
       <div class="navdrop">
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
@@ -44,6 +45,10 @@
       <a href="terms.html">Terms</a>
       <a class="lang" href="../">한국어</a>
     </nav>
+    <button class="navtoggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="navtoggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Open menu</span>
+    </button>
   </div>
 </header>
 
@@ -109,15 +114,15 @@
       <table class="data-table">
         <tr><th>Permission</th><th>Purpose</th></tr>
         <tr>
-          <td><code>gmail.modify</code></td>
-          <td>Needed to read the sender, subject, and snippet of unread mail to
+          <td data-th="Permission"><code>gmail.modify</code></td>
+          <td data-th="Purpose">Needed to read the sender, subject, and snippet of unread mail to
           show the list, and to <b>mark mail as read</b> in Gmail when you check
           it off. The app never sends or deletes mail, and makes no change other
           than marking as read.</td>
         </tr>
         <tr>
-          <td><code>openid</code> · <code>email</code></td>
-          <td>Needed to identify each linked account's email address so multiple
+          <td data-th="Permission"><code>openid</code> · <code>email</code></td>
+          <td data-th="Purpose">Needed to identify each linked account's email address so multiple
           accounts can be shown separately.</td>
         </tr>
       </table>
@@ -192,7 +197,7 @@
   </div>
 </footer>
 
-<script src="../nav.js?v=20260810" defer></script>
+<script src="../nav.js?v=20260811" defer></script>
 <script>
 document.documentElement.classList.add("js");
 

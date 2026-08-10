@@ -7,17 +7,18 @@
   <meta name="description" content="Claude Code와 Codex의 세션·주간 한도를 눈금 게이지로 보여줍니다. 사용량과 잔여량을 바꿔 볼 수 있고, 지금 속도라면 언제 소진되는지 예상치로 알려줍니다.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="사용량 대시보드 — DASH">
-  <link rel="stylesheet" href="../style.css?v=20260810">
+  <link rel="stylesheet" href="../style.css?v=20260811">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
     <a class="logo" href="../">DASH</a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="site-nav">
       <a href="../#demo">데모</a>
       <div class="navdrop">
         <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
@@ -32,6 +33,10 @@
       <a href="../terms.html">서비스 약관</a>
       <a class="lang" href="../en/features/dashboard.html">EN</a>
     </nav>
+    <button class="navtoggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="navtoggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">메뉴 열기</span>
+    </button>
   </div>
 </header>
 
@@ -316,7 +321,7 @@
   </div>
 </footer>
 
-<script src="../nav.js?v=20260810" defer></script>
+<script src="../nav.js?v=20260811" defer></script>
 <script>
 (function () {
   // Band colour is keyed to how much is LEFT, exactly as the app does it,
