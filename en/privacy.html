@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — DASH</title>
-  <link rel="stylesheet" href="../style.css?v=20260810">
+  <link rel="stylesheet" href="../style.css?v=20260811">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/privacy.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/privacy.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
     <a class="logo" href="./">DASH</a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="site-nav">
       <a href="./#demo">Demo</a>
       <div class="navdrop">
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
@@ -29,6 +30,10 @@
       <a href="terms.html">Terms</a>
       <a class="lang" href="../privacy.html">한국어</a>
     </nav>
+    <button class="navtoggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="navtoggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Open menu</span>
+    </button>
   </div>
 </header>
 
@@ -51,25 +56,25 @@
   <table>
     <tr><th>Item</th><th>Details</th><th>Stored in</th></tr>
     <tr>
-      <td>Google account info</td>
-      <td>Email address (openid, email scopes)</td>
-      <td>On device</td>
+      <td data-th="Item">Google account info</td>
+      <td data-th="Details">Email address (openid, email scopes)</td>
+      <td data-th="Stored in">On device</td>
     </tr>
     <tr>
-      <td>Gmail data</td>
-      <td>Sender, subject, received time, labels, and a body snippet of unread mail
+      <td data-th="Item">Gmail data</td>
+      <td data-th="Details">Sender, subject, received time, labels, and a body snippet of unread mail
       — <code>gmail.modify</code> scope</td>
-      <td>On device (cache)</td>
+      <td data-th="Stored in">On device (cache)</td>
     </tr>
     <tr>
-      <td>OAuth tokens</td>
-      <td>Tokens linking your Google account and AI coding tool (Claude Code, Codex) accounts</td>
-      <td>iOS Keychain (encrypted)</td>
+      <td data-th="Item">OAuth tokens</td>
+      <td data-th="Details">Tokens linking your Google account and AI coding tool (Claude Code, Codex) accounts</td>
+      <td data-th="Stored in">iOS Keychain (encrypted)</td>
     </tr>
     <tr>
-      <td>AI service usage</td>
-      <td>Usage limits and remaining quota for Claude Code · Codex</td>
-      <td>On device</td>
+      <td data-th="Item">AI service usage</td>
+      <td data-th="Details">Usage limits and remaining quota for Claude Code · Codex</td>
+      <td data-th="Stored in">On device</td>
     </tr>
   </table>
 
@@ -123,8 +128,8 @@
   Processing delegated to provide features:</p>
   <table>
     <tr><th>Processor</th><th>Purpose</th><th>Scope</th></tr>
-    <tr><td>Cloud infrastructure provider</td><td>Stateless forwarding of triage requests (nothing stored)</td><td>Forwards the minimum information in Section 3 without storing it</td></tr>
-    <tr><td>AI processing service</td><td>Mail importance triage (transient processing)</td><td>Transient processing of the minimum information in Section 3; nothing stored, no model training</td></tr>
+    <tr><td data-th="Processor">Cloud infrastructure provider</td><td data-th="Purpose">Stateless forwarding of triage requests (nothing stored)</td><td data-th="Scope">Forwards the minimum information in Section 3 without storing it</td></tr>
+    <tr><td data-th="Processor">AI processing service</td><td data-th="Purpose">Mail importance triage (transient processing)</td><td data-th="Scope">Transient processing of the minimum information in Section 3; nothing stored, no model training</td></tr>
   </table>
   <p>Error reports sent to the Developer automatically redact personal
   information such as email addresses and tokens.</p>
@@ -157,6 +162,6 @@
     </span>
   </div>
 </footer>
-<script src="../nav.js?v=20260810" defer></script>
+<script src="../nav.js?v=20260811" defer></script>
 </body>
 </html>
