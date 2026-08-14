@@ -739,9 +739,33 @@ a.card:hover .more { text-decoration: underline; }
     transparent 52%, var(--glow, #FF3B30) 130%);
 }
 .glance-glow.pulsing { animation: glance-pulse 1.1s ease-in-out 5; }
+/* mail arrives in three, not five: it is news, not a limit about to land */
+.glance-glow.pulsing-3 { animation: glance-pulse 1.1s ease-in-out 3; }
 .glance-glow.steady { opacity: .8; transition: opacity .4s ease; }
 @keyframes glance-pulse { 0%, 100% { opacity: 0; } 50% { opacity: .9; } }
 .glance-screen { position: relative; display: grid; gap: 12px; }
+
+/* --- new-mail flash demo -------------------------------------------------- */
+/* The phone mock, but with the sidebar in it: the flash is the account's own
+   colour, so the sidebar has to be on screen for the colour to mean anything. */
+.mf-screen {
+  position: relative; display: grid; grid-template-columns: 1fr 160px; gap: 12px;
+  align-items: start;
+}
+.mf-side { display: grid; gap: 8px; }
+.mf-side .sb-head { margin-bottom: 2px; }
+.mf-side .sb-acct { padding: 7px 8px; }
+.mf-side .sb-acct .adr { display: none; }
+.mf-side .sb-acct .cnt { transition: color .2s; }
+.mf-side .sb-acct.arrived { box-shadow: inset 0 0 0 1px var(--acct, #34C759); }
+.mf-title { font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+.mf-queue { font-size: 10.5px; color: var(--muted); font-family: var(--mono); }
+.mf-queue b { color: var(--text); font-weight: 600; }
+@media (max-width: 640px) {
+  .mf-screen { grid-template-columns: 1fr 118px; gap: 8px; }
+  .mf-side .sb-acct .lab { font-size: 11px; }
+}
+
 .glance-card {
   border: 1px solid var(--line); border-radius: 9px; padding: 12px 14px;
   background: var(--bg-soft);
@@ -760,5 +784,5 @@ a.card:hover .more { text-decoration: underline; }
   .term-row.show { animation: none; }
   .js .term-row, .js .card { opacity: 1; transform: none; }
   .swatch:hover { transform: none; }
-  .glance-glow.pulsing { animation: none; opacity: .8; }
+  .glance-glow.pulsing, .glance-glow.pulsing-3 { animation: none; opacity: .8; }
 }
