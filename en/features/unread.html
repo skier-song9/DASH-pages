@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Unread sidebar — DASH</title>
-  <meta name="description" content="The Unread sidebar sits to the right of the dashboard. It shows unread counts per account and only the mail worth seeing now, and folds away when you don't need it. Each account gets its own label and colour.">
+  <meta name="description" content="The Unread sidebar sits to the right of the dashboard. It shows unread counts per account and only the mail worth seeing now, flashes the screen edges three times in that account's colour when mail arrives, and folds away when you don't need it.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="Unread sidebar — DASH">
-  <link rel="stylesheet" href="../../style.css?v=20260811">
+  <link rel="stylesheet" href="../../style.css?v=20260814">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/unread.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/unread.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -145,6 +145,98 @@
   </section>
 
   <section class="fsec wrap">
+    <h2>New mail announces itself <span>// without you looking at the screen</span></h2>
+    <p>DASH stands on the desk beside you. A count going from 3 to 4 is only ever
+    noticed by looking straight at it, so when mail arrives
+    <b>the screen edges flash three times in that account's colour.</b>
+    The colour alone, caught out of the corner of your eye, tells you which account it landed in.</p>
+    <p>With several accounts they take <b>turns</b>. Mail in Personal (green) and Work (blue)
+    means green three times, then blue three times. Blending the two into one flash would
+    leave a colour that belongs to neither.</p>
+    <p class="try-note">(Press a button below — it flashes exactly as the app does)</p>
+
+    <div class="panel">
+      <div class="ctrlbar">
+        <span class="ctrl-label">Deliver new mail</span>
+        <div class="glance-btns" role="group" aria-label="New mail announcement preview">
+          <button type="button" data-arrive="personal">Mail for Personal</button>
+          <button type="button" data-arrive="work">Mail for Work</button>
+          <button type="button" data-arrive="both">Both accounts</button>
+        </div>
+      </div>
+
+      <div class="phone" id="mf-frame">
+        <span class="phone-island" aria-hidden="true"></span>
+        <div class="phone-screen">
+          <div class="glance-glow" id="mf-glow" aria-hidden="true"></div>
+          <div class="phone-status" aria-hidden="true">
+            <span class="batt">82%</span><span>2:57 PM</span><span class="dim">Fri, Aug 14</span>
+          </div>
+          <div class="mf-screen">
+            <div class="glance-screen" aria-hidden="true">
+              <div class="glance-card">
+                <b>Claude Code</b>
+                <div class="urow">
+                  <span class="uwin">5h</span>
+                  <span class="gauge">
+                    <span class="gauge-track">
+                      <span class="gauge-fill" style="--pct:32%;--band:#A3E635"></span>
+                      <span class="gauge-ticks"></span>
+                    </span>
+                  </span>
+                  <span class="upct">68%</span>
+                </div>
+              </div>
+              <div class="glance-card">
+                <b>Codex</b>
+                <div class="urow">
+                  <span class="uwin">1w</span>
+                  <span class="gauge">
+                    <span class="gauge-track">
+                      <span class="gauge-fill" style="--pct:25%;--band:#A3E635"></span>
+                      <span class="gauge-ticks"></span>
+                    </span>
+                  </span>
+                  <span class="upct">75%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mf-side">
+              <p class="mf-title">Unread</p>
+              <div class="sb-acct" id="mf-acct-personal" style="--acct:#34C759">
+                <span class="dot8" style="background:#34C759"></span>
+                <span class="lab">Personal</span>
+                <span class="cnt" id="mf-cnt-personal">3</span>
+              </div>
+              <div class="sb-acct" id="mf-acct-work" style="--acct:#5AC8FA">
+                <span class="dot8" style="background:#5AC8FA"></span>
+                <span class="lab">Work</span>
+                <span class="cnt" id="mf-cnt-work">1</span>
+              </div>
+              <p class="mf-queue" id="mf-queue">Waiting to announce: <b>nothing</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="caption" role="status" id="mf-caption">Press a button and the edges flash three times
+      in that account's colour, and its count goes up by one.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>Three flashes</b> — shorter than the usage warning's five. Mail arriving is news
+      worth knowing about, not a limit about to land that you have to act on now.</li>
+      <li><b>The account's own colour</b> — the same one it wears in the sidebar. Change the colour
+      and the flash changes with it.</li>
+      <li><b>Mail that was already there does not flash</b> — what was sitting unread when you opened
+      the app, a mail you marked read here that Gmail keeps returning for a poll or two, and a mail
+      whose verdict landed late are all not arrivals.</li>
+      <li>It tints inward from the edges, so it <b>never paints over the gauges or the list</b>,
+      and after three flashes it is gone completely.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
     <h2>Gear → account settings <span>// the same spot, a different screen</span></h2>
     <p>Press the gear next to the sidebar title and <b>the same panel turns into the account
     list.</b> No new window opens, and the screen doesn't take you somewhere else.
@@ -272,6 +364,73 @@
     gear.querySelector(".sr-only").textContent = opening ? "Back to the Unread list" : "Open Unread settings";
     paneMail.hidden = opening;
     paneSettings.hidden = !opening;
+  });
+
+  /* ---- new mail flash ----
+     One announcement at a time, in the arriving account's colour, exactly like
+     the app: two accounts receiving mail are two events, not one flash of a
+     colour that belongs to neither. */
+  var ACCOUNTS = {
+    personal: { color: "#34C759", name: "Personal", cnt: "mf-cnt-personal", row: "mf-acct-personal" },
+    work:     { color: "#5AC8FA", name: "Work",     cnt: "mf-cnt-work",     row: "mf-acct-work" }
+  };
+  var FLASH_MS = 3300;          /* three flashes at 1.1s */
+  var mfGlow = document.getElementById("mf-glow");
+  var mfCaption = document.getElementById("mf-caption");
+  var mfQueue = document.getElementById("mf-queue");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var queue = [];
+  var playing = false;
+  var mfTimer;
+
+  function paintQueue() {
+    var waiting = queue.length + (playing ? 1 : 0);
+    mfQueue.innerHTML = waiting > 1
+      ? "Waiting to announce: <b>" + (waiting - 1) + "</b>"
+      : "Waiting to announce: <b>nothing</b>";
+  }
+
+  function bump(key) {
+    var acct = ACCOUNTS[key];
+    var cnt = document.getElementById(acct.cnt);
+    cnt.textContent = String(parseInt(cnt.textContent, 10) + 1);
+    var row = document.getElementById(acct.row);
+    row.classList.add("arrived");
+    setTimeout(function () { row.classList.remove("arrived"); }, FLASH_MS);
+  }
+
+  function playNext() {
+    if (!queue.length) {
+      playing = false;
+      paintQueue();
+      mfCaption.textContent = "When the flashing ends the edges are gone completely. Press again.";
+      return;
+    }
+    playing = true;
+    var key = queue.shift();
+    var acct = ACCOUNTS[key];
+    bump(key);
+    paintQueue();
+    mfCaption.textContent = "New mail for " + acct.name + " — " +
+      (reduced ? "reduced motion: it holds briefly, then goes" : "three flashes in the account's colour");
+    mfGlow.style.setProperty("--glow", acct.color);
+    mfGlow.classList.remove("pulsing-3", "steady");
+    void mfGlow.offsetWidth;             /* restart the animation from scratch */
+    mfGlow.classList.add(reduced ? "steady" : "pulsing-3");
+    mfTimer = setTimeout(function () {
+      mfGlow.classList.remove("pulsing-3", "steady");
+      playNext();
+    }, reduced ? 1600 : FLASH_MS);
+  }
+
+  [].slice.call(document.querySelectorAll("[data-arrive]")).forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var which = btn.dataset.arrive;
+      if (which === "both") queue.push("personal", "work");
+      else queue.push(which);
+      paintQueue();
+      if (!playing) playNext();
+    });
   });
 
   /* ---- label + colour picker ---- */
