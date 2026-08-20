@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delete your data — DASH</title>
+  <link rel="stylesheet" href="../style.css?v=20260814">
+  <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/delete-data.html">
+  <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/delete-data.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="./">DASH</a>
+    <nav class="nav-links" id="site-nav">
+      <a href="./#demo">Demo</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="features/dashboard.html">Usage dashboard</a>
+          <a href="features/unread.html">Unread sidebar</a>
+          <a href="features/learning.html">Learns your criteria</a>
+          <a class="all" href="./#features">All features</a>
+        </div>
+      </div>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a class="lang" href="../delete-data.html">한국어</a>
+    </nav>
+    <button class="navtoggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="navtoggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Open menu</span>
+    </button>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <h1>Delete your data</h1>
+  <p class="meta">DASH — Worklife Dashboard · Developer: skier-song9 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
+
+  <div class="note">Summary — DASH stores no user data on the Developer's servers.
+  Everything lives on your device only, so deletion happens on the device and takes
+  effect immediately. There is no request to file and nothing to wait for.</div>
+
+  <h2>1. Disconnect a single account</h2>
+  <p>Removes that account's token and the data fetched with it. The rest of your
+  settings are left alone.</p>
+  <ol>
+    <li>Open DASH.</li>
+    <li>Tap the gear (⚙︎) at the right of the top bar to open <b>Settings</b>.</li>
+    <li>Tap <b>Disconnect</b> on the account you want to remove.
+    (Claude Code and Codex each have their own row; a Gmail account is removed with
+    <b>Delete account</b> on its page in <b>Unread settings</b>.)</li>
+  </ol>
+  <p>The account's OAuth token and cache are erased from the device the moment you tap it.</p>
+
+  <h2>2. Delete everything</h2>
+  <p>Removes everything the app has kept on the device.</p>
+  <ol>
+    <li>Android: <b>Settings ▸ Apps ▸ DASH ▸ Storage</b>, then <b>Clear data</b> — or
+    long-press the app on the home screen and choose <b>Uninstall</b>.</li>
+    <li>iOS: long-press the app on the home screen and choose <b>Delete App</b>.</li>
+  </ol>
+  <p>Deleting the app takes the tokens, caches, and settings with it.</p>
+
+  <h2>3. Revoke Google account access</h2>
+  <p>If you linked Gmail, you can revoke access from your Google account as well,
+  independently of disconnecting inside the app.</p>
+  <ol>
+    <li>Go to <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account ▸ Third-party apps &amp; services</a>.</li>
+    <li>Select <b>DASH</b> and choose <b>Remove access</b>.</li>
+  </ol>
+
+  <h2>4. What is deleted, and what is retained</h2>
+  <table>
+    <tr><th>Data</th><th>Stored in</th><th>Deleted</th><th>Further retention</th></tr>
+    <tr>
+      <td data-th="Data">OAuth tokens (Google · Claude Code · Codex)</td>
+      <td data-th="Stored in">Encrypted storage on the device</td>
+      <td data-th="Deleted">Immediately on disconnect or app deletion</td>
+      <td data-th="Further retention">None</td>
+    </tr>
+    <tr>
+      <td data-th="Data">Gmail metadata cache (sender, subject, received time, snippet)</td>
+      <td data-th="Stored in">On the device</td>
+      <td data-th="Deleted">Immediately on account removal or app deletion</td>
+      <td data-th="Further retention">None</td>
+    </tr>
+    <tr>
+      <td data-th="Data">Triage rules, sender history, app settings</td>
+      <td data-th="Stored in">On the device</td>
+      <td data-th="Deleted">Immediately on clearing data or app deletion</td>
+      <td data-th="Further retention">None</td>
+    </tr>
+    <tr>
+      <td data-th="Data">Mail details sent transiently for AI triage</td>
+      <td data-th="Stored in">Not stored (stateless processing)</td>
+      <td data-th="Deleted">Discarded as soon as the response returns</td>
+      <td data-th="Further retention">None</td>
+    </tr>
+    <tr>
+      <td data-th="Data">Error reports (personal data redacted)</td>
+      <td data-th="Stored in">The Developer's alert channel</td>
+      <td data-th="Deleted">—</td>
+      <td data-th="Further retention">Automatically deleted within 90 days</td>
+    </tr>
+  </table>
+  <p>The Developer runs no server that stores user data, so nothing beyond the rows
+  above is retained. For the full picture, see the
+  <a class="inline" href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2>5. Ask us directly</h2>
+  <p>If none of the above resolves it, or you want confirmation that data was deleted,
+  email <a class="inline" href="mailto:0603paul@gmail.com?subject=DASH%20data%20deletion%20request">0603paul@gmail.com</a>.
+  We reply within 30 days.</p>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
+    <span class="links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="delete-data.html">Delete data</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+<script src="../nav.js?v=20260811" defer></script>
+</body>
+</html>
