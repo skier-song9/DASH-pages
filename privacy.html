@@ -41,8 +41,11 @@
   <h1>개인정보처리방침</h1>
   <p class="meta">시행일: 2026년 8월 6일 · 문의: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 
-  <p>DASH(이하 "앱")는 개인 개발자(GitHub: skier-song9, 이하 "개발자")가 제공하는 iOS 애플리케이션입니다.
-  본 방침은 앱이 어떤 정보를 어떤 목적으로 처리하는지, 그리고 처리하지 않는 것은 무엇인지를 설명합니다.</p>
+  <p>DASH(이하 "앱")는 개인 개발자(GitHub: skier-song9, 이하 "개발자")가 제공하는
+  iOS · Android 애플리케이션입니다.
+  본 방침은 앱이 어떤 정보를 어떤 목적으로 처리하는지, 그리고 처리하지 않는 것은 무엇인지를 설명합니다.
+  두 플랫폼은 같은 기능을 제공하며, 처리하는 정보와 목적도 동일합니다.
+  차이가 있는 부분(암호화 저장소의 이름 등)은 아래에 각각 표기합니다.</p>
 
   <div class="note">요약 — 앱은 개발자의 서버에 사용자 데이터를 저장하지 않습니다.
   메일과 사용량 데이터는 사용자의 기기 안에서만 처리·보관되며,
@@ -65,7 +68,7 @@
     <tr>
       <td data-th="항목">OAuth 토큰</td>
       <td data-th="내용">Google 계정 및 AI 코딩 도구(Claude Code, Codex) 계정 연결 토큰</td>
-      <td data-th="보관 위치">iOS Keychain (암호화)</td>
+      <td data-th="보관 위치">iOS Keychain · Android EncryptedSharedPreferences (암호화)</td>
     </tr>
     <tr>
       <td data-th="항목">AI 서비스 사용량</td>
@@ -111,7 +114,8 @@
   <h2>5. 저장과 보안</h2>
   <ul>
     <li>모든 데이터는 사용자의 기기 안에 저장됩니다. 개발자는 사용자 데이터를 저장하는 서버를 운영하지 않습니다.</li>
-    <li>OAuth 토큰은 iOS Keychain에 암호화되어 저장됩니다.</li>
+    <li>OAuth 토큰은 운영체제가 제공하는 암호화 저장소에 보관됩니다 —
+    iOS는 Keychain, Android는 하드웨어 지원 키로 암호화되는 EncryptedSharedPreferences를 사용합니다.</li>
     <li>모든 네트워크 통신은 TLS(HTTPS)로 암호화됩니다.</li>
     <li>앱에는 광고·트래킹·분석 SDK가 포함되어 있지 않습니다.</li>
   </ul>
@@ -135,6 +139,7 @@
     <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 보안 설정</a>에서
     언제든지 직접 철회할 수 있습니다.</li>
   </ul>
+  <p>단계별 안내는 <a class="inline" href="delete-data.html">데이터 삭제 안내</a>를 참고하세요.</p>
 
   <h2>8. 아동의 개인정보</h2>
   <p>앱은 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>

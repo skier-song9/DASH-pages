@@ -41,9 +41,12 @@
   <h1>Privacy Policy</h1>
   <p class="meta">Effective: August 6, 2026 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 
-  <p>DASH (the "App") is an iOS application provided by an individual developer
-  (GitHub: skier-song9, the "Developer"). This policy explains what information
-  the App processes, for what purpose — and what it does not process.
+  <p>DASH (the "App") is an iOS and Android application provided by an individual
+  developer (GitHub: skier-song9, the "Developer"). This policy explains what
+  information the App processes, for what purpose — and what it does not process.
+  Both platforms offer the same features and process the same information for the
+  same purposes; where they differ (the name of the encrypted store, for one) both
+  are named below.
   This is a translation provided for convenience; if it conflicts with the
   <a class="inline" href="../privacy.html">Korean version</a>, the Korean version prevails.</p>
 
@@ -69,7 +72,7 @@
     <tr>
       <td data-th="Item">OAuth tokens</td>
       <td data-th="Details">Tokens linking your Google account and AI coding tool (Claude Code, Codex) accounts</td>
-      <td data-th="Stored in">iOS Keychain (encrypted)</td>
+      <td data-th="Stored in">iOS Keychain · Android EncryptedSharedPreferences (encrypted)</td>
     </tr>
     <tr>
       <td data-th="Item">AI service usage</td>
@@ -118,7 +121,9 @@
   <h2>5. Storage and security</h2>
   <ul>
     <li>All data is stored on your device. The Developer operates no server that stores user data.</li>
-    <li>OAuth tokens are stored encrypted in the iOS Keychain.</li>
+    <li>OAuth tokens are held in the encrypted store the operating system provides —
+    the Keychain on iOS, and EncryptedSharedPreferences, keyed by hardware-backed
+    keys, on Android.</li>
     <li>All network traffic is encrypted with TLS (HTTPS).</li>
     <li>The App contains no advertising, tracking, or analytics SDKs.</li>
   </ul>
@@ -141,6 +146,7 @@
     <li>You can revoke the App's Google account access at any time in your
     <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account security settings</a>.</li>
   </ul>
+  <p>Step-by-step instructions are on the <a class="inline" href="delete-data.html">Delete your data</a> page.</p>
 
   <h2>8. Children's privacy</h2>
   <p>The App is not directed at children under 14 and does not knowingly collect their personal information.</p>
