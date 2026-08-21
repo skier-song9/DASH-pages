@@ -709,7 +709,7 @@ a.card:hover .more { text-decoration: underline; }
   color: var(--muted); cursor: pointer;
 }
 .glance-btns button:hover { border-color: var(--accent); color: var(--text); }
-/* landscape iPhone chassis — DASH only runs sideways, so the mock does too */
+/* landscape phone chassis — DASH only runs sideways, so the mock does too */
 .phone {
   position: relative; margin: 18px auto 0; max-width: 620px;
   background: #1a1a1c; border-radius: 34px; padding: 12px;
