@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DASH — AI usage and mail on one screen</title>
-  <meta name="description" content="DASH is an iOS app that combines a Claude Code · Codex usage dashboard with an AI-powered unread mail sidebar.">
+  <meta name="description" content="DASH is an iOS and Android app that combines a Claude Code · Codex usage dashboard with an AI-powered unread mail sidebar.">
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
@@ -17,9 +17,9 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "DASH",
-    "operatingSystem": "iOS",
+    "operatingSystem": "iOS, Android",
     "applicationCategory": "ProductivityApplication",
-    "description": "DASH is a personal productivity dashboard iOS app showing AI coding tool (Claude Code, Codex) usage limits and AI-triaged unread Gmail on one screen.",
+    "description": "DASH is a personal productivity dashboard iOS and Android app showing AI coding tool (Claude Code, Codex) usage limits and AI-triaged unread Gmail on one screen.",
     "url": "https://dash-worklife.org/en/"
   }
   </script>
@@ -57,10 +57,11 @@
     <p class="eyebrow">DASH</p>
     <h1>DASH<span class="accent"> — </span>AI usage and mail on one screen<span class="caret"></span></h1>
     <p class="sub">DASH puts Claude Code · Codex usage gauges and
-    AI-triaged Gmail unread mail on a single iOS screen.
+    AI-triaged Gmail unread mail on a single screen, on iOS and Android.
     Your data never leaves your device.</p>
     <div class="cta">
-      <button class="btn primary" id="appstore-btn" type="button">View on the App Store</button>
+      <button class="btn primary store-btn" type="button">View on the App Store</button>
+      <button class="btn primary store-btn" type="button">View on Google Play</button>
       <a class="btn" href="#features">Explore features</a>
     </div>
 
@@ -95,7 +96,7 @@
   <section class="about wrap" id="about">
     <h2>What is DASH? <span>// the app's purpose</span></h2>
     <div class="strip">
-      <p><b>DASH is a personal productivity dashboard iOS app for developers who use AI coding tools.</b>
+      <p><b>DASH is a personal productivity dashboard iOS and Android app for developers who use AI coding tools.</b>
       Developers check two things many times a day — "how much AI tool quota do I
       have left?" and "did I miss an important email?". DASH's purpose is to
       reduce both checks to one app, one screen.</p>
@@ -178,7 +179,7 @@
       <p>DASH stores no user data on any server.</p>
       <ul>
         <li>Mail and usage data are processed and kept on your device only</li>
-        <li>OAuth tokens are stored encrypted in the iOS Keychain</li>
+        <li>OAuth tokens are stored encrypted — in the iOS Keychain, and in Android EncryptedSharedPreferences</li>
         <li>AI triage sends only the sender, subject, and a snippet — stored nowhere</li>
         <li>No ads, no tracking, no analytics SDKs</li>
       </ul>
@@ -203,12 +204,15 @@
 <script>
 document.documentElement.classList.add("js");
 
+// App Store / Google Play CTAs — coming soon toast
 const toast = document.getElementById("toast");
 let toastTimer;
-document.getElementById("appstore-btn").addEventListener("click", () => {
-  toast.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+document.querySelectorAll(".store-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+  });
 });
 
 
