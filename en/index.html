@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DASH — AI usage and mail on one screen</title>
-  <meta name="description" content="DASH is an iOS and Android app that combines a Claude Code · Codex usage dashboard with an AI-powered unread mail sidebar.">
+  <title>DASH — AI usage on one screen</title>
+  <meta name="description" content="DASH is a standby iOS and Android dashboard that shows Claude Code · Codex · Antigravity subscription usage on one screen.">
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
@@ -19,7 +19,7 @@
     "name": "DASH",
     "operatingSystem": "iOS, Android",
     "applicationCategory": "ProductivityApplication",
-    "description": "DASH is a personal productivity dashboard iOS and Android app showing AI coding tool (Claude Code, Codex) usage limits and AI-triaged unread Gmail on one screen.",
+    "description": "DASH is a personal productivity dashboard iOS and Android app showing AI coding tool (Claude Code, Codex, Antigravity) usage limits on one screen.",
     "url": "https://dash-worklife.org/en/"
   }
   </script>
@@ -36,8 +36,6 @@
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">Usage dashboard</a>
-          <a href="features/unread.html">Unread sidebar</a>
-          <a href="features/learning.html">Learns your criteria</a>
           <a class="all" href="./#features">All features</a>
         </div>
       </div>
@@ -55,9 +53,10 @@
 <main>
   <section class="hero wrap">
     <p class="eyebrow">DASH</p>
-    <h1>DASH<span class="accent"> — </span>AI usage and mail on one screen<span class="caret"></span></h1>
-    <p class="sub">DASH puts Claude Code · Codex usage gauges and
-    AI-triaged Gmail unread mail on a single screen, on iOS and Android.
+    <h1>DASH<span class="accent"> — </span>AI usage on one screen<span class="caret"></span></h1>
+    <p class="sub">DASH is a standby dashboard for Claude Code · Codex · Antigravity
+    subscription usage, on iOS and Android. Dock your phone next to your monitor
+    and it answers "is what's left enough?" without you turning your head.
     Your data never leaves your device.</p>
     <div class="cta">
       <button class="btn primary store-btn" type="button">View on the App Store</button>
@@ -84,10 +83,8 @@
           <div class="bar"><i class="warn" data-width="87%"></i></div>
         </div>
         <div class="term-row" data-step="3">
-          <div class="term-label"><b>Unread</b><span>important 3 / total 27</span></div>
-          <div class="mail"><span class="tag">important</span><span class="from">Apple Developer</span><span class="subj">Your membership renewal payment is complete</span></div>
-          <div class="mail"><span class="tag">important</span><span class="from">Kim</span><span class="subj">Could we move the meeting time?</span></div>
-          <div class="mail"><span class="tag dim">promo</span><span class="from">Newsletter</span><span class="subj">This week's recommended articles</span></div>
+          <div class="term-label"><b>Antigravity</b><span>Gemini 3.1 Pro · 74% — resets in 6 days</span></div>
+          <div class="bar"><i class="warn" data-width="74%"></i></div>
         </div>
       </div>
     </div>
@@ -97,40 +94,14 @@
     <h2>What is DASH? <span>// the app's purpose</span></h2>
     <div class="strip">
       <p><b>DASH is a personal productivity dashboard iOS and Android app for developers who use AI coding tools.</b>
-      Developers check two things many times a day — "how much AI tool quota do I
-      have left?" and "did I miss an important email?". DASH's purpose is to
-      reduce both checks to one app, one screen.</p>
+      Developers check the same thing many times a session — "how much AI tool
+      quota do I have left?". DASH's purpose is to move that check onto a phone
+      screen you already own.</p>
       <ul>
-        <li>Shows session and weekly usage limits of AI coding tools (Claude Code, Codex) as gauges</li>
-        <li>Surfaces only the important unread Gmail, and marks mail you've checked as read</li>
+        <li>Shows session, weekly and per-model usage limits of AI coding tools (Claude Code, Codex, Antigravity) as gauges</li>
+        <li>Forecasts when you'll run out at the current pace, and tints the screen edges as quota runs low</li>
         <li>A personal tool — no subscription, and no server that stores your data</li>
       </ul>
-    </div>
-  </section>
-
-  <section class="about wrap" id="google-data">
-    <h2>Google data use <span>// what and why</span></h2>
-    <div class="strip">
-      <p>DASH requests Google account access only for the purposes below.</p>
-      <table class="data-table">
-        <tr><th>Permission</th><th>Purpose</th></tr>
-        <tr>
-          <td data-th="Permission"><code>gmail.modify</code></td>
-          <td data-th="Purpose">Needed to read the sender, subject, and snippet of unread mail to
-          show the list, and to <b>mark mail as read</b> in Gmail when you check
-          it off. The app never sends or deletes mail, and makes no change other
-          than marking as read.</td>
-        </tr>
-        <tr>
-          <td data-th="Permission"><code>openid</code> · <code>email</code></td>
-          <td data-th="Purpose">Needed to identify each linked account's email address so multiple
-          accounts can be shown separately.</td>
-        </tr>
-      </table>
-      <p class="fine">Mail data stays on your device. Importance triage transiently
-      processes only the sender, subject, and part of the body — stored nowhere,
-      and never used for advertising or model training.
-      See the <a class="inline" href="privacy.html">Privacy Policy</a> for details.</p>
     </div>
   </section>
 
@@ -145,29 +116,14 @@
   </section>
 
   <section class="features wrap" id="features">
-    <h2>Features <span>// all three on one screen</span></h2>
+    <h2>Features <span>// one screen</span></h2>
     <div class="grid">
       <a class="card" href="features/dashboard.html">
         <div class="icon" aria-hidden="true">▚</div>
         <h3>Usage dashboard</h3>
-        <p>Shows Claude Code and Codex session and weekly limits as gauges.
-        Forecasts when you'll run out at the current pace, alongside reset times.</p>
-        <span class="more">Details →</span>
-      </a>
-      <a class="card" href="features/unread.html">
-        <div class="icon" aria-hidden="true">▤</div>
-        <h3>Unread sidebar</h3>
-        <p>Only the unread Gmail you'd lose something by missing —
-        deadlines, payments, security — stays up front;
-        newsletters fold away quietly. New mail flashes the screen edges
-        in that account's colour.</p>
-        <span class="more">Details →</span>
-      </a>
-      <a class="card" href="features/learning.html">
-        <div class="icon" aria-hidden="true">▣</div>
-        <h3>Learns your criteria</h3>
-        <p>One line like "Notion alerts don't matter" changes how mail is triaged.
-        Write a sentence in plain language and the sidebar filters by it.</p>
+        <p>Shows Claude Code, Codex and Antigravity session, weekly and per-model limits as gauges.
+        Forecasts when you'll run out at the current pace, alongside reset times.
+        Long-press a card and drag to put the subscription you use most on top.</p>
         <span class="more">Details →</span>
       </a>
     </div>
@@ -178,9 +134,9 @@
     <div class="strip">
       <p>DASH stores no user data on any server.</p>
       <ul>
-        <li>Mail and usage data are processed and kept on your device only</li>
+        <li>Usage data is processed and kept on your device only</li>
         <li>OAuth tokens are stored encrypted — in the iOS Keychain, and in Android EncryptedSharedPreferences</li>
-        <li>AI triage sends only the sender, subject, and a snippet — stored nowhere</li>
+        <li>The app talks to nothing but each AI service's own usage API</li>
         <li>No ads, no tracking, no analytics SDKs</li>
       </ul>
     </div>

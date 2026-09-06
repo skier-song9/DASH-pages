@@ -21,8 +21,6 @@
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">Usage dashboard</a>
-          <a href="features/unread.html">Unread sidebar</a>
-          <a href="features/learning.html">Learns your criteria</a>
           <a class="all" href="./#features">All features</a>
         </div>
       </div>
@@ -39,7 +37,7 @@
 
 <main class="wrap doc">
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective: August 6, 2026 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
+  <p class="meta">Effective: August 6, 2026 · Revised: September 6, 2026 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 
   <p>DASH (the "App") is an iOS and Android application provided by an individual
   developer (GitHub: skier-song9, the "Developer"). This policy explains what
@@ -51,74 +49,39 @@
   <a class="inline" href="../privacy.html">Korean version</a>, the Korean version prevails.</p>
 
   <div class="note">Summary — the App stores no user data on the Developer's servers.
-  Mail and usage data are processed and kept on your device only, and only the
-  minimum mail information needed for AI triage is transmitted transiently for
-  that purpose.</div>
+  Usage data is processed and kept on your device only, and the App talks to
+  nothing but each AI service's own usage API.</div>
+
+  <div class="note"><b>Revised September 6, 2026 (version 1.0.1)</b> — Gmail linking and the
+  Unread sidebar have been removed from the App. From this version on, the App
+  processes no Google account information or Gmail data, sends nothing anywhere
+  for mail triage, and sends no error reports to the Developer. If you linked a
+  Google account in an earlier version, the token only ever lived on your device
+  and is no longer used after updating; you can revoke DASH's access yourself in
+  your <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account security settings</a>.</div>
 
   <h2>1. Information processed</h2>
   <table>
     <tr><th>Item</th><th>Details</th><th>Stored in</th></tr>
     <tr>
-      <td data-th="Item">Google account info</td>
-      <td data-th="Details">Email address (openid, email scopes)</td>
-      <td data-th="Stored in">On device</td>
-    </tr>
-    <tr>
-      <td data-th="Item">Gmail data</td>
-      <td data-th="Details">Sender, subject, received time, labels, and a body snippet of unread mail
-      — <code>gmail.modify</code> scope</td>
-      <td data-th="Stored in">On device (cache)</td>
-    </tr>
-    <tr>
       <td data-th="Item">OAuth tokens</td>
-      <td data-th="Details">Tokens linking your Google account and AI coding tool (Claude Code, Codex) accounts</td>
+      <td data-th="Details">Tokens linking your AI coding tool (Claude Code, Codex, Antigravity) accounts</td>
       <td data-th="Stored in">iOS Keychain · Android EncryptedSharedPreferences (encrypted)</td>
     </tr>
     <tr>
       <td data-th="Item">AI service usage</td>
-      <td data-th="Details">Usage limits and remaining quota for Claude Code · Codex</td>
+      <td data-th="Details">Usage limits and remaining quota for Claude Code · Codex · Antigravity</td>
       <td data-th="Stored in">On device</td>
     </tr>
   </table>
 
   <h2>2. Purposes of use</h2>
   <ul>
-    <li>Reading Gmail metadata to display the unread mail list and count.</li>
-    <li>Classifying mail importance using rules and AI triage.</li>
-    <li>Marking mail you have checked as read in Gmail, via the <code>gmail.modify</code> permission.
-    The App never sends, deletes, or makes any change to mail other than marking it read.</li>
     <li>Reading each service's usage API to display AI coding tool limits.</li>
+    <li>Forecasting when quota runs out from how usage changes. This is computed on the device only.</li>
   </ul>
 
-  <h2>3. Transient transmission for AI triage</h2>
-  <p>To classify mail importance, the following information leaves your device and
-  is sent transiently, through a relay server operated by the Developer, to an
-  external AI processing system:</p>
-  <ul>
-    <li>Sender name and address, subject, the beginning of the body (up to 220
-    characters), and signals such as bulk-mail markers</li>
-  </ul>
-  <p>This transmission is transient — it exists only while the classification
-  response is produced. The relay server is stateless and records nothing, and
-  the transmitted information is not stored and is not used to train models.
-  Full mail bodies and attachments are never transmitted.</p>
-
-  <h2>4. Compliance for Google user data (Limited Use)</h2>
-  <p>The App's use of information received from Google APIs adheres to the
-  <a class="inline" href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
-  including the Limited Use requirements. Specifically:</p>
-  <ul>
-    <li>Gmail data is used only to provide the user-facing features in Section 2.</li>
-    <li>Gmail data is not used for advertising.</li>
-    <li>Gmail data is not sold or transferred to third parties.</li>
-    <li>Gmail data is not used to develop, improve, or train generalized AI/ML models.
-    The AI triage in Section 3 is transient processing solely to provide the
-    feature you requested.</li>
-    <li>No humans read Gmail data, except with your explicit consent,
-    for security purposes, or to comply with legal obligations.</li>
-  </ul>
-
-  <h2>5. Storage and security</h2>
+  <h2>3. Storage and security</h2>
   <ul>
     <li>All data is stored on your device. The Developer operates no server that stores user data.</li>
     <li>OAuth tokens are held in the encrypted store the operating system provides —
@@ -128,33 +91,26 @@
     <li>The App contains no advertising, tracking, or analytics SDKs.</li>
   </ul>
 
-  <h2>6. Third parties and processors</h2>
-  <p>The Developer does not provide or sell user data to third parties.
-  Processing delegated to provide features:</p>
-  <table>
-    <tr><th>Processor</th><th>Purpose</th><th>Scope</th></tr>
-    <tr><td data-th="Processor">Cloud infrastructure provider</td><td data-th="Purpose">Stateless forwarding of triage requests (nothing stored)</td><td data-th="Scope">Forwards the minimum information in Section 3 without storing it</td></tr>
-    <tr><td data-th="Processor">AI processing service</td><td data-th="Purpose">Mail importance triage (transient processing)</td><td data-th="Scope">Transient processing of the minimum information in Section 3; nothing stored, no model training</td></tr>
-  </table>
-  <p>Error reports sent to the Developer automatically redact personal
-  information such as email addresses and tokens.</p>
+  <h2>4. Third parties and processors</h2>
+  <p>The Developer does not provide or sell user data to third parties, and
+  delegates processing to no one. The only parties the App communicates with
+  are the usage APIs of the AI services you linked yourself (Anthropic, OpenAI,
+  Google), and each request carries nothing beyond the token that service issued.</p>
 
-  <h2>7. Retention and deletion</h2>
+  <h2>5. Retention and deletion</h2>
   <ul>
     <li>On-device data is deleted when you delete the App.</li>
-    <li>Disconnecting an account in the App's settings immediately deletes that account's tokens and cache.</li>
-    <li>You can revoke the App's Google account access at any time in your
-    <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account security settings</a>.</li>
+    <li>Disconnecting an account in the App's settings immediately deletes that account's token.</li>
   </ul>
   <p>Step-by-step instructions are on the <a class="inline" href="delete-data.html">Delete your data</a> page.</p>
 
-  <h2>8. Children's privacy</h2>
+  <h2>6. Children's privacy</h2>
   <p>The App is not directed at children under 14 and does not knowingly collect their personal information.</p>
 
-  <h2>9. Changes to this policy</h2>
+  <h2>7. Changes to this policy</h2>
   <p>Changes will be posted on this page; material changes will be announced in the App.</p>
 
-  <h2>10. Contact</h2>
+  <h2>8. Contact</h2>
   <p>Privacy inquiries: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 </main>
 

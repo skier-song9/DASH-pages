@@ -21,8 +21,6 @@
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">Usage dashboard</a>
-          <a href="features/unread.html">Unread sidebar</a>
-          <a href="features/learning.html">Learns your criteria</a>
           <a class="all" href="./#features">All features</a>
         </div>
       </div>
@@ -51,11 +49,9 @@
   <ol>
     <li>Open DASH.</li>
     <li>Tap the gear (⚙︎) at the right of the top bar to open <b>Settings</b>.</li>
-    <li>Tap <b>Disconnect</b> on the account you want to remove.
-    (Claude Code and Codex each have their own row; a Gmail account is removed with
-    <b>Delete account</b> on its page in <b>Unread settings</b>.)</li>
+    <li>Tap <b>Disconnect</b> on the row you want to remove (Claude Code · Codex · Antigravity).</li>
   </ol>
-  <p>The account's OAuth token and cache are erased from the device the moment you tap it.</p>
+  <p>The account's OAuth token is erased from the device the moment you tap it.</p>
 
   <h2>2. Delete everything</h2>
   <p>Removes everything the app has kept on the device.</p>
@@ -64,11 +60,12 @@
     long-press the app on the home screen and choose <b>Uninstall</b>.</li>
     <li>iOS: long-press the app on the home screen and choose <b>Delete App</b>.</li>
   </ol>
-  <p>Deleting the app takes the tokens, caches, and settings with it.</p>
+  <p>Deleting the app takes the tokens and settings with it.</p>
 
-  <h2>3. Revoke Google account access</h2>
-  <p>If you linked Gmail, you can revoke access from your Google account as well,
-  independently of disconnecting inside the app.</p>
+  <h2>3. Revoke Google account access granted to an earlier version</h2>
+  <p>Gmail linking was removed in version 1.0.1. If you linked Gmail in an earlier
+  version, the token only ever lived on your device and is no longer used after
+  updating, but we recommend revoking DASH's access from your Google account as well.</p>
   <ol>
     <li>Go to <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account ▸ Third-party apps &amp; services</a>.</li>
     <li>Select <b>DASH</b> and choose <b>Remove access</b>.</li>
@@ -78,34 +75,16 @@
   <table>
     <tr><th>Data</th><th>Stored in</th><th>Deleted</th><th>Further retention</th></tr>
     <tr>
-      <td data-th="Data">OAuth tokens (Google · Claude Code · Codex)</td>
+      <td data-th="Data">OAuth tokens (Claude Code · Codex · Antigravity)</td>
       <td data-th="Stored in">Encrypted storage on the device</td>
       <td data-th="Deleted">Immediately on disconnect or app deletion</td>
       <td data-th="Further retention">None</td>
     </tr>
     <tr>
-      <td data-th="Data">Gmail metadata cache (sender, subject, received time, snippet)</td>
-      <td data-th="Stored in">On the device</td>
-      <td data-th="Deleted">Immediately on account removal or app deletion</td>
-      <td data-th="Further retention">None</td>
-    </tr>
-    <tr>
-      <td data-th="Data">Triage rules, sender history, app settings</td>
+      <td data-th="Data">App settings (card order, models to show, display options)</td>
       <td data-th="Stored in">On the device</td>
       <td data-th="Deleted">Immediately on clearing data or app deletion</td>
       <td data-th="Further retention">None</td>
-    </tr>
-    <tr>
-      <td data-th="Data">Mail details sent transiently for AI triage</td>
-      <td data-th="Stored in">Not stored (stateless processing)</td>
-      <td data-th="Deleted">Discarded as soon as the response returns</td>
-      <td data-th="Further retention">None</td>
-    </tr>
-    <tr>
-      <td data-th="Data">Error reports (personal data redacted)</td>
-      <td data-th="Stored in">The Developer's alert channel</td>
-      <td data-th="Deleted">—</td>
-      <td data-th="Further retention">Automatically deleted within 90 days</td>
     </tr>
   </table>
   <p>The Developer runs no server that stores user data, so nothing beyond the rows

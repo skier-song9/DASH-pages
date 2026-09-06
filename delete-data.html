@@ -21,8 +21,6 @@
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">사용량 대시보드</a>
-          <a href="features/unread.html">Unread 사이드바</a>
-          <a href="features/learning.html">내 기준으로 학습</a>
           <a class="all" href="./#features">기능 전체 보기</a>
         </div>
       </div>
@@ -50,10 +48,9 @@
   <ol>
     <li>DASH를 실행합니다.</li>
     <li>상단 바 오른쪽의 톱니바퀴(⚙︎)를 눌러 <b>설정</b>을 엽니다.</li>
-    <li>끊으려는 계정 항목에서 <b>연결 해제</b>를 누릅니다.
-    (Claude Code · Codex는 각 항목에서, Gmail 계정은 <b>Unread 설정</b>의 계정 화면에서 <b>계정 삭제</b>를 누릅니다.)</li>
+    <li>끊으려는 항목(Claude Code · Codex · Antigravity)에서 <b>연결 해제</b>를 누릅니다.</li>
   </ol>
-  <p>누르는 즉시 해당 계정의 OAuth 토큰과 캐시가 기기에서 삭제됩니다.</p>
+  <p>누르는 즉시 해당 계정의 OAuth 토큰이 기기에서 삭제됩니다.</p>
 
   <h2>2. 모든 데이터 삭제하기</h2>
   <p>앱이 기기에 보관한 것을 남김없이 지웁니다.</p>
@@ -62,10 +59,11 @@
     홈 화면에서 앱을 길게 눌러 <b>제거</b>합니다.</li>
     <li>iOS: 홈 화면에서 앱을 길게 눌러 <b>앱 삭제</b>를 선택합니다.</li>
   </ol>
-  <p>앱을 삭제하면 토큰·캐시·설정이 모두 함께 사라집니다.</p>
+  <p>앱을 삭제하면 토큰·설정이 모두 함께 사라집니다.</p>
 
-  <h2>3. Google 계정 권한 철회</h2>
-  <p>Gmail을 연동했다면, 앱에서 연결을 해제하는 것과 별개로 Google 계정 쪽 권한도 직접 철회할 수 있습니다.</p>
+  <h2>3. 이전 버전의 Google 계정 권한 철회</h2>
+  <p>버전 1.0.1부터 Gmail 연동 기능은 삭제되었습니다. 그 이전 버전에서 Gmail을 연동했던 경우,
+  토큰은 기기에만 있었고 업데이트 후 더 이상 사용되지 않지만, Google 계정 쪽 권한을 직접 철회해 두는 것을 권합니다.</p>
   <ol>
     <li><a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 ▸ 타사 앱 및 서비스</a>로 이동합니다.</li>
     <li>목록에서 <b>DASH</b>를 선택하고 <b>액세스 권한 삭제</b>를 누릅니다.</li>
@@ -75,34 +73,16 @@
   <table>
     <tr><th>데이터</th><th>보관 위치</th><th>삭제 시점</th><th>추가 보관</th></tr>
     <tr>
-      <td data-th="데이터">OAuth 토큰 (Google · Claude Code · Codex)</td>
+      <td data-th="데이터">OAuth 토큰 (Claude Code · Codex · Antigravity)</td>
       <td data-th="보관 위치">기기 내부 암호화 저장소</td>
       <td data-th="삭제 시점">연결 해제 또는 앱 삭제 시 즉시</td>
       <td data-th="추가 보관">없음</td>
     </tr>
     <tr>
-      <td data-th="데이터">Gmail 메타데이터 캐시 (발신자, 제목, 수신 시각, 스니펫)</td>
-      <td data-th="보관 위치">기기 내부</td>
-      <td data-th="삭제 시점">계정 삭제 또는 앱 삭제 시 즉시</td>
-      <td data-th="추가 보관">없음</td>
-    </tr>
-    <tr>
-      <td data-th="데이터">분류 규칙 · 발신자 학습 기록 · 앱 설정</td>
+      <td data-th="데이터">앱 설정 (카드 순서, 표시 모델, 표시 옵션)</td>
       <td data-th="보관 위치">기기 내부</td>
       <td data-th="삭제 시점">앱 삭제 또는 데이터 삭제 시 즉시</td>
       <td data-th="추가 보관">없음</td>
-    </tr>
-    <tr>
-      <td data-th="데이터">AI 분류를 위해 일시 전송된 메일 정보</td>
-      <td data-th="보관 위치">저장되지 않음 (무상태 처리)</td>
-      <td data-th="삭제 시점">응답 직후 소멸</td>
-      <td data-th="추가 보관">없음</td>
-    </tr>
-    <tr>
-      <td data-th="데이터">오류 알림 기록 (개인정보 마스킹됨)</td>
-      <td data-th="보관 위치">개발자의 알림 채널</td>
-      <td data-th="삭제 시점">—</td>
-      <td data-th="추가 보관">최대 90일 후 자동 삭제</td>
     </tr>
   </table>
   <p>개발자는 사용자 데이터를 저장하는 서버를 운영하지 않으므로, 위 항목 외에
