@@ -1,0 +1,349 @@
+{
+  "country": "KR",
+  "year": 2027,
+  "updated": "2026-09-08",
+  "events": [
+    {
+      "id": "kr-new-years-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "신정연휴",
+      "name_en": "New Year's Day",
+      "start": "2027-01-01",
+      "dayoff": true
+    },
+    {
+      "id": "kr-year-end-tax-service-opens",
+      "tier": 2,
+      "cat": "event",
+      "name": "연말정산 간소화 개통",
+      "name_en": "Year-end Tax Settlement Service Opens",
+      "rule": "01-15",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-vat-final-return-deadline",
+      "tier": 2,
+      "cat": "event",
+      "name": "부가세 확정신고 마감",
+      "name_en": "VAT Final Return Deadline",
+      "rule": "01-25",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-korean-new-year-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "설날",
+      "name_en": "Korean New Year",
+      "start": "2027-02-06",
+      "end": "2027-02-08",
+      "dayoff": true
+    },
+    {
+      "id": "kr-korean-new-year-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "설날 대체공휴일",
+      "name_en": "Korean New Year (substitute)",
+      "start": "2027-02-09",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-valentines-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "발렌타인데이",
+      "name_en": "Valentine's Day",
+      "rule": "02-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "kr-independence-movement-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "삼일절",
+      "name_en": "Independence Movement Day",
+      "start": "2027-03-01",
+      "dayoff": true
+    },
+    {
+      "id": "kr-white-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "화이트데이",
+      "name_en": "White Day",
+      "rule": "03-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "kr-april-fools-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "만우절",
+      "name_en": "April Fools' Day",
+      "rule": "04-01",
+      "interests": []
+    },
+    {
+      "id": "kr-black-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "블랙데이",
+      "name_en": "Black Day",
+      "rule": "04-14",
+      "interests": []
+    },
+    {
+      "id": "kr-labor-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "노동절",
+      "name_en": "Labor Day",
+      "start": "2027-05-01",
+      "dayoff": true
+    },
+    {
+      "id": "kr-labor-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "노동절 대체공휴일",
+      "name_en": "Labor Day (substitute)",
+      "start": "2027-05-03",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-childrens-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "어린이날",
+      "name_en": "Children's Day",
+      "start": "2027-05-05",
+      "dayoff": true
+    },
+    {
+      "id": "kr-parents-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "어버이날",
+      "name_en": "Parents' Day",
+      "rule": "05-08",
+      "interests": []
+    },
+    {
+      "id": "kr-buddhas-birthday-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "부처님오신날",
+      "name_en": "Buddha's Birthday",
+      "start": "2027-05-13",
+      "dayoff": true
+    },
+    {
+      "id": "kr-rose-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "로즈데이",
+      "name_en": "Rose Day",
+      "rule": "05-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "kr-teachers-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "스승의날",
+      "name_en": "Teachers' Day",
+      "rule": "05-15",
+      "interests": []
+    },
+    {
+      "id": "kr-income-tax-return-deadline",
+      "tier": 2,
+      "cat": "event",
+      "name": "종합소득세 신고 마감",
+      "name_en": "Comprehensive Income Tax Return Deadline",
+      "rule": "05-31",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-memorial-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "현충일",
+      "name_en": "Memorial Day",
+      "start": "2027-06-06",
+      "dayoff": true
+    },
+    {
+      "id": "kr-constitution-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "제헌절",
+      "name_en": "Constitution Day",
+      "start": "2027-07-17",
+      "dayoff": false
+    },
+    {
+      "id": "kr-constitution-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "제헌절 대체공휴일",
+      "name_en": "Constitution Day (substitute)",
+      "start": "2027-07-19",
+      "dayoff": false,
+      "substitute": true
+    },
+    {
+      "id": "kr-vat-preliminary-return-deadline",
+      "tier": 2,
+      "cat": "event",
+      "name": "부가세 예정신고 마감",
+      "name_en": "VAT Preliminary Return Deadline",
+      "rule": "07-25",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-liberation-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "광복절",
+      "name_en": "Liberation Day",
+      "start": "2027-08-15",
+      "dayoff": true
+    },
+    {
+      "id": "kr-liberation-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "광복절 대체공휴일",
+      "name_en": "Liberation Day (substitute)",
+      "start": "2027-08-16",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-chuseok-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "추석",
+      "name_en": "Chuseok",
+      "start": "2027-09-14",
+      "end": "2027-09-16",
+      "dayoff": true
+    },
+    {
+      "id": "kr-national-foundation-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "개천절",
+      "name_en": "National Foundation Day",
+      "start": "2027-10-03",
+      "dayoff": true
+    },
+    {
+      "id": "kr-national-foundation-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "개천절 대체공휴일",
+      "name_en": "National Foundation Day (substitute)",
+      "start": "2027-10-04",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-hangul-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "한글날",
+      "name_en": "Hangul Day",
+      "start": "2027-10-09",
+      "dayoff": true
+    },
+    {
+      "id": "kr-hangul-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "한글날 대체공휴일",
+      "name_en": "Hangul Day (substitute)",
+      "start": "2027-10-11",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-halloween",
+      "tier": 2,
+      "cat": "event",
+      "name": "할로윈",
+      "name_en": "Halloween",
+      "rule": "10-31",
+      "interests": []
+    },
+    {
+      "id": "kr-pepero-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "빼빼로데이",
+      "name_en": "Pepero Day",
+      "rule": "11-11",
+      "interests": []
+    },
+    {
+      "id": "kr-suneung-2027",
+      "tier": 3,
+      "cat": "event",
+      "name": "수능",
+      "name_en": "CSAT",
+      "start": "2027-11-18",
+      "interests": [
+        "undergrad",
+        "other"
+      ],
+      "src": "https://www.korea.kr/news/policyNewsView.do?newsId=148943916"
+    },
+    {
+      "id": "kr-christmas-eve",
+      "tier": 2,
+      "cat": "event",
+      "name": "크리스마스이브",
+      "name_en": "Christmas Eve",
+      "rule": "12-24",
+      "interests": []
+    },
+    {
+      "id": "kr-christmas-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "기독탄신일",
+      "name_en": "Christmas Day",
+      "start": "2027-12-25",
+      "dayoff": true
+    },
+    {
+      "id": "kr-christmas-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "기독탄신일 대체공휴일",
+      "name_en": "Christmas Day (substitute)",
+      "start": "2027-12-27",
+      "dayoff": true,
+      "substitute": true
+    }
+  ]
+}

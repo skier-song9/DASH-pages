@@ -1,0 +1,73 @@
+# Countries the D-Day feed is generated for, and how each one's public holidays are read from the
+# `holidays` library. Adding a country here (plus an optional curated/{CC}.yaml) is all it takes for
+# the app to list it under Settings > D-Day > 지역; the manifest is derived from this file.
+#
+# Per-country keys:
+#   name / name_en          Shown in the app's region picker (local script + English).
+#   language                Locale passed to the holidays library for the local `name`; `name_en`
+#                           always comes from en_US.
+#   family_patterns         Regexes whose group(1) reduces a companion day to its family name.
+#                           Consecutive days in one family merge into a single ranged event
+#                           (설날 전날 / 설날 / 설날 다음날 -> "설날" 02-16..02-18).
+#   substitute_label        How a substitute holiday is displayed; {base} is the holiday it stands
+#                           in for. Omit to keep the library's own wording.
+#   bare_substitute_names_en English names the library uses for substitutes without naming the
+#                           source holiday (Japan's 振替休日); the id is linked to the Sunday holiday
+#                           that caused it.
+#   not_dayoff              English names of public days that are not days off (dayoff: false).
+#   official                Optional authoritative source that corrects tier 1. `data_go_kr` needs
+#                           the DATA_GO_KR_KEY environment variable (a GitHub secret in CI) and is
+#                           skipped with a log line when it is absent.
+#   official_names_en       English names for entries the official source may add that the library
+#                           does not know (임시공휴일 etc.). Unmapped names fall back to the local
+#                           text with a warning.
+
+countries:
+  KR:
+    name: 대한민국
+    name_en: South Korea
+    language: ko
+    family_patterns:
+      local: ["^(.+) 전날$", "^(.+) 다음날$"]
+      en: ["^The day preceding (.+)$", "^The second day of (.+)$"]
+    substitute_label:
+      local: "{base} 대체공휴일"
+      en: "{base} (substitute)"
+    # 제헌절 is a national day (국경일) but has not been a public day off since 2008.
+    not_dayoff: ["Constitution Day"]
+    official: data_go_kr
+    official_names_en:
+      1월1일: New Year's Day
+      설날: Korean New Year
+      삼일절: Independence Movement Day
+      근로자의날: Labor Day
+      어린이날: Children's Day
+      부처님오신날: Buddha's Birthday
+      현충일: Memorial Day
+      제헌절: Constitution Day
+      광복절: Liberation Day
+      추석: Chuseok
+      개천절: National Foundation Day
+      한글날: Hangul Day
+      기독탄신일: Christmas Day
+      대체공휴일: Substitute Holiday
+      임시공휴일: Temporary Public Holiday
+      대통령선거일: Presidential Election Day
+      국회의원선거일: National Assembly Election Day
+      지방선거일: Local Election Day
+
+  US:
+    name: United States
+    name_en: United States
+    language: en_US
+    # Federal holidays that fall on a weekend are observed on the nearest weekday; the library
+    # already says "(observed)", which is the term Americans expect, so it is kept in both fields.
+    substitute_label:
+      local: "{base} (observed)"
+      en: "{base} (observed)"
+
+  JP:
+    name: 日本
+    name_en: Japan
+    language: ja
+    bare_substitute_names_en: ["Substitute Holiday"]

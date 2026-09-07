@@ -1,0 +1,29 @@
+# Curated (non-holiday) events for the United States. See curated/KR.yaml for the entry shapes.
+# `name` and `name_en` are both English here because the local language is English.
+
+country: US
+events:
+  # --- tier 2: recurring ---------------------------------------------------------------------
+  # Individual income tax returns are due April 15; a weekend or D.C. holiday shifts the real
+  # deadline, which a rule cannot express, so this reads as "by this date".
+  - {id: us-tax-day, tier: 2, name: Tax Day, name_en: Tax Day, rule: "04-15", interests: [worker]}
+  - {id: us-halloween, tier: 2, name: Halloween, name_en: Halloween, rule: "10-31", interests: []}
+  # Thanksgiving is the fourth Thursday of November; Black Friday and Cyber Monday follow it.
+  - {id: us-black-friday, tier: 2, name: Black Friday, name_en: Black Friday, nth_weekday: {month: 11, weekday: thu, n: 4, offset: 1}, interests: []}
+  - {id: us-cyber-monday, tier: 2, name: Cyber Monday, name_en: Cyber Monday, nth_weekday: {month: 11, weekday: thu, n: 4, offset: 4}, interests: []}
+
+  # --- tier 2: dated per season (the NFL fixes the date years ahead) -------------------------
+  - id: us-super-bowl-2026
+    tier: 2
+    name: Super Bowl LX
+    name_en: Super Bowl LX
+    start: 2026-02-08
+    interests: []
+    src: https://levisstadium.com/event/super-bowl-lx/
+  - id: us-super-bowl-2027
+    tier: 2
+    name: Super Bowl LXI
+    name_en: Super Bowl LXI
+    start: 2027-02-14
+    interests: []
+    src: https://www.sofistadium.com/events/detail/super-bowl-lxi

@@ -1,0 +1,678 @@
+{
+  "country": "KR",
+  "year": 2026,
+  "updated": "2026-09-08",
+  "events": [
+    {
+      "id": "kr-new-years-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "신정연휴",
+      "name_en": "New Year's Day",
+      "start": "2026-01-01",
+      "dayoff": true
+    },
+    {
+      "id": "kr-toeic-560-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제560회",
+      "name_en": "TOEIC Test 560",
+      "start": "2026-01-11",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-year-end-tax-service-opens",
+      "tier": 2,
+      "cat": "event",
+      "name": "연말정산 간소화 개통",
+      "name_en": "Year-end Tax Settlement Service Opens",
+      "rule": "01-15",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-vat-final-return-deadline",
+      "tier": 2,
+      "cat": "event",
+      "name": "부가세 확정신고 마감",
+      "name_en": "VAT Final Return Deadline",
+      "rule": "01-25",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-toeic-561-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제561회",
+      "name_en": "TOEIC Test 561",
+      "start": "2026-01-25",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-562-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제562회",
+      "name_en": "TOEIC Test 562",
+      "start": "2026-02-01",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-563-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제563회",
+      "name_en": "TOEIC Test 563",
+      "start": "2026-02-08",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-valentines-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "발렌타인데이",
+      "name_en": "Valentine's Day",
+      "rule": "02-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "kr-korean-new-year-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "설날",
+      "name_en": "Korean New Year",
+      "start": "2026-02-16",
+      "end": "2026-02-18",
+      "dayoff": true
+    },
+    {
+      "id": "kr-toeic-564-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제564회",
+      "name_en": "TOEIC Test 564",
+      "start": "2026-02-28",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-independence-movement-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "삼일절",
+      "name_en": "Independence Movement Day",
+      "start": "2026-03-01",
+      "dayoff": true
+    },
+    {
+      "id": "kr-independence-movement-day-sub-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "삼일절 대체공휴일",
+      "name_en": "Independence Movement Day (substitute)",
+      "start": "2026-03-02",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-white-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "화이트데이",
+      "name_en": "White Day",
+      "rule": "03-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "kr-toeic-565-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제565회",
+      "name_en": "TOEIC Test 565",
+      "start": "2026-03-15",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-566-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제566회",
+      "name_en": "TOEIC Test 566",
+      "start": "2026-03-29",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-april-fools-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "만우절",
+      "name_en": "April Fools' Day",
+      "rule": "04-01",
+      "interests": []
+    },
+    {
+      "id": "kr-toeic-567-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제567회",
+      "name_en": "TOEIC Test 567",
+      "start": "2026-04-12",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-black-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "블랙데이",
+      "name_en": "Black Day",
+      "rule": "04-14",
+      "interests": []
+    },
+    {
+      "id": "kr-toeic-568-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제568회",
+      "name_en": "TOEIC Test 568",
+      "start": "2026-04-26",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-labor-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "노동절",
+      "name_en": "Labor Day",
+      "start": "2026-05-01",
+      "dayoff": true
+    },
+    {
+      "id": "kr-childrens-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "어린이날",
+      "name_en": "Children's Day",
+      "start": "2026-05-05",
+      "dayoff": true
+    },
+    {
+      "id": "kr-parents-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "어버이날",
+      "name_en": "Parents' Day",
+      "rule": "05-08",
+      "interests": []
+    },
+    {
+      "id": "kr-toeic-569-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제569회",
+      "name_en": "TOEIC Test 569",
+      "start": "2026-05-10",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-rose-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "로즈데이",
+      "name_en": "Rose Day",
+      "rule": "05-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "kr-teachers-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "스승의날",
+      "name_en": "Teachers' Day",
+      "rule": "05-15",
+      "interests": []
+    },
+    {
+      "id": "kr-buddhas-birthday-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "부처님오신날",
+      "name_en": "Buddha's Birthday",
+      "start": "2026-05-24",
+      "dayoff": true
+    },
+    {
+      "id": "kr-buddhas-birthday-sub-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "부처님오신날 대체공휴일",
+      "name_en": "Buddha's Birthday (substitute)",
+      "start": "2026-05-25",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-income-tax-return-deadline",
+      "tier": 2,
+      "cat": "event",
+      "name": "종합소득세 신고 마감",
+      "name_en": "Comprehensive Income Tax Return Deadline",
+      "rule": "05-31",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-toeic-570-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제570회",
+      "name_en": "TOEIC Test 570",
+      "start": "2026-05-31",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-local-election-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "지방선거일",
+      "name_en": "Local Election Day",
+      "start": "2026-06-03",
+      "dayoff": true
+    },
+    {
+      "id": "kr-memorial-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "현충일",
+      "name_en": "Memorial Day",
+      "start": "2026-06-06",
+      "dayoff": true
+    },
+    {
+      "id": "kr-toeic-571-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제571회",
+      "name_en": "TOEIC Test 571",
+      "start": "2026-06-13",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-572-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제572회",
+      "name_en": "TOEIC Test 572",
+      "start": "2026-06-28",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-573-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제573회",
+      "name_en": "TOEIC Test 573",
+      "start": "2026-07-12",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-constitution-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "제헌절",
+      "name_en": "Constitution Day",
+      "start": "2026-07-17",
+      "dayoff": false
+    },
+    {
+      "id": "kr-vat-preliminary-return-deadline",
+      "tier": 2,
+      "cat": "event",
+      "name": "부가세 예정신고 마감",
+      "name_en": "VAT Preliminary Return Deadline",
+      "rule": "07-25",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "kr-toeic-574-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제574회",
+      "name_en": "TOEIC Test 574",
+      "start": "2026-07-26",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-575-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제575회",
+      "name_en": "TOEIC Test 575",
+      "start": "2026-08-09",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-liberation-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "광복절",
+      "name_en": "Liberation Day",
+      "start": "2026-08-15",
+      "dayoff": true
+    },
+    {
+      "id": "kr-liberation-day-sub-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "광복절 대체공휴일",
+      "name_en": "Liberation Day (substitute)",
+      "start": "2026-08-17",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-toeic-576-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제576회",
+      "name_en": "TOEIC Test 576",
+      "start": "2026-08-23",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-577-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제577회",
+      "name_en": "TOEIC Test 577",
+      "start": "2026-08-30",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-578-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제578회",
+      "name_en": "TOEIC Test 578",
+      "start": "2026-09-06",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-national-scholarship-2nd-deadline-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "국가장학금 2차 신청 마감",
+      "name_en": "National Scholarship 2nd-round Application Deadline",
+      "start": "2026-09-09",
+      "interests": [
+        "undergrad"
+      ],
+      "src": "https://www.gukjenews.com/news/articleView.html?idxno=3684065"
+    },
+    {
+      "id": "kr-toeic-579-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제579회",
+      "name_en": "TOEIC Test 579",
+      "start": "2026-09-20",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-chuseok-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "추석",
+      "name_en": "Chuseok",
+      "start": "2026-09-24",
+      "end": "2026-09-26",
+      "dayoff": true
+    },
+    {
+      "id": "kr-national-foundation-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "개천절",
+      "name_en": "National Foundation Day",
+      "start": "2026-10-03",
+      "dayoff": true
+    },
+    {
+      "id": "kr-national-foundation-day-sub-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "개천절 대체공휴일",
+      "name_en": "National Foundation Day (substitute)",
+      "start": "2026-10-05",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "kr-hangul-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "한글날",
+      "name_en": "Hangul Day",
+      "start": "2026-10-09",
+      "dayoff": true
+    },
+    {
+      "id": "kr-toeic-580-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제580회",
+      "name_en": "TOEIC Test 580",
+      "start": "2026-10-11",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-halloween",
+      "tier": 2,
+      "cat": "event",
+      "name": "할로윈",
+      "name_en": "Halloween",
+      "rule": "10-31",
+      "interests": []
+    },
+    {
+      "id": "kr-toeic-581-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제581회",
+      "name_en": "TOEIC Test 581",
+      "start": "2026-10-31",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-pepero-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "빼빼로데이",
+      "name_en": "Pepero Day",
+      "rule": "11-11",
+      "interests": []
+    },
+    {
+      "id": "kr-toeic-582-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제582회",
+      "name_en": "TOEIC Test 582",
+      "start": "2026-11-15",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-suneung-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "수능",
+      "name_en": "CSAT",
+      "start": "2026-11-19",
+      "interests": [
+        "undergrad",
+        "other"
+      ],
+      "src": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&lev=0&statusYN=W&s=moe&m=020402&opType=N&boardSeq=100526"
+    },
+    {
+      "id": "kr-toeic-583-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제583회",
+      "name_en": "TOEIC Test 583",
+      "start": "2026-11-29",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-toeic-584-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제584회",
+      "name_en": "TOEIC Test 584",
+      "start": "2026-12-13",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    },
+    {
+      "id": "kr-christmas-eve",
+      "tier": 2,
+      "cat": "event",
+      "name": "크리스마스이브",
+      "name_en": "Christmas Eve",
+      "rule": "12-24",
+      "interests": []
+    },
+    {
+      "id": "kr-christmas-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "기독탄신일",
+      "name_en": "Christmas Day",
+      "start": "2026-12-25",
+      "dayoff": true
+    },
+    {
+      "id": "kr-toeic-585-2026",
+      "tier": 3,
+      "cat": "event",
+      "name": "토익 제585회",
+      "name_en": "TOEIC Test 585",
+      "start": "2026-12-27",
+      "interests": [
+        "undergrad",
+        "jobseeker"
+      ],
+      "src": "https://www.toeicstory.co.kr/2523"
+    }
+  ]
+}

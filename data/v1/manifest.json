@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "updated": "2026-09-08",
+  "countries": {
+    "KR": {
+      "name": "대한민국",
+      "name_en": "South Korea",
+      "years": [
+        2026,
+        2027
+      ],
+      "updated": "2026-09-08"
+    },
+    "US": {
+      "name": "United States",
+      "name_en": "United States",
+      "years": [
+        2026,
+        2027
+      ],
+      "updated": "2026-09-08"
+    },
+    "JP": {
+      "name": "日本",
+      "name_en": "Japan",
+      "years": [
+        2026,
+        2027
+      ],
+      "updated": "2026-09-08"
+    }
+  }
+}

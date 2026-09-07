@@ -1,0 +1,91 @@
+# Curated (non-holiday) events for South Korea. Tier 2 entries recur every year and are shipped as
+# a `rule` "MM-DD" that the app expands; tier 3 entries are dated one-offs and must cite the page
+# the date was verified on in `src` - an entry without a verifiable source is left out rather than
+# guessed. `interests` selects which onboarding chips show an event; an empty list means it is
+# shown to everyone. Ids are written out in full and never change, because 👍/👎 reactions are keyed
+# by them.
+#
+# Entry shapes (exactly one of):
+#   rule: "MM-DD"                                  recurring; id has no year
+#   nth_weekday: {month, weekday, n, offset}       computed; id gains -{year}
+#   start: YYYY-MM-DD [end: YYYY-MM-DD]            dated; id must already end in -{year}
+
+country: KR
+events:
+  # --- tier 2: recurring cultural days -----------------------------------------------------
+  - {id: kr-valentines-day, tier: 2, name: 발렌타인데이, name_en: Valentine's Day, rule: "02-14", interests: [romance]}
+  - {id: kr-white-day, tier: 2, name: 화이트데이, name_en: White Day, rule: "03-14", interests: [romance]}
+  - {id: kr-black-day, tier: 2, name: 블랙데이, name_en: Black Day, rule: "04-14", interests: []}
+  - {id: kr-april-fools-day, tier: 2, name: 만우절, name_en: April Fools' Day, rule: "04-01", interests: []}
+  - {id: kr-parents-day, tier: 2, name: 어버이날, name_en: Parents' Day, rule: "05-08", interests: []}
+  - {id: kr-teachers-day, tier: 2, name: 스승의날, name_en: Teachers' Day, rule: "05-15", interests: []}
+  - {id: kr-rose-day, tier: 2, name: 로즈데이, name_en: Rose Day, rule: "05-14", interests: [romance]}
+  - {id: kr-halloween, tier: 2, name: 할로윈, name_en: Halloween, rule: "10-31", interests: []}
+  - {id: kr-pepero-day, tier: 2, name: 빼빼로데이, name_en: Pepero Day, rule: "11-11", interests: []}
+  - {id: kr-christmas-eve, tier: 2, name: 크리스마스이브, name_en: Christmas Eve, rule: "12-24", interests: []}
+
+  # --- tier 2: recurring tax calendar (statutory dates; a weekend deadline moves to the next
+  #     business day, which the rule cannot express, so these read as "by this date") -----------
+  - {id: kr-year-end-tax-service-opens, tier: 2, name: 연말정산 간소화 개통, name_en: Year-end Tax Settlement Service Opens, rule: "01-15", interests: [worker]}
+  - {id: kr-vat-final-return-deadline, tier: 2, name: 부가세 확정신고 마감, name_en: VAT Final Return Deadline, rule: "01-25", interests: [worker]}
+  - {id: kr-income-tax-return-deadline, tier: 2, name: 종합소득세 신고 마감, name_en: Comprehensive Income Tax Return Deadline, rule: "05-31", interests: [worker]}
+  - {id: kr-vat-preliminary-return-deadline, tier: 2, name: 부가세 예정신고 마감, name_en: VAT Preliminary Return Deadline, rule: "07-25", interests: [worker]}
+
+  # --- tier 3: dated, verified ---------------------------------------------------------------
+  # 2027학년도 수능 - 교육부 보도자료 (2026-11-19 목).
+  - id: kr-suneung-2026
+    tier: 3
+    name: 수능
+    name_en: CSAT
+    start: 2026-11-19
+    interests: [undergrad, other]
+    src: https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&lev=0&statusYN=W&s=moe&m=020402&opType=N&boardSeq=100526
+  # 2028학년도 수능 - 대한민국 정책브리핑 (2027-11-18 목; the KICE basic plan follows in March 2027).
+  - id: kr-suneung-2027
+    tier: 3
+    name: 수능
+    name_en: CSAT
+    start: 2027-11-18
+    interests: [undergrad, other]
+    src: https://www.korea.kr/news/policyNewsView.do?newsId=148943916
+  # 2026학년도 2학기 국가장학금 2차 신청 - 8/12 09:00 ~ 9/9 18:00 (한국장학재단 보도자료 경유).
+  - id: kr-national-scholarship-2nd-deadline-2026
+    tier: 3
+    name: 국가장학금 2차 신청 마감
+    name_en: National Scholarship 2nd-round Application Deadline
+    start: 2026-09-09
+    interests: [undergrad]
+    src: https://www.gukjenews.com/news/articleView.html?idxno=3684065
+  # 2026 토익 정기시험 - 한국TOEIC위원회 공식 블로그의 연간 일정표. 2027 dates are published late
+  # in the year and are added when they appear.
+  - {id: kr-toeic-560-2026, tier: 3, name: 토익 제560회, name_en: TOEIC Test 560, start: 2026-01-11, interests: [undergrad, jobseeker], src: &toeic2026 https://www.toeicstory.co.kr/2523}
+  - {id: kr-toeic-561-2026, tier: 3, name: 토익 제561회, name_en: TOEIC Test 561, start: 2026-01-25, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-562-2026, tier: 3, name: 토익 제562회, name_en: TOEIC Test 562, start: 2026-02-01, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-563-2026, tier: 3, name: 토익 제563회, name_en: TOEIC Test 563, start: 2026-02-08, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-564-2026, tier: 3, name: 토익 제564회, name_en: TOEIC Test 564, start: 2026-02-28, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-565-2026, tier: 3, name: 토익 제565회, name_en: TOEIC Test 565, start: 2026-03-15, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-566-2026, tier: 3, name: 토익 제566회, name_en: TOEIC Test 566, start: 2026-03-29, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-567-2026, tier: 3, name: 토익 제567회, name_en: TOEIC Test 567, start: 2026-04-12, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-568-2026, tier: 3, name: 토익 제568회, name_en: TOEIC Test 568, start: 2026-04-26, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-569-2026, tier: 3, name: 토익 제569회, name_en: TOEIC Test 569, start: 2026-05-10, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-570-2026, tier: 3, name: 토익 제570회, name_en: TOEIC Test 570, start: 2026-05-31, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-571-2026, tier: 3, name: 토익 제571회, name_en: TOEIC Test 571, start: 2026-06-13, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-572-2026, tier: 3, name: 토익 제572회, name_en: TOEIC Test 572, start: 2026-06-28, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-573-2026, tier: 3, name: 토익 제573회, name_en: TOEIC Test 573, start: 2026-07-12, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-574-2026, tier: 3, name: 토익 제574회, name_en: TOEIC Test 574, start: 2026-07-26, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-575-2026, tier: 3, name: 토익 제575회, name_en: TOEIC Test 575, start: 2026-08-09, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-576-2026, tier: 3, name: 토익 제576회, name_en: TOEIC Test 576, start: 2026-08-23, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-577-2026, tier: 3, name: 토익 제577회, name_en: TOEIC Test 577, start: 2026-08-30, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-578-2026, tier: 3, name: 토익 제578회, name_en: TOEIC Test 578, start: 2026-09-06, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-579-2026, tier: 3, name: 토익 제579회, name_en: TOEIC Test 579, start: 2026-09-20, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-580-2026, tier: 3, name: 토익 제580회, name_en: TOEIC Test 580, start: 2026-10-11, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-581-2026, tier: 3, name: 토익 제581회, name_en: TOEIC Test 581, start: 2026-10-31, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-582-2026, tier: 3, name: 토익 제582회, name_en: TOEIC Test 582, start: 2026-11-15, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-583-2026, tier: 3, name: 토익 제583회, name_en: TOEIC Test 583, start: 2026-11-29, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-584-2026, tier: 3, name: 토익 제584회, name_en: TOEIC Test 584, start: 2026-12-13, interests: [undergrad, jobseeker], src: *toeic2026}
+  - {id: kr-toeic-585-2026, tier: 3, name: 토익 제585회, name_en: TOEIC Test 585, start: 2026-12-27, interests: [undergrad, jobseeker], src: *toeic2026}
+
+  # Checked on 2026-09-08 and not yet announced, so deliberately absent (re-check when they are):
+  #   2027학년도 1학기 국가장학금 1차 신청 (expected Nov-Dec 2026, kosaf.go.kr)
+  #   2027 토익 정기시험 일정 (exam.toeic.co.kr)
+  #   2027년 국가공무원 9급 공채 필기시험 (expected Dec 2026, gosi.kr)

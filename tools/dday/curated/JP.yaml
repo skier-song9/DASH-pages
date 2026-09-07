@@ -1,0 +1,11 @@
+# Curated (non-holiday) events for Japan. See curated/KR.yaml for the entry shapes.
+# 節分 falls on February 2 in some years (2025, 2029, ...); the rule keeps the usual February 3
+# because 2026 and 2027 are both regular years - revisit before publishing a year where it moves.
+
+country: JP
+events:
+  - {id: jp-valentines-day, tier: 2, name: バレンタインデー, name_en: Valentine's Day, rule: "02-14", interests: [romance]}
+  - {id: jp-white-day, tier: 2, name: ホワイトデー, name_en: White Day, rule: "03-14", interests: [romance]}
+  - {id: jp-setsubun, tier: 2, name: 節分, name_en: Setsubun, rule: "02-03", interests: []}
+  - {id: jp-tanabata, tier: 2, name: 七夕, name_en: Tanabata, rule: "07-07", interests: []}
+  - {id: jp-halloween, tier: 2, name: ハロウィン, name_en: Halloween, rule: "10-31", interests: []}
