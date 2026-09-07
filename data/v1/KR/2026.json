@@ -7,7 +7,7 @@
       "id": "kr-new-years-day-2026",
       "tier": 1,
       "cat": "holiday",
-      "name": "신정연휴",
+      "name": "신정",
       "name_en": "New Year's Day",
       "start": "2026-01-01",
       "dayoff": true
@@ -656,7 +656,7 @@
       "id": "kr-christmas-day-2026",
       "tier": 1,
       "cat": "holiday",
-      "name": "기독탄신일",
+      "name": "크리스마스",
       "name_en": "Christmas Day",
       "start": "2026-12-25",
       "dayoff": true

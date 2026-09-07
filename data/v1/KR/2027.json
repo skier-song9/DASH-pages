@@ -7,7 +7,7 @@
       "id": "kr-new-years-day-2027",
       "tier": 1,
       "cat": "holiday",
-      "name": "신정연휴",
+      "name": "신정",
       "name_en": "New Year's Day",
       "start": "2027-01-01",
       "dayoff": true
@@ -330,7 +330,7 @@
       "id": "kr-christmas-day-2027",
       "tier": 1,
       "cat": "holiday",
-      "name": "기독탄신일",
+      "name": "크리스마스",
       "name_en": "Christmas Day",
       "start": "2027-12-25",
       "dayoff": true
@@ -339,7 +339,7 @@
       "id": "kr-christmas-day-sub-2027",
       "tier": 1,
       "cat": "holiday",
-      "name": "기독탄신일 대체공휴일",
+      "name": "크리스마스 대체공휴일",
       "name_en": "Christmas Day (substitute)",
       "start": "2027-12-27",
       "dayoff": true,

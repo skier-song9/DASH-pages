@@ -47,6 +47,9 @@ Tier-1 processing:
 - Names the library marks "(estimated)" / "(추정)" lose the suffix and get `tentative: true`.
 - `not_dayoff` lists public days that are not days off (KR 제헌절 -> `dayoff: false`). 노동절 is
   kept with `dayoff: true` on purpose.
+- `display_names` swaps the library's statutory wording for what people actually say (KR 신정연휴 ->
+  신정, 기독탄신일 -> 크리스마스; a substitute built from a renamed base becomes 크리스마스 대체공휴일).
+  It runs last, after the official override, and touches `name` only: `name_en` and ids never move.
 - Ids are `{cc}-{slug-of-English-name}[-sub]-{year}` and never depend on the local-language text.
   A rare collision (two 国民の休日 in one year) inserts the month-day into the slug.
 

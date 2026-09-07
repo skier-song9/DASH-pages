@@ -15,6 +15,9 @@
 #                           source holiday (Japan's 振替休日); the id is linked to the Sunday holiday
 #                           that caused it.
 #   not_dayoff              English names of public days that are not days off (dayoff: false).
+#   display_names           Local-language tier-1 names to swap for the colloquial form after
+#                           generation ("신정연휴" -> "신정"). Applies to the plain name and to the
+#                           substitute label built from it; ids and name_en are never touched.
 #   official                Optional authoritative source that corrects tier 1. `data_go_kr` needs
 #                           the DATA_GO_KR_KEY environment variable (a GitHub secret in CI) and is
 #                           skipped with a log line when it is absent.
@@ -35,6 +38,11 @@ countries:
       en: "{base} (substitute)"
     # 제헌절 is a national day (국경일) but has not been a public day off since 2008.
     not_dayoff: ["Constitution Day"]
+    # The library prints the statutory wording; the sidebar should read the way people talk.
+    # Ids are derived from the English name, so renaming here never re-keys reactions.
+    display_names:
+      신정연휴: 신정
+      기독탄신일: 크리스마스
     official: data_go_kr
     official_names_en:
       1월1일: New Year's Day

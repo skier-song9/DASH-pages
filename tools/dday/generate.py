@@ -386,6 +386,37 @@ def disambiguate_ids(events: list[dict[str, Any]]) -> None:
             event["id"] = head + match.group(0)
 
 
+def rename_for_display(events: list[dict[str, Any]], cfg: dict[str, Any]) -> list[dict[str, Any]]:
+    """Swap statutory tier-1 names for the colloquial ones listed in ``display_names``.
+
+    The library prints the legal wording ("신정연휴", "기독탄신일") while the sidebar should read the
+    way people talk ("신정", "크리스마스"). This runs after generation and after the official
+    override, so days added from either source are covered, and it only touches ``name``: ids are
+    derived from the English name and ``name_en`` stays as the library wrote it. A substitute
+    built from a renamed base ("기독탄신일 대체공휴일") is rebuilt with the new base so the pair
+    reads consistently; family names such as 설날 and 추석 are simply not listed and pass through.
+    """
+    renames = cfg.get("display_names") or {}
+    if not renames:
+        return events
+    for old, new in renames.items():
+        if not isinstance(old, str) or not isinstance(new, str) or not old.strip() or not new.strip():
+            raise FeedError(f"display_names entries must map a name to a name, got {old!r}: {new!r}")
+    sub_label = (cfg.get("substitute_label") or {}).get("local")
+    for event in events:
+        if event.get("tier") != 1:
+            continue
+        name = event["name"]
+        for old, new in renames.items():
+            if name == old:
+                event["name"] = new
+                break
+            if sub_label and name == sub_label.format(base=old):
+                event["name"] = sub_label.format(base=new)
+                break
+    return events
+
+
 # --------------------------------------------------------------------------------------------
 # Tier 1 correction - official source (KR: 한국천문연구원 특일정보 API)
 # --------------------------------------------------------------------------------------------
@@ -667,6 +698,8 @@ def generate(out_dir: Path, config: dict[str, Any], curated_dir: Path, years: li
                     official = fetch_data_go_kr(kr_key, year)
                     if official is not None:
                         events = apply_official(cc, year, events, official, cfg)
+            # Display names are the last tier-1 step so they also cover days the official source added.
+            events = rename_for_display(events, cfg)
             events += curated_events(cc, year, curated_doc)
 
             path = out_dir / cc / f"{year}.json"

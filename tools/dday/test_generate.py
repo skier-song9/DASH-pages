@@ -113,6 +113,30 @@ class KoreaHolidayTests(unittest.TestCase):
         for ident in self.events:
             self.assertRegex(ident, g.ID_RE)
 
+    def test_display_names_swap_statutory_wording_but_keep_ids_and_english(self):
+        # 2027 has a Christmas substitute, which exercises the rebuilt substitute label.
+        raw = g.holiday_events("KR", 2027, CONFIG["KR"])
+        before = {e["id"]: (e["name_en"], e["start"], e.get("end")) for e in raw}
+        events = by_id(g.rename_for_display(raw, CONFIG["KR"]))
+        self.assertEqual(events["kr-new-years-day-2027"]["name"], "신정")
+        self.assertEqual(events["kr-christmas-day-2027"]["name"], "크리스마스")
+        self.assertEqual(events["kr-christmas-day-sub-2027"]["name"], "크리스마스 대체공휴일")
+        # Names that are not listed pass through untouched, ranges included.
+        self.assertEqual(events["kr-korean-new-year-2027"]["name"], "설날")
+        self.assertEqual(events["kr-chuseok-2027"]["name"], "추석")
+        self.assertEqual(events["kr-buddhas-birthday-2027"]["name"], "부처님오신날")
+        self.assertEqual(events["kr-independence-movement-day-2027"]["name"], "삼일절")
+        # Every id, English name and date is exactly what it was before the pass.
+        self.assertEqual({i: (e["name_en"], e["start"], e.get("end")) for i, e in events.items()}, before)
+
+    def test_display_names_only_touch_tier_one_and_are_a_no_op_without_config(self):
+        raw = g.holiday_events("KR", 2026, CONFIG["KR"])
+        self.assertEqual(g.rename_for_display([dict(e) for e in raw], {}), raw)
+        curated = {"id": "kr-x", "tier": 2, "cat": "event", "name": "기독탄신일", "name_en": "x", "rule": "12-25", "interests": []}
+        self.assertEqual(g.rename_for_display([dict(curated)], CONFIG["KR"]), [curated])
+        with self.assertRaises(g.FeedError):
+            g.rename_for_display(list(raw), {"display_names": {"신정연휴": ""}})
+
 
 class OtherCountryHolidayTests(unittest.TestCase):
     def test_us_observed_holidays_are_substitutes(self):
@@ -323,6 +347,10 @@ class AssemblyTests(unittest.TestCase):
             self.assertIn("kr-chuseok-2026", ids)
             self.assertIn("kr-pepero-day", ids)
             self.assertIn("kr-suneung-2026", ids)
+            # The written file carries the colloquial display names, with English untouched.
+            names = {e["id"]: (e["name"], e["name_en"]) for e in kr["events"]}
+            self.assertEqual(names["kr-new-years-day-2026"], ("신정", "New Year's Day"))
+            self.assertEqual(names["kr-christmas-day-2026"], ("크리스마스", "Christmas Day"))
 
     def test_partial_run_keeps_other_countries_in_the_manifest(self):
         with tempfile.TemporaryDirectory() as tmp:
