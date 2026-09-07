@@ -7,7 +7,7 @@
   <meta name="description" content="Session and weekly limits for Claude Code and Codex, drawn as ticked gauges. Flip between usage and remaining, and see when you'll run out at your current pace.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="Usage dashboard — DASH">
-  <link rel="stylesheet" href="../../style.css?v=20260814">
+  <link rel="stylesheet" href="../../style.css?v=20260908">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -24,6 +24,7 @@
         <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="dashboard.html">Usage dashboard</a>
+          <a href="dday.html">D-Day</a>
           <a class="all" href="../#features">All features</a>
         </div>
       </div>
@@ -298,6 +299,20 @@
     </ul>
   </section>
 
+  <section class="fend wrap">
+    <h2>Other features</h2>
+    <div class="grid">
+      <a class="card" href="dday.html">
+        <div class="icon" aria-hidden="true">●○★</div>
+        <h3>D-Day</h3>
+        <p>Upcoming holidays, events and your own calendar as dots on a timeline beside the cards.
+        Today on top, the near future spread wide. Tap to add a day to your calendar;
+        long-press to react anonymously.</p>
+        <span class="more">Details →</span>
+      </a>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -400,6 +415,18 @@
       }
     });
   });
+})();
+
+// the cross-link card at the bottom fades up on scroll, as on the home page
+(function () {
+  var cards = [].slice.call(document.querySelectorAll(".card"));
+  if (!("IntersectionObserver" in window)) { cards.forEach(function (c) { c.classList.add("show"); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add("show"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(function (c) { io.observe(c); });
 })();
 </script>
 </body>

@@ -7,7 +7,7 @@
   <meta name="description" content="Claude Code와 Codex의 세션·주간 한도를 눈금 게이지로 보여줍니다. 사용량과 잔여량을 바꿔 볼 수 있고, 지금 속도라면 언제 소진되는지 예상치로 알려줍니다.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="사용량 대시보드 — DASH">
-  <link rel="stylesheet" href="../style.css?v=20260814">
+  <link rel="stylesheet" href="../style.css?v=20260908">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -24,6 +24,7 @@
         <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="dashboard.html">사용량 대시보드</a>
+          <a href="dday.html">D-Day</a>
           <a class="all" href="../#features">기능 전체 보기</a>
         </div>
       </div>
@@ -289,6 +290,20 @@
     </ul>
   </section>
 
+  <section class="fend wrap">
+    <h2>다른 기능</h2>
+    <div class="grid">
+      <a class="card" href="dday.html">
+        <div class="icon" aria-hidden="true">●○★</div>
+        <h3>D-Day</h3>
+        <p>다가오는 휴일·이벤트·내 일정을 카드 옆 타임라인에 점으로 세웁니다.
+        오늘이 맨 위, 가까운 날이 넓게. 탭하면 캘린더에 추가하고,
+        길게 누르면 익명으로 반응을 남깁니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -391,6 +406,18 @@
       }
     });
   });
+})();
+
+// the cross-link card at the bottom fades up on scroll, as on the home page
+(function () {
+  var cards = [].slice.call(document.querySelectorAll(".card"));
+  if (!("IntersectionObserver" in window)) { cards.forEach(function (c) { c.classList.add("show"); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add("show"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(function (c) { io.observe(c); });
 })();
 </script>
 </body>

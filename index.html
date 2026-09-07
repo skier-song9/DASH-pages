@@ -8,7 +8,7 @@
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
-  <link rel="stylesheet" href="style.css?v=20260814">
+  <link rel="stylesheet" href="style.css?v=20260908">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -36,6 +36,7 @@
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">사용량 대시보드</a>
+          <a href="features/dday.html">D-Day</a>
           <a class="all" href="./#features">기능 전체 보기</a>
         </div>
       </div>
@@ -99,7 +100,8 @@
       <ul>
         <li>AI 코딩 도구(Claude Code, Codex, Antigravity)의 세션·주간·모델별 사용 한도를 게이지로 보여줍니다</li>
         <li>지금 속도라면 언제 소진되는지 예측하고, 남은 양이 줄면 화면 가장자리가 물듭니다</li>
-        <li>구독·설치형 서비스가 아닌 개인 도구이며, 별도 서버에 데이터를 저장하지 않습니다</li>
+        <li>다가오는 휴일·이벤트·캘린더 일정을 D-Day 타임라인으로 카드 옆에 세워 둡니다</li>
+        <li>구독·설치형 서비스가 아닌 개인 도구이며, 사용자를 식별할 수 있는 데이터를 서버에 저장하지 않습니다</li>
       </ul>
     </div>
   </section>
@@ -125,17 +127,26 @@
         카드를 길게 눌러 끌면 주로 쓰는 구독을 맨 위에 둘 수 있습니다.</p>
         <span class="more">자세히 →</span>
       </a>
+      <a class="card" href="features/dday.html">
+        <div class="icon" aria-hidden="true">●○★</div>
+        <h3>D-Day</h3>
+        <p>다가오는 휴일·이벤트·내 일정을 카드 옆 타임라인에 점으로 세웁니다.
+        오늘이 맨 위, 가까운 날이 넓게. 탭하면 캘린더에 추가하고,
+        길게 누르면 익명으로 반응을 남깁니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
     </div>
   </section>
 
   <section class="privacy-strip wrap">
     <h2>프라이버시 <span>// 설계부터</span></h2>
     <div class="strip">
-      <p>DASH는 서버에 사용자 데이터를 저장하지 않습니다.</p>
+      <p>DASH는 사용자를 식별할 수 있는 데이터를 서버에 저장하지 않습니다.</p>
       <ul>
-        <li>사용량 데이터는 기기 안에서만 처리·보관됩니다</li>
+        <li>사용량 데이터와 캘린더 일정은 기기 안에서만 처리·보관됩니다</li>
         <li>OAuth 토큰은 iOS Keychain · Android EncryptedSharedPreferences에 암호화 저장됩니다</li>
-        <li>앱은 각 AI 서비스의 사용량 API 외에 어떤 서버와도 통신하지 않습니다</li>
+        <li>앱이 통신하는 곳은 각 AI 서비스의 사용량 API, 휴일·이벤트 목록을 내려받는 dash-worklife.org, 그리고 익명 반응을 받는 집계 서버뿐입니다</li>
+        <li>이벤트 👍/👎 반응은 계정·기기 식별 정보 없이 익명으로만 보냅니다</li>
         <li>광고·트래킹·분석 SDK가 없습니다</li>
       </ul>
     </div>

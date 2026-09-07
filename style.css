@@ -786,3 +786,168 @@ a.card:hover .more { text-decoration: underline; }
   .swatch:hover { transform: none; }
   .glance-glow.pulsing, .glance-glow.pulsing-3 { animation: none; opacity: .8; }
 }
+
+/* ==========================================================================
+   D-Day sidebar mock (features/dday.html)
+   The Unread chassis (.sbdemo / .sb / .sb-rail) is reused as the frame; only
+   the contents are new. Colour rule from the app: the gauge ramp never appears
+   in the sidebar — one accent (#64D2FF) marks today/tomorrow, the today line
+   and the sandwich bridge, everything else is white or secondary.
+   ========================================================================== */
+.sb.dd, .dd-frame {
+  --dd-accent: #64D2FF;
+  --dd-sec: rgba(235,235,245,.6);
+}
+/* --dd-text: in the app this equals the usage card's percent size × layout
+   scale (21pt with two cards); slightly smaller here so the mono web font fits.
+   --dd-w: the app's expanded sidebar is 260pt. The English pages shrink the type
+   and widen the box because this monospace face is ~20% wider for Latin text
+   than the app's SF Pro — otherwise the mock truncates names the app shows. */
+.sb.dd { flex: 0 0 var(--dd-w, 260px); width: var(--dd-w, 260px); padding: 14px 12px; }
+html[lang="en"] .sb.dd, html[lang="en"] .dd-frame { --dd-text: 15px; --dd-w: 292px; }
+.sbdemo[data-collapsed="true"] .sb.dd { flex-basis: 0; width: 0; padding-left: 0; padding-right: 0; }
+.sb-rail button {
+  border: 0; background: none; color: var(--muted); font-family: var(--mono);
+  font-size: 18px; line-height: 1; padding: 2px 8px; cursor: pointer; border-radius: 6px;
+}
+.sb-rail button:hover { color: var(--text); background: rgba(255,255,255,.08); }
+.dd-frame {
+  position: relative; width: var(--dd-w, 260px); max-width: 100%; min-height: 300px; padding: 14px 12px;
+  border: 1px solid var(--line); border-radius: 12px; background: #0e0e0e; overflow: hidden;
+}
+.dd-frame.dim .dd-tl { opacity: .35; }
+.dd-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; min-height: 24px; }
+.dd-head h3, .dd-head .t { font-size: 15px; font-weight: 700; margin: 0; margin-right: auto; }
+.dd-head .flag { font-size: 14px; margin-right: -2px; }
+.dd-head .cnt { font-size: 12px; color: var(--dd-sec); margin-left: -4px; margin-right: auto; }
+.dd-head .back {
+  border: 0; background: none; color: var(--dd-sec); font-family: var(--mono);
+  font-size: 18px; line-height: 1; padding: 0 4px 0 0; cursor: pointer;
+}
+.dd-head .back:hover { color: var(--text); }
+.dd-pane[hidden] { display: none; }
+
+/* --- rows: shared by the timeline (absolute) and the list (stacked) -------- */
+.dd-row { display: flex; align-items: flex-start; gap: 8px; font-size: var(--dd-text, 18px); min-width: 0; }
+.dd-row .g { flex: none; display: flex; justify-content: flex-end; padding-top: 8px; }
+.dd-row .g i { display: block; width: 9px; height: 9px; border-radius: 50%; background: #000; box-shadow: 0 0 0 1px rgba(255,255,255,.35); }
+.dd-row.hol .g i { background: #fff; box-shadow: none; }                    /* ● holiday */
+.dd-row.ev .g i, .dd-row.agg .g i { background: #000; box-shadow: 0 0 0 1.5px #fff; }  /* ○ event */
+.dd-row.cal .g i { width: auto; height: auto; border-radius: 0; background: none; box-shadow: none; }  /* ★ my calendar */
+.dd-row.cal .g i::before { content: "★"; display: block; font-size: 12px; line-height: 9px; margin-top: -2px; color: var(--dd-sec); }
+.dd-row .txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.dd-row .nm { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; line-height: 1.2; color: #fff; }
+.dd-row.ev .nm, .dd-row.agg .nm { font-weight: 500; }
+.dd-row.cal .nm { font-weight: 500; color: var(--dd-sec); }
+.dd-row.agg .nm .cnt { font-weight: 700; }
+.dd-row .w { font-size: 11px; color: var(--dd-sec); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.dd-row .d { flex: none; font-weight: 700; font-size: var(--dd-text, 18px); line-height: 1.2; letter-spacing: -.02em; font-variant-numeric: tabular-nums; color: #fff; }
+.dd-row .d.today { color: var(--dd-accent); }
+.dd-row .tag {
+  display: inline-block; vertical-align: middle; margin-left: 6px; padding: 0 4px;
+  border: 1px solid rgba(255,255,255,.2); border-radius: 5px;
+  font-size: 9px; line-height: 13px; font-weight: 400; color: var(--dd-sec);
+}
+.dd-row .tag.tent { border-style: dashed; }
+.dd-row .open {
+  flex: none; align-self: center; border: 0; background: none; padding: 0;
+  font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--dd-accent);
+  white-space: nowrap; cursor: pointer;
+}
+.dd-row .open:hover { text-decoration: underline; }
+.dd-row.far { opacity: .55; }
+
+/* --- timeline: axis on the left, today at the top, non-linear spacing ------ */
+.dd-tl { position: relative; height: 330px; }
+.dd-tl .axis { position: absolute; left: 40px; top: 4px; bottom: 0; width: 1px; background: rgba(255,255,255,.14); }
+.dd-tl .now {
+  position: absolute; left: 0; top: 0; width: 45px; height: 8px;
+  display: flex; align-items: center; justify-content: flex-end; gap: 4px;
+  font-size: 9px; color: var(--dd-accent);
+}
+.dd-tl .now i { display: block; width: 9px; height: 2px; background: var(--dd-accent); }
+.dd-tl .now-date { position: absolute; left: 54px; top: -2px; font-size: 10px; color: var(--dd-sec); }
+.dd-tl .tick { position: absolute; left: 36px; width: 9px; height: 1px; background: rgba(255,255,255,.22); }
+.dd-tl .tick span { position: absolute; right: 14px; top: -6px; font-size: 9px; color: rgba(235,235,245,.4); white-space: nowrap; }
+.dd-tl .dd-row { position: absolute; left: 0; right: 0; height: 42px; }
+.dd-tl .dd-row .g { width: 50px; padding-right: 5px; }
+/* sandwich day: the axis between two holiday dots thickens, plus one line below */
+.dd-tl .bridge-axis { position: absolute; left: 39px; width: 3px; border-radius: 2px; background: var(--dd-accent); opacity: .85; }
+.dd-tl .dd-row.bridge { height: 20px; align-items: center; font-size: 11px; color: var(--dd-sec); }
+.dd-tl .dd-row.bridge .g { padding-top: 0; }
+.dd-tl .dd-row.bridge .g i { width: 5px; height: 5px; background: var(--dd-accent); box-shadow: none; }
+.dd-tl .dd-row.bridge b { color: #fff; font-weight: 600; }
+.dd-tl .later { position: absolute; left: 0; right: 0; display: flex; gap: 8px; align-items: center; font-size: 10px; color: rgba(235,235,245,.45); }
+.dd-tl .later .g { flex: none; width: 50px; text-align: right; padding-right: 3px; letter-spacing: -1px; }
+
+/* --- list mode: the axis is gone, the same ticks become section headers ---- */
+.dd-list { position: relative; height: 330px; overflow: hidden; }
+.dd-list .inner { height: 100%; overflow-y: auto; padding-bottom: 40px; scrollbar-width: none; }
+.dd-list .inner::-webkit-scrollbar { display: none; }
+.dd-list .sec { font-size: 10px; letter-spacing: .04em; color: rgba(235,235,245,.4); padding: 10px 0 4px 4px; }
+.dd-list .dd-row { padding: 5px 4px; border-radius: 8px; }
+.dd-list .dd-row .g { width: 20px; justify-content: center; }
+.dd-list .dd-row.held { background: rgba(255,255,255,.07); }
+/* same grammar as the card scroll fade: "there is more below" */
+.dd-list .fade-b {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 48px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(14,14,14,0), #0e0e0e);
+}
+
+/* --- long-press menu and the tap detail card ----------------------------- */
+.dd-menu {
+  position: absolute; right: 14px; width: 176px; z-index: 3; padding: 4px 0;
+  background: rgba(44,44,46,.97); border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.7);
+  font-size: 13px; color: #fff;
+}
+.dd-menu div { display: flex; align-items: center; gap: 8px; padding: 8px 12px; }
+.dd-menu div + div { border-top: 1px solid rgba(255,255,255,.1); }
+.dd-menu .off { color: #ff6b6b; }
+.dd-detail {
+  position: absolute; left: 12px; right: 12px; top: 58px; z-index: 3; padding: 12px 14px;
+  background: rgba(44,44,46,.97); border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.7);
+}
+.dd-detail .cat { font-size: 11px; color: var(--dd-sec); }
+.dd-detail .name { margin-top: 2px; font-size: 19px; font-weight: 700; line-height: 1.25; color: #fff; }
+.dd-detail .name .d { margin-left: 6px; font-size: 15px; font-weight: 700; color: var(--dd-sec); }
+.dd-detail .when { font-size: 12px; color: var(--dd-sec); }
+.dd-detail .btns { display: flex; gap: 8px; margin-top: 12px; }
+.dd-detail .btns span { flex: 1; text-align: center; padding: 7px 0; border-radius: 8px; background: rgba(255,255,255,.1); font-size: 12px; color: #fff; }
+.dd-detail .btns .primary { background: var(--dd-accent); color: #000; font-weight: 700; }
+
+/* --- first open: interest chips ------------------------------------------ */
+.dd-ask { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
+.dd-ask .q { font-size: 15px; font-weight: 700; line-height: 1.3; color: #fff; }
+.dd-ask .h { font-size: 11px; color: var(--dd-sec); line-height: 1.45; }
+.dd-ask .chips { margin-top: 0; gap: 6px; }
+.dd-ask .chip { font-size: 12px; padding: 5px 10px; border-color: rgba(255,255,255,.16); background: none; color: var(--dd-sec); }
+.dd-ask .chip:hover { border-color: rgba(255,255,255,.35); color: #fff; }
+.dd-ask .chip[aria-pressed="true"] { background: rgba(100,210,255,.16); border-color: rgba(100,210,255,.55); color: #fff; font-weight: 500; }
+.dd-ask .go {
+  align-self: flex-end; border: 0; border-radius: 8px; padding: 6px 14px;
+  background: var(--dd-accent); color: #000; font-family: var(--mono); font-size: 12px; font-weight: 700; cursor: default;
+}
+
+/* --- Settings ▸ D-Day mock ----------------------------------------------- */
+.dd-form { max-width: 380px; font-size: 13px; }
+.dd-form .sec { padding: 14px 12px 6px; font-size: 11px; letter-spacing: .06em; color: var(--muted); }
+.dd-form .sec:first-child { padding-top: 0; }
+.dd-form .group { border: 1px solid var(--line); border-radius: 10px; background: #111; overflow: hidden; }
+.dd-form .cell { display: flex; align-items: center; gap: 10px; padding: 9px 12px; }
+.dd-form .cell + .cell { border-top: 1px solid var(--line); }
+.dd-form .cell .name { flex: 1; }
+.dd-form .cell .val { font-size: 12px; color: var(--muted); text-align: right; }
+/* system tint, as in the OS settings list — not the D-Day accent */
+.dd-form .cell .val.on, .dd-form .cell .chk { color: #0A84FF; }
+.dd-form .cell .n { width: 14px; font-size: 11px; color: var(--muted); }
+.dd-form .mv {
+  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
+  border-radius: 6px; background: rgba(255,255,255,.08); font-size: 11px;
+}
+.dd-form .mv.dis { opacity: .3; }
+.dd-form .foot { padding: 6px 12px 0; font-size: 11px; line-height: 1.5; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .sb.dd { flex: 1 1 auto; width: auto; }
+  .dd-frame { width: 100%; }
+}

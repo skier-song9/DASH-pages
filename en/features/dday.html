@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D-Day — DASH</title>
+  <meta name="description" content="Upcoming holidays, events and your own calendar as dots on a timeline beside the usage cards. Today on top, the near future spread wide. Tap to add to your calendar; long-press to react anonymously.">
+  <meta property="og:site_name" content="DASH">
+  <meta property="og:title" content="D-Day — DASH">
+  <link rel="stylesheet" href="../../style.css?v=20260908">
+  <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dday.html">
+  <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dday.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../">DASH</a>
+    <nav class="nav-links" id="site-nav">
+      <a href="../#demo">Demo</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="dashboard.html">Usage dashboard</a>
+          <a href="dday.html">D-Day</a>
+          <a class="all" href="../#features">All features</a>
+        </div>
+      </div>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../terms.html">Terms</a>
+      <a class="lang" href="../../features/dday.html">한국어</a>
+    </nav>
+    <button class="navtoggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="navtoggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">Open menu</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="../">Home</a><span>/</span><a href="../#features">Features</a><span>/</span>D-Day</p>
+  </div>
+
+  <section class="fhero wrap">
+    <p class="eyebrow">Feature 02</p>
+    <h1>D-Day</h1>
+    <p class="sub">To the right of the usage cards, upcoming <b>holidays · events · your calendar</b> stand as dots on a
+    time axis. Today is at the top, and the nearer a day is the more room it gets. When the dots crowd the top,
+    you're about to be busy — the shape says so before you read a word.</p>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>The screen <span>// dots on a time axis, beside the cards</span></h2>
+    <p>The vertical line on the left of the sidebar is <b>time</b>. Today is at the top; the ticks read
+    <b>today · 1 week · 1 month · 3 months</b>. The axis is non-linear: the coming week takes half the screen and
+    three months out folds into a few pixels. Each day is one dot on the axis, and the dot's shape is its category —
+    <b>● holiday · ○ event · ★ my calendar</b>. The card column does not move by a single pixel.</p>
+
+    <div class="panel">
+      <div class="ctrlbar">
+        <span class="ctrl-label">Sidebar</span>
+        <fieldset class="seg">
+          <legend class="sr-only">Sidebar mode</legend>
+          <input type="radio" name="ddmode" id="ddmode-tl" value="tl" checked>
+          <label for="ddmode-tl">Timeline</label>
+          <input type="radio" name="ddmode" id="ddmode-list" value="list">
+          <label for="ddmode-list">Schedule</label>
+        </fieldset>
+        <button class="iconbtn" type="button" id="dd-collapse" aria-pressed="false" aria-label="Collapse or expand the sidebar" title="Collapse / expand">›</button>
+      </div>
+
+      <div class="sbdemo" id="dd-demo" data-collapsed="false">
+        <div class="sbstage" aria-hidden="true">
+          <div class="ghost-label">usage cards — unchanged</div>
+          <div class="ghost a"></div>
+          <div class="ghost b"></div>
+        </div>
+
+        <aside class="sb dd" aria-label="D-Day sidebar preview">
+          <!-- timeline mode -->
+          <div class="dd-pane" id="dd-pane-tl">
+            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-tl">
+              <div class="axis"></div>
+              <div class="now">today<i></i></div><div class="now-date">Wed 9/9</div>
+              <div class="dd-row cal" style="top:22px"><span class="g"><i></i></span><span class="txt"><span class="nm">Team weekly</span><span class="w">tomorrow 14:00</span></span><span class="d today">D-1</span></div>
+              <div class="dd-row agg" style="top:66px"><span class="g"><i></i></span><span class="txt"><span class="nm">Events <span class="cnt">4</span></span><span class="w">Fireworks tomorrow · Scholarship D-9 · Pepero Day …</span></span><button class="open" type="button" data-ddmode="list">Open schedule ›</button></div>
+              <div class="tick" style="top:140px"><span>1 wk</span></div>
+              <div class="dd-row hol" style="top:164px"><span class="g"><i></i></span><span class="txt"><span class="nm">Chuseok</span><span class="w">Thu 9/24 – Sat 9/26</span></span><span class="d">D-15</span></div>
+              <div class="tick" style="top:209px"><span>1 mo</span></div>
+              <div class="bridge-axis" style="top:218px;height:44px"></div>
+              <div class="dd-row hol" style="top:210px"><span class="g"><i></i></span><span class="txt"><span class="nm">Foundation Day<span class="tag">sub</span></span><span class="w">Mon 10/5</span></span><span class="d">D-26</span></div>
+              <div class="dd-row hol" style="top:254px"><span class="g"><i></i></span><span class="txt"><span class="nm">Hangul Day</span><span class="w">Fri 10/9</span></span><span class="d">D-30</span></div>
+              <div class="dd-row bridge" style="top:298px"><span class="g"><i></i></span><span class="nm"><b>Leave 10/6–8</b> → 9 days off</span></div>
+              <div class="later" style="top:318px"><span class="g">···</span><span>Christmas D-107 · Seollal D-150</span></div>
+            </div>
+          </div>
+
+          <!-- list mode ("Open schedule") -->
+          <div class="dd-pane" id="dd-pane-list" hidden>
+            <div class="dd-head"><button class="back" type="button" data-ddmode="tl" aria-label="Back to the timeline">‹</button><span class="t">Schedule</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-list">
+              <div class="inner">
+                <div class="sec">today · tomorrow</div>
+                <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">Fireworks festival</span><span class="w">Thu 9/10</span></span><span class="d today">D-1</span></div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Team weekly</span><span class="w">tomorrow 14:00</span></span><span class="d today">D-1</span></div>
+                <div class="sec">1 week</div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Dentist</span><span class="w">Sat 9/12 10:30</span></span><span class="d">D-3</span></div>
+                <div class="sec">1 month</div>
+                <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">Scholarship deadline</span><span class="w">Fri 9/18</span></span><span class="d">D-9</span></div>
+                <div class="dd-row hol"><span class="g"><i></i></span><span class="txt"><span class="nm">Chuseok</span><span class="w">Thu 9/24 – Sat 9/26</span></span><span class="d">D-15</span></div>
+                <div class="dd-row hol"><span class="g"><i></i></span><span class="txt"><span class="nm">Foundation Day<span class="tag">sub</span></span><span class="w">Mon 10/5</span></span><span class="d">D-26</span></div>
+                <div class="dd-row hol"><span class="g"><i></i></span><span class="txt"><span class="nm">Hangul Day</span><span class="w">Fri 10/9 · leave 3 → 9 off</span></span><span class="d">D-30</span></div>
+                <div class="sec">3 months</div>
+                <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">Pepero Day</span><span class="w">Wed 11/11</span></span><span class="d">D-63</span></div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Club retreat</span><span class="w">Sat 11/21 all day</span></span><span class="d">D-73</span></div>
+                <div class="sec">later</div>
+                <div class="dd-row hol far"><span class="g"><i></i></span><span class="txt"><span class="nm">Christmas</span><span class="w">Fri 12/25</span></span><span class="d">D-107</span></div>
+                <div class="dd-row hol far"><span class="g"><i></i></span><span class="txt"><span class="nm">Seollal</span><span class="w">Sat 2/6 – Mon 2/8</span></span><span class="d">D-150</span></div>
+              </div>
+              <div class="fade-b" aria-hidden="true"></div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="sb-rail"><button type="button" data-collapse="false" aria-label="Expand the sidebar">‹</button></div>
+      </div>
+      <p class="caption">The toggle, the › button and "Open schedule ›" really work. Same gestures as the app — the cards stay put, only the sidebar changes.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>Shape is the category</b> — ● holiday (filled) · ○ event (ring) · ★ my calendar. Because shape does that
+      job, colour is spent in exactly one place.</li>
+      <li><b>Colour only for today and tomorrow</b> — the D-n of today and tomorrow, the today marker, and the
+      break bridge below are light blue. The green-to-red ramp of the usage gauges never appears in the sidebar:
+      D-Day is not a warning.</li>
+      <li><b>Type the size of the cards</b> — names and D-n are the same size as the percent figures on the cards
+      next door, so they read from the same distance; the trade-off is about six items on screen at once.
+      The date and time on the second line are small.</li>
+      <li><b>Tags</b> — <code>sub</code> (substitute holiday) and <code>temp</code> (one-off holiday) have a solid
+      border; <code>tentative</code> (not yet confirmed) is dashed.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>Reading the timeline <span>// the near future is wide</span></h2>
+    <p>An item is two lines. The first is the <b>name and D-n</b>; the second is the date (and the time, for your
+    own calendar). When two days sit so close their text would overlap, the later one is pushed down so nothing
+    is covered — so a dot's vertical position means "around then", and the second line gives the exact date.</p>
+    <p><b>Events are folded.</b> The dots on the default screen are holidays and your calendar; events gather
+    into a single ○ at the position of the nearest one — "Events 4" plus the names of the closest two or three
+    are visible at a glance, and the rest are one tap away behind <b>"Open schedule ›"</b>.</p>
+    <p><b>The break bridge.</b> When only one to three workdays separate two holidays and bridging them with
+    leave gives you five or more days off in a row, the axis between the two dots thickens and a line appears
+    underneath: <code>Leave 10/6–8 → 9 days off</code>. DASH did the arithmetic; you only decide.</p>
+
+    <ul class="klist">
+      <li><b>The "···" line</b> — anything past three months folds into one line naming the next two items and their D-n.</li>
+      <li><b>When space runs out</b> — items that don't fit on the axis go into the "···" line, starting with the
+      category you placed lowest in <a class="inline" href="#settings">Settings › Category order</a> and the
+      farthest dates first. The list always shows everything.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>Open schedule <span>// the same ticks become section headers</span></h2>
+    <p>Tap "Open schedule ›" and the axis disappears; the same ticks — <b>today · tomorrow / 1 week / 1 month /
+    3 months / later</b> — become section headers, and all three categories interleave by date in one list.
+    There's no limit on items, and it scrolls <b>inside the sidebar only</b>; the card column stays where it is.
+    The fade at the bottom means "more below", and <b>‹</b> in the header takes you back to the timeline.</p>
+    <p>The "Schedule" toggle in the demo above is this screen. The long-press menu described further down lives here.</p>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>Tap <span>// the detail card, and adding to your calendar</span></h2>
+    <p>Tap a holiday or event dot and a <b>detail card</b> opens inside the sidebar: category and country, name
+    and D-n, the date range, and two buttons — <b>Add to Calendar</b> and Close. Tap one of your own calendar
+    items (★) and, instead of a card, the event opens in the <b>calendar event view</b> — the operating system's
+    own screen, so location, attendees and alerts look exactly as they do in the Calendar app.</p>
+
+    <ol class="steps">
+      <li><div class="stepbox"><span class="n">01</span><span class="t">Tap a holiday or event</span></div><span class="arrow" aria-hidden="true">→</span></li>
+      <li><div class="stepbox"><span class="n">02</span><span class="t">Detail card</span></div><span class="arrow" aria-hidden="true">→</span></li>
+      <li><div class="stepbox"><span class="n">03</span><span class="t">Add to Calendar</span></div><span class="arrow" aria-hidden="true">→</span></li>
+      <li><div class="stepbox"><span class="n">04</span><span class="t">Save in the calendar editor</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    </ol>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div>
+          <div class="dd-frame dim" aria-label="Holiday detail card preview">
+            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-tl" style="height:220px" aria-hidden="true">
+              <div class="axis"></div>
+              <div class="now">today<i></i></div><div class="now-date">Wed 9/9</div>
+              <div class="dd-row cal" style="top:22px"><span class="g"><i></i></span><span class="txt"><span class="nm">Team weekly</span><span class="w">tomorrow 14:00</span></span><span class="d today">D-1</span></div>
+              <div class="dd-row hol" style="top:164px"><span class="g"><i></i></span><span class="txt"><span class="nm">Chuseok</span><span class="w">Thu 9/24 – Sat 9/26</span></span><span class="d">D-15</span></div>
+            </div>
+            <div class="dd-detail">
+              <div class="cat">● Holiday · South Korea</div>
+              <div class="name">Chuseok<span class="d">D-15</span></div>
+              <div class="when">Thu, Sep 24 – Sat, Sep 26 · 3 days</div>
+              <div class="btns"><span class="primary">Add to Calendar</span><span>Close</span></div>
+            </div>
+          </div>
+          <p class="caption">The detail card that opens when you tap a holiday or event. The light-blue button is "Add to Calendar".</p>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>Add to Calendar</b> opens the operating system's event editor with the title and dates already
+            filled in. Pick which calendar it goes into and tap <b>Save</b> — that's it. If you don't tap Save,
+            nothing is created; DASH never writes an event on its own.</li>
+            <li><b>Permission, once.</b> The first time you add something, the system asks whether to allow
+            calendar access. On iOS this is an <i>add-only</i> permission, so even if you haven't connected your
+            calendar in Settings, DASH can add without reading any existing events. If you already connected
+            your calendar, you aren't asked again.</li>
+            <li><b>Tapping a calendar item</b> → the calendar event view. Editing or deleting happens there,
+            the same way as in the Calendar app.</li>
+            <li>Tapping the card column on the left does nothing to the sidebar. The sidebar is operated only from inside itself.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="reactions">
+    <h2>Long-press <span>// 👍 Useful · 👎 Not for me · turn off an interest</span></h2>
+    <p>In the schedule list, long-press an <b>○ event</b> row and a three-item menu appears. Holiday and calendar
+    rows have no menu — holidays belong to everyone and your calendar is already yours, so there's nothing to ask.</p>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div>
+          <div class="dd-frame" aria-label="Long-press menu preview">
+            <div class="dd-head"><span class="back" aria-hidden="true" style="font-size:18px;color:var(--dd-sec)">‹</span><span class="t">Schedule</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-list" style="height:230px" aria-hidden="true">
+              <div class="inner">
+                <div class="sec">today · tomorrow</div>
+                <div class="dd-row ev held"><span class="g"><i></i></span><span class="txt"><span class="nm">Fireworks festival</span><span class="w">Thu 9/10</span></span><span class="d today">D-1</span></div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Team weekly</span><span class="w">tomorrow 14:00</span></span><span class="d today">D-1</span></div>
+                <div class="sec">1 week</div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Dentist</span><span class="w">Sat 9/12 10:30</span></span><span class="d">D-3</span></div>
+              </div>
+            </div>
+            <div class="dd-menu" style="top:92px" role="img" aria-label="Menu: 👍 Useful, 👎 Not for me, Turn off Festivals">
+              <div>👍 Useful</div>
+              <div>👎 Not for me</div>
+              <div class="off">Turn off Festivals</div>
+            </div>
+          </div>
+          <p class="caption">"Fireworks festival" held down. The third line names whichever interest that event belongs to.</p>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>👍 Useful</b> — one vote saying "glad I was told about this day".</li>
+            <li><b>👎 Not for me</b> — one vote saying "this has nothing to do with me".</li>
+            <li><b>Turn off Festivals</b> — switches off the interest that event belongs to ("Festivals" here).
+            It's the same as switching it off under <a class="inline" href="#interests">Settings › Interests</a>:
+            events of that kind leave the timeline and the list. You can switch it back on in Settings any time.</li>
+            <li>One device counts <b>once per event</b>. Pressing again doesn't add another vote.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip" style="margin-top:22px">
+      <p><b>Reactions are always anonymous.</b> Exactly five things go to the server —
+      event ID · reaction (👍 / 👎 / off) · country code · platform (iOS / Android) · app version.</p>
+      <ul>
+        <li>No account, e-mail, name, device ID, advertising ID or install ID — nothing that could say who you are
+        goes along. Not even the developer can tell which reaction came from whom.</li>
+        <li>It is used for one thing: as input for deciding which kinds of days to show more of, and which less.
+        It is never used to target you with ads or to build a profile of you.</li>
+        <li>There's no switch to turn it on or off, because anonymity is a rule, not a setting. If you don't react, nothing is sent.</li>
+        <li>Holidays, your calendar items, and nothing whatsoever from your calendar ever go to the server.
+        The details are in the <a class="inline" href="../privacy.html#dday">Privacy Policy</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="interests">
+    <h2>Interests <span>// asked once on first open, changeable any time</span></h2>
+    <p>The first time you expand the sidebar it asks one thing — <b>"What events are you interested in?"</b>
+    Pick any number of the seven chips <b>Festivals · Workers · Undergrad · Grad school · Job seekers · Dating · Other</b>
+    and tap <b>Start</b>. The question is "what interests you", not "who are you": you can be a worker and a job
+    seeker at once, and a grad student can switch on dating events.</p>
+    <p><b>Holidays and your calendar are never asked about.</b> They always show. Nationwide fun days that belong to
+    no chip — Pepero Day, April Fools', Halloween — always show too. Your choice is stored <b>on this device only</b>
+    and never sent anywhere.</p>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div>
+          <div class="dd-frame" style="min-height:280px">
+            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-ask">
+              <div class="q">What events are you interested in?</div>
+              <div class="chips" id="dd-chips" role="group" aria-label="Interests">
+                <button class="chip" type="button" aria-pressed="true">Festivals</button>
+                <button class="chip" type="button" aria-pressed="true">Workers</button>
+                <button class="chip" type="button" aria-pressed="false">Undergrad</button>
+                <button class="chip" type="button" aria-pressed="false">Grad school</button>
+                <button class="chip" type="button" aria-pressed="false">Job seekers</button>
+                <button class="chip" type="button" aria-pressed="false">Dating</button>
+                <button class="chip" type="button" aria-pressed="false">Other</button>
+              </div>
+              <div class="h">Holidays and your calendar always show. You can change this later in Settings; it's stored on this device only.</div>
+              <button class="go" type="button" tabindex="-1">Start</button>
+            </div>
+          </div>
+          <p class="caption">The chips really toggle. They are the same seven switches as Settings › D-Day › Interests in the app.</p>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>Pre-selected chip</b> — if at least one AI tool account is connected, "Workers" starts switched
+            on. It's only a suggestion; turn it off if it's wrong. That guess is made on the device too.</li>
+            <li><b>Changing later</b> — the toggles under Settings › D-Day › Interests, or long-press an event in the list and choose "Turn off …".</li>
+            <li><b>You can pick nothing.</b> You get a sidebar with holidays, your calendar and the common events only.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="settings">
+    <h2>Settings <span>// region · calendar access · category order</span></h2>
+    <p>Gear (⚙︎) › <b>D-Day</b>. Four items, and under them one line noting that reactions are anonymous.
+    There is no feedback section and no "suggest an event" form.</p>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div class="dd-form" aria-label="Settings › D-Day preview">
+          <div class="sec">D-DAY</div>
+          <div class="group">
+            <div class="cell"><span class="name">Region</span><span class="val">🇰🇷 South Korea · Auto</span></div>
+            <div class="cell"><span class="name">Calendar access</span><span class="val on">Connected</span></div>
+          </div>
+          <div class="foot">Reads every account added to this device (Google, iCloud, Outlook, …).</div>
+          <div class="sec">Category order</div>
+          <div class="group">
+            <div class="cell"><span class="n">1</span><span class="name">● Holidays</span><span class="mv dis" aria-hidden="true">↑</span><span class="mv" aria-hidden="true">↓</span></div>
+            <div class="cell"><span class="n">2</span><span class="name">★ My calendar</span><span class="mv" aria-hidden="true">↑</span><span class="mv" aria-hidden="true">↓</span></div>
+            <div class="cell"><span class="n">3</span><span class="name">○ Events</span><span class="mv" aria-hidden="true">↑</span><span class="mv dis" aria-hidden="true">↓</span></div>
+          </div>
+          <div class="foot">Top matters most. When the timeline runs out of room, the lowest category folds into "···" first.</div>
+          <div class="sec">Interests</div>
+          <div class="group">
+            <div class="cell"><span class="name">Festivals</span><span class="chk">✓</span></div>
+            <div class="cell"><span class="name">Workers</span><span class="chk">✓</span></div>
+            <div class="cell"><span class="name">Undergrad</span><span></span></div>
+            <div class="cell"><span class="name">Grad school</span><span></span></div>
+            <div class="cell"><span class="name">Job seekers</span><span></span></div>
+            <div class="cell"><span class="name">Dating</span><span></span></div>
+            <div class="cell"><span class="name">Other</span><span></span></div>
+          </div>
+          <div class="foot">Event reactions (👍/👎) are always anonymous. No account or device identifiers are ever collected.</div>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>Region</b> — <i>Auto</i> follows the device's region setting. Choose another country and the
+            holidays and events switch to that country's; switch back and they're there instantly. The choices are
+            the countries on the list.</li>
+            <li><b>Calendar access</b> — this is where read access to your calendar is requested. Allow it and the
+            upcoming events from every account on the device appear as ★. It is read-only and <b>never leaves the
+            device</b>. iOS asks with: <i>"Reads your calendar to show upcoming events in the D-Day sidebar. Events
+            never leave the device."</i> If you decline, holidays and events still show. You can revoke it any time
+            in the system settings (iOS: Settings › Privacy &amp; Security › Calendars · Android: Settings › Apps › DASH › Permissions).</li>
+            <li><b>Category order</b> — change with ↑↓, the same way as the usage card order. It only decides which
+            category folds into the "···" line first when the timeline overflows; the list is unaffected (always by date).
+            A setting that works only where you can't see it.</li>
+            <li><b>Interests</b> — the same seven switches as the chips on first open.</li>
+            <li><b>Refresh</b> — the holiday and event list is checked once a day, and only a few KB are downloaded on
+            days it changed. Offline, the last downloaded list (initially the current year's list bundled with the app) keeps working.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="collapse">
+    <h2>Collapse <span>// the rail shows one ‹</span></h2>
+    <p>Tap <b>›</b> in the header and the sidebar folds into a narrow rail that shows a single <b>‹</b> — no D-n,
+    no dots. The card column widens by the same amount, so the gauge bars get longer. Tap the rail's ‹ to expand
+    again; the collapsed state is remembered.</p>
+    <p>On days you don't need D-Day, leave it collapsed and the screen is exactly what it used to be. Try the › button in the demo above.</p>
+  </section>
+
+  <section class="fend wrap">
+    <h2>Other features</h2>
+    <div class="grid">
+      <a class="card" href="dashboard.html">
+        <div class="icon" aria-hidden="true">▚</div>
+        <h3>Usage dashboard</h3>
+        <p>Shows Claude Code, Codex and Antigravity session, weekly and per-model limits as gauges.
+        Forecasts when you'll run out at the current pace, alongside reset times.</p>
+        <span class="more">Details →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
+    <span class="links">
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Service</a>
+      <a href="../delete-data.html">Delete data</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../../nav.js?v=20260811" defer></script>
+<script>
+(function () {
+  // The demo mirrors the app's three gestures: "Open schedule ›" and ‹ swap the
+  // timeline and the list, › in the header collapses to the rail. The card
+  // column is a fixed ghost on purpose — "the cards never move" is shown, not
+  // just claimed.
+  var demo = document.getElementById("dd-demo");
+  var panes = { tl: document.getElementById("dd-pane-tl"), list: document.getElementById("dd-pane-list") };
+  var radios = [].slice.call(document.querySelectorAll('input[name="ddmode"]'));
+  var collapseBtn = document.getElementById("dd-collapse");
+
+  function show(mode) {
+    Object.keys(panes).forEach(function (k) { panes[k].hidden = k !== mode; });
+    radios.forEach(function (r) { r.checked = r.value === mode; });
+  }
+  radios.forEach(function (r) {
+    r.addEventListener("change", function () { if (r.checked) show(r.value); });
+  });
+  [].slice.call(demo.querySelectorAll("[data-ddmode]")).forEach(function (btn) {
+    btn.addEventListener("click", function () { show(btn.dataset.ddmode); });
+  });
+
+  function setCollapsed(on) {
+    demo.setAttribute("data-collapsed", on ? "true" : "false");
+    collapseBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    collapseBtn.textContent = on ? "‹" : "›";
+  }
+  collapseBtn.addEventListener("click", function () {
+    setCollapsed(demo.getAttribute("data-collapsed") !== "true");
+  });
+  [].slice.call(demo.querySelectorAll("[data-collapse]")).forEach(function (btn) {
+    btn.addEventListener("click", function () { setCollapsed(btn.dataset.collapse === "true"); });
+  });
+  show("tl");
+})();
+
+(function () {
+  // Interest chips are multi-select, exactly like the first-open screen.
+  [].slice.call(document.querySelectorAll("#dd-chips .chip")).forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chip.setAttribute("aria-pressed", chip.getAttribute("aria-pressed") === "true" ? "false" : "true");
+    });
+  });
+})();
+
+// the cross-link card at the bottom fades up on scroll, as on the home page
+(function () {
+  var cards = [].slice.call(document.querySelectorAll(".card"));
+  if (!("IntersectionObserver" in window)) { cards.forEach(function (c) { c.classList.add("show"); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add("show"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(function (c) { io.observe(c); });
+})();
+</script>
+</body>
+</html>

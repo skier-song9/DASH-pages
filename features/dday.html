@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D-Day — DASH</title>
+  <meta name="description" content="다가오는 휴일·이벤트·내 일정을 사용량 카드 옆 타임라인에 점으로 세웁니다. 오늘이 맨 위, 가까운 날이 넓게. 탭하면 캘린더에 추가하고, 길게 누르면 익명으로 반응을 남깁니다.">
+  <meta property="og:site_name" content="DASH">
+  <meta property="og:title" content="D-Day — DASH">
+  <link rel="stylesheet" href="../style.css?v=20260908">
+  <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dday.html">
+  <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dday.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../">DASH</a>
+    <nav class="nav-links" id="site-nav">
+      <a href="../#demo">데모</a>
+      <div class="navdrop">
+        <a class="navdrop-btn" href="../#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
+        <div class="navdrop-menu">
+          <a href="dashboard.html">사용량 대시보드</a>
+          <a href="dday.html">D-Day</a>
+          <a class="all" href="../#features">기능 전체 보기</a>
+        </div>
+      </div>
+      <a href="../privacy.html">개인정보처리방침</a>
+      <a href="../terms.html">서비스 약관</a>
+      <a class="lang" href="../en/features/dday.html">EN</a>
+    </nav>
+    <button class="navtoggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span class="navtoggle-bars" aria-hidden="true"></span>
+      <span class="sr-only">메뉴 열기</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="../">홈</a><span>/</span><a href="../#features">기능</a><span>/</span>D-Day</p>
+  </div>
+
+  <section class="fhero wrap">
+    <p class="eyebrow">기능 02</p>
+    <h1>D-Day</h1>
+    <p class="sub">사용량 카드 오른쪽에 다가오는 <b>휴일 · 이벤트 · 내 일정</b>이 시간 축 위의 점으로 서 있습니다.
+    오늘이 맨 위, 가까운 날일수록 넓게. 점이 위쪽에 몰려 있으면 곧 바쁘다는 뜻입니다 —
+    글자를 읽기 전에 모양이 먼저 말합니다.</p>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>화면 <span>// 카드 옆, 시간 축 위의 점들</span></h2>
+    <p>사이드바 왼쪽의 세로선이 <b>시간</b>입니다. 맨 위가 오늘, 눈금은 <b>오늘 · 1주 · 1달 · 3달</b>.
+    축은 비선형이라 가까운 일주일이 화면의 절반을 쓰고, 석 달 뒤는 몇 픽셀로 접힙니다.
+    날 하나는 축 위의 점 하나이고, 점의 모양이 카테고리입니다 — <b>● 휴일 · ○ 이벤트 · ★ 내 일정</b>.
+    카드 열은 한 픽셀도 바뀌지 않습니다.</p>
+
+    <div class="panel">
+      <div class="ctrlbar">
+        <span class="ctrl-label">사이드바</span>
+        <fieldset class="seg">
+          <legend class="sr-only">사이드바 모드</legend>
+          <input type="radio" name="ddmode" id="ddmode-tl" value="tl" checked>
+          <label for="ddmode-tl">타임라인</label>
+          <input type="radio" name="ddmode" id="ddmode-list" value="list">
+          <label for="ddmode-list">일정</label>
+        </fieldset>
+        <button class="iconbtn" type="button" id="dd-collapse" aria-pressed="false" aria-label="사이드바 접기 / 펼치기" title="접기 / 펼치기">›</button>
+      </div>
+
+      <div class="sbdemo" id="dd-demo" data-collapsed="false">
+        <div class="sbstage" aria-hidden="true">
+          <div class="ghost-label">사용량 카드 — 그대로</div>
+          <div class="ghost a"></div>
+          <div class="ghost b"></div>
+        </div>
+
+        <aside class="sb dd" aria-label="D-Day 사이드바 미리 보기">
+          <!-- 타임라인 모드 -->
+          <div class="dd-pane" id="dd-pane-tl">
+            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-tl">
+              <div class="axis"></div>
+              <div class="now">오늘<i></i></div><div class="now-date">9/9(수)</div>
+              <div class="dd-row cal" style="top:22px"><span class="g"><i></i></span><span class="txt"><span class="nm">팀 주간 회의</span><span class="w">내일 14:00</span></span><span class="d today">D-1</span></div>
+              <div class="dd-row agg" style="top:66px"><span class="g"><i></i></span><span class="txt"><span class="nm">이벤트 <span class="cnt">4</span></span><span class="w">불꽃축제 내일 · 국가장학금 D-9 · 빼빼로데이 …</span></span><button class="open" type="button" data-ddmode="list">일정 열기 ›</button></div>
+              <div class="tick" style="top:140px"><span>1주</span></div>
+              <div class="dd-row hol" style="top:164px"><span class="g"><i></i></span><span class="txt"><span class="nm">추석 연휴</span><span class="w">9/24(목) ~ 26(토)</span></span><span class="d">D-15</span></div>
+              <div class="tick" style="top:209px"><span>1달</span></div>
+              <div class="bridge-axis" style="top:218px;height:44px"></div>
+              <div class="dd-row hol" style="top:210px"><span class="g"><i></i></span><span class="txt"><span class="nm">개천절<span class="tag">대체</span></span><span class="w">10/5(월)</span></span><span class="d">D-26</span></div>
+              <div class="dd-row hol" style="top:254px"><span class="g"><i></i></span><span class="txt"><span class="nm">한글날</span><span class="w">10/9(금)</span></span><span class="d">D-30</span></div>
+              <div class="dd-row bridge" style="top:298px"><span class="g"><i></i></span><span class="nm"><b>10/6~8 연차 3개</b> → 9일 연휴</span></div>
+              <div class="later" style="top:318px"><span class="g">···</span><span>크리스마스 D-107 · 설날 D-150</span></div>
+            </div>
+          </div>
+
+          <!-- 리스트 모드 ("일정 열기") -->
+          <div class="dd-pane" id="dd-pane-list" hidden>
+            <div class="dd-head"><button class="back" type="button" data-ddmode="tl" aria-label="타임라인으로 돌아가기">‹</button><span class="t">일정</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-list">
+              <div class="inner">
+                <div class="sec">오늘 · 내일</div>
+                <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">불꽃축제</span><span class="w">9/10(목)</span></span><span class="d today">D-1</span></div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">팀 주간 회의</span><span class="w">내일 14:00</span></span><span class="d today">D-1</span></div>
+                <div class="sec">1주</div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">치과</span><span class="w">9/12(토) 10:30</span></span><span class="d">D-3</span></div>
+                <div class="sec">1달</div>
+                <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">국가장학금 신청 마감</span><span class="w">9/18(금)</span></span><span class="d">D-9</span></div>
+                <div class="dd-row hol"><span class="g"><i></i></span><span class="txt"><span class="nm">추석 연휴</span><span class="w">9/24(목) ~ 26(토)</span></span><span class="d">D-15</span></div>
+                <div class="dd-row hol"><span class="g"><i></i></span><span class="txt"><span class="nm">개천절<span class="tag">대체</span></span><span class="w">10/5(월)</span></span><span class="d">D-26</span></div>
+                <div class="dd-row hol"><span class="g"><i></i></span><span class="txt"><span class="nm">한글날</span><span class="w">10/9(금) · 연차 3개면 9일</span></span><span class="d">D-30</span></div>
+                <div class="sec">3달</div>
+                <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">빼빼로데이</span><span class="w">11/11(수)</span></span><span class="d">D-63</span></div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">동아리 MT</span><span class="w">11/21(토) 종일</span></span><span class="d">D-73</span></div>
+                <div class="sec">그 이후</div>
+                <div class="dd-row hol far"><span class="g"><i></i></span><span class="txt"><span class="nm">크리스마스</span><span class="w">12/25(금)</span></span><span class="d">D-107</span></div>
+                <div class="dd-row hol far"><span class="g"><i></i></span><span class="txt"><span class="nm">설날</span><span class="w">2/6(토) ~ 8(월)</span></span><span class="d">D-150</span></div>
+              </div>
+              <div class="fade-b" aria-hidden="true"></div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="sb-rail"><button type="button" data-collapse="false" aria-label="사이드바 펼치기">‹</button></div>
+      </div>
+      <p class="caption">위 토글과 › 버튼, "일정 열기 ›"는 실제로 동작합니다. 앱에서도 같은 몸짓입니다 — 카드 열은 그대로, 사이드바만 바뀝니다.</p>
+    </div>
+
+    <ul class="klist">
+      <li><b>점 모양이 카테고리</b> — ● 휴일(채움) · ○ 이벤트(테두리) · ★ 내 일정. 색이 아니라 모양으로 구분하므로,
+      색은 딱 한 군데에만 씁니다.</li>
+      <li><b>색은 오늘·내일에만</b> — 오늘과 내일의 D-n, 오늘 표시선, 그리고 아래 나오는 연휴 다리만 하늘색입니다.
+      사용량 게이지의 초록 → 빨강 램프는 사이드바에 절대 쓰지 않습니다. D-Day는 경고가 아니기 때문입니다.</li>
+      <li><b>글자는 카드와 같은 크기</b> — 이름과 D-n은 옆 카드의 % 숫자와 같은 크기입니다. 그래서 곁눈으로도 읽히고,
+      대신 한 번에 보이는 항목은 여섯 개 남짓입니다. 둘째 줄의 날짜·시각은 작게.</li>
+      <li><b>태그</b> — <code>대체</code>(대체공휴일) · <code>임시</code>(임시공휴일)는 실선, <code>예정</code>(아직 확정되지 않은 날)은 점선 테두리입니다.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>타임라인 읽기 <span>// 가까운 것이 넓다</span></h2>
+    <p>항목 하나는 두 줄입니다. 첫 줄은 <b>이름과 D-n</b>, 둘째 줄은 날짜(내 일정이면 시각까지).
+    두 날이 너무 가까워 글자가 겹칠 것 같으면 뒤의 항목을 아래로 밀어 서로 덮지 않게 합니다 —
+    그래서 점의 세로 위치는 "대략 그 즈음"이고, 정확한 날짜는 둘째 줄이 말합니다.</p>
+    <p><b>이벤트는 접혀 있습니다.</b> 기본 화면의 점은 휴일과 내 일정이고, 이벤트는 가장 가까운 이벤트의 위치에
+    ○ 하나로 모입니다 — "이벤트 4"와 가까운 두세 개의 이름까지는 곁눈에 들어오고, 나머지는 <b>"일정 열기 ›"</b>를 탭해 봅니다.</p>
+    <p><b>연휴 다리.</b> 두 휴일 사이에 평일이 하루에서 사흘만 끼어 있고, 그 사이를 연차로 이으면 닷새 넘게 쉴 수 있을 때,
+    두 점 사이의 축이 두꺼워지고 아래에 한 줄이 붙습니다: <code>10/6~8 연차 3개 → 9일 연휴</code>.
+    계산은 DASH가 했으니, 결정만 하면 됩니다.</p>
+
+    <ul class="klist">
+      <li><b>"···" 줄</b> — 석 달 너머는 한 줄로 접혀 다음 두 개만 이름과 D-n을 보여줍니다.</li>
+      <li><b>자리가 모자라면</b> — 축에 들어가지 않는 항목은 <a class="inline" href="#settings">설정의 카테고리 순서</a>에서
+      아래에 둔 카테고리부터, 먼 것부터 "···" 줄로 들어갑니다. 리스트에서는 모두 볼 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>일정 열기 <span>// 같은 눈금이 섹션 제목으로</span></h2>
+    <p>"일정 열기 ›"를 탭하면 축이 사라지고, 같은 눈금 <b>오늘 · 내일 / 1주 / 1달 / 3달 / 그 이후</b>가 섹션 제목이 되어
+    세 카테고리가 날짜순으로 한 리스트에 섞입니다. 항목 수 제한이 없고 <b>사이드바 안에서만</b> 스크롤합니다 —
+    카드 열은 그대로입니다. 아래쪽 페이드는 "더 있음"이라는 뜻이고, 헤더의 <b>‹</b>로 타임라인에 돌아옵니다.</p>
+    <p>위 데모의 "일정" 토글이 이 화면입니다. 뒤에 나오는 길게 누르기 메뉴는 이 리스트에서 쓰는 것입니다.</p>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>탭 <span>// 상세 카드, 그리고 캘린더에 추가</span></h2>
+    <p>휴일이나 이벤트 점을 탭하면 사이드바 안에 <b>상세 카드</b>가 뜹니다. 카테고리와 국가, 이름과 D-n, 기간,
+    그리고 버튼 둘 — <b>캘린더에 추가</b>와 닫기. 내 일정(★)을 탭하면 카드 대신 그 이벤트가
+    <b>캘린더 이벤트 화면</b>으로 열립니다. 운영체제의 공식 화면이라 위치·참석자·알림이 캘린더 앱과 똑같이 보입니다.</p>
+
+    <ol class="steps">
+      <li><div class="stepbox"><span class="n">01</span><span class="t">휴일·이벤트 점을 탭</span></div><span class="arrow" aria-hidden="true">→</span></li>
+      <li><div class="stepbox"><span class="n">02</span><span class="t">상세 카드</span></div><span class="arrow" aria-hidden="true">→</span></li>
+      <li><div class="stepbox"><span class="n">03</span><span class="t">캘린더에 추가</span></div><span class="arrow" aria-hidden="true">→</span></li>
+      <li><div class="stepbox"><span class="n">04</span><span class="t">캘린더 편집 화면에서 저장</span></div><span class="arrow" aria-hidden="true">→</span></li>
+    </ol>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div>
+          <div class="dd-frame dim" aria-label="휴일 상세 카드 미리 보기">
+            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-tl" style="height:220px" aria-hidden="true">
+              <div class="axis"></div>
+              <div class="now">오늘<i></i></div><div class="now-date">9/9(수)</div>
+              <div class="dd-row cal" style="top:22px"><span class="g"><i></i></span><span class="txt"><span class="nm">팀 주간 회의</span><span class="w">내일 14:00</span></span><span class="d today">D-1</span></div>
+              <div class="dd-row hol" style="top:164px"><span class="g"><i></i></span><span class="txt"><span class="nm">추석 연휴</span><span class="w">9/24(목) ~ 26(토)</span></span><span class="d">D-15</span></div>
+            </div>
+            <div class="dd-detail">
+              <div class="cat">● 휴일 · 대한민국</div>
+              <div class="name">추석 연휴<span class="d">D-15</span></div>
+              <div class="when">9월 24일(목) ~ 26일(토) · 3일</div>
+              <div class="btns"><span class="primary">캘린더에 추가</span><span>닫기</span></div>
+            </div>
+          </div>
+          <p class="caption">휴일·이벤트를 탭하면 뜨는 상세 카드. 하늘색 버튼이 "캘린더에 추가"입니다.</p>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>캘린더에 추가</b>는 운영체제의 일정 편집 화면을 열어 줍니다. 제목과 날짜가 미리 채워져 있고,
+            어느 캘린더에 넣을지 고른 뒤 <b>저장</b>을 누르면 끝입니다. 저장을 누르지 않으면 아무것도 만들어지지 않습니다 —
+            DASH가 임의로 일정을 쓰는 일은 없습니다.</li>
+            <li><b>권한은 처음 한 번.</b> 처음 추가할 때 운영체제가 캘린더 접근을 허용할지 묻습니다.
+            iOS는 이때 <i>추가 전용</i> 권한만 요청하므로, 설정에서 내 일정을 연동하지 않았어도 기존 일정을 읽지 않은 채
+            추가만 할 수 있습니다. 이미 내 일정을 연동했다면 다시 묻지 않습니다.</li>
+            <li><b>내 일정 탭</b> → 캘린더 이벤트 화면. 편집하거나 삭제하는 것도 그 화면에서 캘린더 앱과 같은 방식으로 합니다.</li>
+            <li>왼쪽 카드 열을 탭해도 사이드바는 반응하지 않습니다. 사이드바는 사이드바 안에서만 조작합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="reactions">
+    <h2>길게 누르기 <span>// 👍 유용해요 · 👎 관심 없어요 · 관심 해제</span></h2>
+    <p>일정 리스트에서 <b>○ 이벤트</b> 행을 길게 누르면 메뉴 셋이 뜹니다. 휴일과 내 일정 행에는 메뉴가 없습니다 —
+    휴일은 모두의 것이고, 내 일정은 이미 내 것이라 물을 게 없기 때문입니다.</p>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div>
+          <div class="dd-frame" aria-label="길게 누르기 메뉴 미리 보기">
+            <div class="dd-head"><span class="back" aria-hidden="true" style="font-size:18px;color:var(--dd-sec)">‹</span><span class="t">일정</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-list" style="height:230px" aria-hidden="true">
+              <div class="inner">
+                <div class="sec">오늘 · 내일</div>
+                <div class="dd-row ev held"><span class="g"><i></i></span><span class="txt"><span class="nm">불꽃축제</span><span class="w">9/10(목)</span></span><span class="d today">D-1</span></div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">팀 주간 회의</span><span class="w">내일 14:00</span></span><span class="d today">D-1</span></div>
+                <div class="sec">1주</div>
+                <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">치과</span><span class="w">9/12(토) 10:30</span></span><span class="d">D-3</span></div>
+              </div>
+            </div>
+            <div class="dd-menu" style="top:92px" role="img" aria-label="메뉴: 👍 유용해요, 👎 관심 없어요, 축제 관심 해제">
+              <div>👍 유용해요</div>
+              <div>👎 관심 없어요</div>
+              <div class="off">축제 관심 해제</div>
+            </div>
+          </div>
+          <p class="caption">"불꽃축제"를 길게 누른 모습. 세 번째 줄은 그 이벤트가 속한 관심 카테고리 이름으로 바뀝니다.</p>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>👍 유용해요</b> — "이런 날을 알려줘서 좋았다"는 한 표입니다.</li>
+            <li><b>👎 관심 없어요</b> — "이건 나와 상관없다"는 한 표입니다.</li>
+            <li><b>축제 관심 해제</b> — 그 이벤트가 속한 관심 카테고리(여기서는 "축제")를 끕니다.
+            <a class="inline" href="#interests">설정 ▸ 관심 이벤트</a>에서 끈 것과 같아서, 그 카테고리의 이벤트가 타임라인과 리스트에서
+            사라집니다. 언제든 설정에서 다시 켤 수 있습니다.</li>
+            <li>한 기기에서는 이벤트 하나에 <b>한 번만</b> 셉니다. 여러 번 눌러도 한 표입니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip" style="margin-top:22px">
+      <p><b>반응은 언제나 익명입니다.</b> 서버로 가는 것은 다섯 가지뿐입니다 —
+      이벤트 ID · 반응(👍 / 👎 / 해제) · 국가 코드 · 플랫폼(iOS / Android) · 앱 버전.</p>
+      <ul>
+        <li>계정, 이메일, 이름, 기기 ID, 광고 ID, 설치 ID — 누구인지 알 수 있는 정보는 어떤 것도 함께 가지 않습니다.
+        어느 반응이 누구에게서 왔는지는 개발자도 알 수 없습니다.</li>
+        <li>쓰이는 곳은 하나입니다: 어떤 종류의 날을 더 보여주고 덜 보여줄지 정하는 데 참고합니다.
+        나에게 맞춤 광고를 하거나, 나를 프로파일링하는 데 쓰이지 않습니다.</li>
+        <li>켜고 끄는 스위치가 없습니다. 익명은 설정이 아니라 규칙이기 때문입니다. 반응을 남기지 않으면 아무것도 보내지 않습니다.</li>
+        <li>휴일, 내 일정, 그리고 내 캘린더의 어떤 내용도 서버로 가지 않습니다. 자세한 내용은
+        <a class="inline" href="../privacy.html#dday">개인정보처리방침</a>에 있습니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="interests">
+    <h2>관심 이벤트 <span>// 첫 펼침에 한 번, 설정에서 언제든</span></h2>
+    <p>사이드바를 처음 펼치면 한 가지만 묻습니다 — <b>"어떤 이벤트에 관심 있나요?"</b>
+    칩 일곱 개 <b>축제 · 직장인 · 대학생 · 대학원생 · 취준생 · 연애 · 기타</b> 가운데 여러 개를 고르고 <b>시작</b>을 누릅니다.
+    "누구인가"가 아니라 "무엇에 관심 있는가"를 묻는 것이라, 직장인이면서 취준생일 수 있고 대학원생이 연애 이벤트를 켤 수 있습니다.</p>
+    <p><b>휴일과 내 일정은 묻지 않습니다.</b> 언제나 보입니다. 빼빼로데이·만우절·할로윈처럼 어떤 칩에도 속하지 않는
+    전국민 공통 이벤트도 언제나 보입니다. 선택은 <b>이 기기에만</b> 저장되고, 서버로 가지 않습니다.</p>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div>
+          <div class="dd-frame" style="min-height:280px">
+            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-ask">
+              <div class="q">어떤 이벤트에 관심 있나요?</div>
+              <div class="chips" id="dd-chips" role="group" aria-label="관심 이벤트">
+                <button class="chip" type="button" aria-pressed="true">축제</button>
+                <button class="chip" type="button" aria-pressed="true">직장인</button>
+                <button class="chip" type="button" aria-pressed="false">대학생</button>
+                <button class="chip" type="button" aria-pressed="false">대학원생</button>
+                <button class="chip" type="button" aria-pressed="false">취준생</button>
+                <button class="chip" type="button" aria-pressed="false">연애</button>
+                <button class="chip" type="button" aria-pressed="false">기타</button>
+              </div>
+              <div class="h">휴일과 내 일정은 항상 보여요. 나중에 설정에서 바꿀 수 있고, 이 기기에만 저장됩니다.</div>
+              <button class="go" type="button" tabindex="-1">시작</button>
+            </div>
+          </div>
+          <p class="caption">칩은 실제로 눌립니다. 앱의 설정 ▸ D-Day ▸ 관심 이벤트에 있는 토글 일곱 개와 같은 항목입니다.</p>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>미리 켜져 있는 칩</b> — AI 도구 계정이 하나라도 연결돼 있으면 "직장인"이 켜진 채로 시작합니다.
+            제안일 뿐이니 아니면 끄면 됩니다. 이 판단도 기기 안에서 합니다.</li>
+            <li><b>나중에 바꾸기</b> — 설정 ▸ D-Day ▸ 관심 이벤트의 토글, 또는 리스트에서 이벤트를 길게 눌러 "관심 해제".</li>
+            <li><b>아무것도 고르지 않아도</b> 됩니다. 휴일, 내 일정, 공통 이벤트만 보이는 사이드바가 됩니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="settings">
+    <h2>설정 <span>// 지역 · 캘린더 연동 · 카테고리 순서</span></h2>
+    <p>톱니바퀴(⚙︎) ▸ <b>D-Day</b>. 네 가지가 있고, 그 아래 반응이 익명이라는 안내 한 줄이 있습니다.
+    피드백 섹션이나 이벤트 제안 폼은 없습니다.</p>
+
+    <div class="panel">
+      <div class="demo2col">
+        <div class="dd-form" aria-label="설정 ▸ D-Day 미리 보기">
+          <div class="sec">D-DAY</div>
+          <div class="group">
+            <div class="cell"><span class="name">지역</span><span class="val">🇰🇷 대한민국 · 자동</span></div>
+            <div class="cell"><span class="name">캘린더 연동</span><span class="val on">연결됨</span></div>
+          </div>
+          <div class="foot">캘린더는 이 기기에 추가된 계정(Google·iCloud·Outlook 등)을 모두 읽습니다.</div>
+          <div class="sec">카테고리 순서</div>
+          <div class="group">
+            <div class="cell"><span class="n">1</span><span class="name">● 휴일</span><span class="mv dis" aria-hidden="true">↑</span><span class="mv" aria-hidden="true">↓</span></div>
+            <div class="cell"><span class="n">2</span><span class="name">★ 내 일정</span><span class="mv" aria-hidden="true">↑</span><span class="mv" aria-hidden="true">↓</span></div>
+            <div class="cell"><span class="n">3</span><span class="name">○ 이벤트</span><span class="mv" aria-hidden="true">↑</span><span class="mv dis" aria-hidden="true">↓</span></div>
+          </div>
+          <div class="foot">맨 위가 가장 중요합니다. 타임라인에 자리가 모자랄 때 아래 카테고리부터 "···"로 접힙니다.</div>
+          <div class="sec">관심 이벤트</div>
+          <div class="group">
+            <div class="cell"><span class="name">축제</span><span class="chk">✓</span></div>
+            <div class="cell"><span class="name">직장인</span><span class="chk">✓</span></div>
+            <div class="cell"><span class="name">대학생</span><span></span></div>
+            <div class="cell"><span class="name">대학원생</span><span></span></div>
+            <div class="cell"><span class="name">취준생</span><span></span></div>
+            <div class="cell"><span class="name">연애</span><span></span></div>
+            <div class="cell"><span class="name">기타</span><span></span></div>
+          </div>
+          <div class="foot">이벤트 반응(👍/👎)은 항상 익명으로 처리됩니다. 계정·기기 식별 정보는 어떤 경우에도 수집하지 않습니다.</div>
+        </div>
+        <div>
+          <ul class="klist" style="margin-top:0">
+            <li><b>지역</b> — 기본은 기기의 지역 설정을 따르는 <i>자동</i>입니다. 다른 나라를 고르면 그 나라의 휴일과 이벤트로
+            바뀌고, 다시 돌아오면 기다림 없이 바로 나옵니다. 고를 수 있는 나라는 목록에 있는 나라입니다.</li>
+            <li><b>캘린더 연동</b> — 여기서 캘린더 읽기 권한을 요청합니다. 허용하면 기기에 추가된 모든 계정의 다가오는 일정이
+            ★로 나타납니다. 읽기만 하고 <b>기기 밖으로 나가지 않습니다</b>. iOS는 이렇게 묻습니다:
+            <i>"D-Day 사이드바에 다음 일정을 표시하기 위해 캘린더를 읽습니다. 일정은 기기 밖으로 나가지 않습니다."</i>
+            허용하지 않아도 휴일과 이벤트는 그대로 보입니다. 권한은 언제든 운영체제 설정에서 되돌릴 수 있습니다
+            (iOS: 설정 ▸ 개인정보 보호 및 보안 ▸ 캘린더 · Android: 설정 ▸ 앱 ▸ DASH ▸ 권한).</li>
+            <li><b>카테고리 순서</b> — ↑↓로 바꿉니다. 사용량 카드 순서와 같은 방식입니다. 타임라인이 넘칠 때 아래 카테고리부터
+            "···" 줄로 접히는 우선순위이고, 리스트 모드에는 영향이 없습니다(늘 날짜순). 보이지 않는 곳에서만 작동하는 설정입니다.</li>
+            <li><b>관심 이벤트</b> — 첫 펼침에서 고른 칩과 같은 일곱 개의 토글입니다.</li>
+            <li><b>갱신</b> — 휴일·이벤트 목록은 하루 한 번, 바뀐 날만 몇 KB를 받습니다. 인터넷이 없으면 마지막으로 받은
+            목록(처음에는 앱에 내장된 올해 목록)으로 그대로 동작합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fsec wrap" id="collapse">
+    <h2>접기 <span>// 레일에는 ‹ 하나</span></h2>
+    <p>헤더의 <b>›</b>를 탭하면 사이드바가 좁은 레일로 접히고, 레일에는 <b>‹</b> 하나만 남습니다 — D-n도 점도 없습니다.
+    그만큼 카드 열이 넓어져 게이지 바가 길어집니다. 레일의 ‹를 탭하면 다시 펼쳐지고, 접힌 상태는 기억됩니다.</p>
+    <p>D-Day가 필요 없는 날은 접어 두면 예전 화면 그대로입니다. 위 데모의 › 버튼으로 확인해 볼 수 있습니다.</p>
+  </section>
+
+  <section class="fend wrap">
+    <h2>다른 기능</h2>
+    <div class="grid">
+      <a class="card" href="dashboard.html">
+        <div class="icon" aria-hidden="true">▚</div>
+        <h3>사용량 대시보드</h3>
+        <p>Claude Code, Codex, Antigravity의 세션·주간·모델별 한도를 게이지로 표시합니다.
+        지금 속도라면 언제 소진되는지 예측하고, 리셋 시각을 함께 보여줍니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
+    <span class="links">
+      <a href="../privacy.html">개인정보처리방침</a>
+      <a href="../terms.html">서비스 약관</a>
+      <a href="../delete-data.html">데이터 삭제</a>
+      <a href="https://github.com/skier-song9/DASH" target="_blank" rel="noopener">GitHub</a>
+    </span>
+  </div>
+</footer>
+
+<script src="../nav.js?v=20260811" defer></script>
+<script>
+(function () {
+  // The demo mirrors the app's three gestures: "일정 열기 ›" and ‹ swap the
+  // timeline and the list, › in the header collapses to the rail. The card
+  // column is a fixed ghost on purpose — "the cards never move" is shown, not
+  // just claimed.
+  var demo = document.getElementById("dd-demo");
+  var panes = { tl: document.getElementById("dd-pane-tl"), list: document.getElementById("dd-pane-list") };
+  var radios = [].slice.call(document.querySelectorAll('input[name="ddmode"]'));
+  var collapseBtn = document.getElementById("dd-collapse");
+
+  function show(mode) {
+    Object.keys(panes).forEach(function (k) { panes[k].hidden = k !== mode; });
+    radios.forEach(function (r) { r.checked = r.value === mode; });
+  }
+  radios.forEach(function (r) {
+    r.addEventListener("change", function () { if (r.checked) show(r.value); });
+  });
+  [].slice.call(demo.querySelectorAll("[data-ddmode]")).forEach(function (btn) {
+    btn.addEventListener("click", function () { show(btn.dataset.ddmode); });
+  });
+
+  function setCollapsed(on) {
+    demo.setAttribute("data-collapsed", on ? "true" : "false");
+    collapseBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    collapseBtn.textContent = on ? "‹" : "›";
+  }
+  collapseBtn.addEventListener("click", function () {
+    setCollapsed(demo.getAttribute("data-collapsed") !== "true");
+  });
+  [].slice.call(demo.querySelectorAll("[data-collapse]")).forEach(function (btn) {
+    btn.addEventListener("click", function () { setCollapsed(btn.dataset.collapse === "true"); });
+  });
+  show("tl");
+})();
+
+(function () {
+  // Interest chips are multi-select, exactly like the first-open screen.
+  [].slice.call(document.querySelectorAll("#dd-chips .chip")).forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chip.setAttribute("aria-pressed", chip.getAttribute("aria-pressed") === "true" ? "false" : "true");
+    });
+  });
+})();
+
+// the cross-link card at the bottom fades up on scroll, as on the home page
+(function () {
+  var cards = [].slice.call(document.querySelectorAll(".card"));
+  if (!("IntersectionObserver" in window)) { cards.forEach(function (c) { c.classList.add("show"); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add("show"); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.2 });
+  cards.forEach(function (c) { io.observe(c); });
+})();
+</script>
+</body>
+</html>

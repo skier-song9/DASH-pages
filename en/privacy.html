@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — DASH</title>
-  <link rel="stylesheet" href="../style.css?v=20260814">
+  <link rel="stylesheet" href="../style.css?v=20260908">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/privacy.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/privacy.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -21,6 +21,7 @@
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">Usage dashboard</a>
+          <a href="features/dday.html">D-Day</a>
           <a class="all" href="./#features">All features</a>
         </div>
       </div>
@@ -37,7 +38,7 @@
 
 <main class="wrap doc">
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective: August 6, 2026 · Revised: September 6, 2026 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
+  <p class="meta">Effective: August 6, 2026 · Revised: September 8, 2026 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 
   <p>DASH (the "App") is an iOS and Android application provided by an individual
   developer (GitHub: skier-song9, the "Developer"). This policy explains what
@@ -48,9 +49,16 @@
   This is a translation provided for convenience; if it conflicts with the
   <a class="inline" href="../privacy.html">Korean version</a>, the Korean version prevails.</p>
 
-  <div class="note">Summary — the App stores no user data on the Developer's servers.
-  Usage data is processed and kept on your device only, and the App talks to
-  nothing but each AI service's own usage API.</div>
+  <div class="note">Summary — the App stores nothing on the Developer's servers that could identify you.
+  Usage data and calendar events are processed and kept on your device only. The App talks to
+  three places: each AI service's own usage API, the Developer's site (dash-worklife.org) for the
+  D-Day holiday and event list, and the Developer's server that counts anonymous event reactions.</div>
+
+  <div class="note" id="dday"><b>Revised September 8, 2026 (D-Day sidebar added)</b> — a D-Day sidebar showing
+  upcoming holidays, events and your own calendar has been added. Accordingly: ① the App reads your device
+  calendar only if you allow it (events never leave the device), ② it writes to your calendar only when you tap
+  "Add to Calendar", and ③ only when you react to an event with 👍/👎 does it send five fields, none of them
+  identifying, to a counting server. Sections 1–5 below reflect this.</div>
 
   <div class="note"><b>Revised September 6, 2026 (version 1.0.1)</b> — Gmail linking and the
   Unread sidebar have been removed from the App. From this version on, the App
@@ -73,12 +81,43 @@
       <td data-th="Details">Usage limits and remaining quota for Claude Code · Codex · Antigravity</td>
       <td data-th="Stored in">On device</td>
     </tr>
+    <tr>
+      <td data-th="Item">Calendar events</td>
+      <td data-th="Details">Only if you allow calendar access — the title, date, time and calendar colour of upcoming
+      events in the device's Calendar app, used solely to show "my calendar" in the D-Day sidebar</td>
+      <td data-th="Stored in">On device (read for display only)</td>
+    </tr>
+    <tr>
+      <td data-th="Item">D-Day settings</td>
+      <td data-th="Details">Region, chosen interests, category order, whether the sidebar is collapsed, and the IDs of
+      events you already reacted to (to prevent duplicate reactions)</td>
+      <td data-th="Stored in">On device</td>
+    </tr>
+    <tr>
+      <td data-th="Item">Holiday and event list</td>
+      <td data-th="Details">A public list (dates of holidays, observances and events per country) downloaded from the
+      Developer's site. Not personal data; the request carries no credentials or identifiers</td>
+      <td data-th="Stored in">On device (cache)</td>
+    </tr>
+    <tr>
+      <td data-th="Item">Anonymous event reactions</td>
+      <td data-th="Details">Only when you long-press an event and choose 👍 Useful · 👎 Not for me · turn off an interest —
+      five fields: event ID, reaction type, country code, platform (ios/android), app version. Nothing that could identify
+      you — no account, e-mail, device ID, advertising ID or install ID</td>
+      <td data-th="Stored in">The Developer's counting server (Cloudflare)</td>
+    </tr>
   </table>
 
   <h2>2. Purposes of use</h2>
   <ul>
     <li>Reading each service's usage API to display AI coding tool limits.</li>
     <li>Forecasting when quota runs out from how usage changes. This is computed on the device only.</li>
+    <li>If you allow it, reading upcoming events from the device calendar to show them in the D-Day sidebar. What is read is never sent off the device.</li>
+    <li>Only when you tap "Add to Calendar" on a detail card, opening the operating system's event editor to write an
+    event to your calendar. Nothing is saved unless you tap Save there; the App never creates or changes events on its own.</li>
+    <li>Checking the Developer's site once a day for an updated holiday and event list, and downloading it.</li>
+    <li>Using anonymous event reactions solely as aggregate input for deciding which kinds of events to show more or
+    less. Reactions cannot be linked to an individual and are never used for profiling, advertising or any other purpose.</li>
   </ul>
 
   <h2>3. Storage and security</h2>
@@ -89,18 +128,38 @@
     keys, on Android.</li>
     <li>All network traffic is encrypted with TLS (HTTPS).</li>
     <li>The App contains no advertising, tracking, or analytics SDKs.</li>
+    <li>Calendar events are read on the device only, through the operating system's calendar permission, and are never
+    sent to the Developer's servers or to third parties. You can revoke the permission at any time in the system settings
+    (iOS: Settings › Privacy &amp; Security › Calendars · Android: Settings › Apps › DASH › Permissions); doing so only
+    removes "my calendar" items — everything else keeps working.</li>
+    <li>Anonymous event reactions contain no value that identifies you, your account or your device. To limit abusive
+    repeat submissions the counting server uses only a one-way hash of the connecting IP address combined with a random
+    value that changes daily; the raw IP address is never logged or stored. The hash differs the next day even for the
+    same device, so it cannot be used to track anyone.</li>
+    <li>A device sends at most one reaction per event. To enforce this, the IDs of events you already reacted to are recorded on the device only.</li>
   </ul>
 
   <h2>4. Third parties and processors</h2>
-  <p>The Developer does not provide or sell user data to third parties, and
-  delegates processing to no one. The only parties the App communicates with
-  are the usage APIs of the AI services you linked yourself (Anthropic, OpenAI,
-  Google), and each request carries nothing beyond the token that service issued.</p>
+  <p>The Developer does not provide or sell user data to third parties. The App communicates with
+  exactly three parties, and sends none of them anything that could identify you.</p>
+  <ul>
+    <li>The usage APIs of the AI services you linked yourself (Anthropic, OpenAI, Google) — each request carries
+    nothing beyond the token that service issued.</li>
+    <li>The Developer's site dash-worklife.org (hosted on GitHub Pages) — the holiday and event list files are downloaded
+    from here. As with any web request the connecting IP reaches the hosting provider (GitHub), but the App sends no
+    credentials or identifiers.</li>
+    <li>The Developer's counting server (running on Cloudflare Workers and D1) — receives anonymous event reactions.
+    Cloudflare is the infrastructure that runs code the Developer deployed; the stored data contains no identifiers.</li>
+  </ul>
 
   <h2>5. Retention and deletion</h2>
   <ul>
     <li>On-device data is deleted when you delete the App.</li>
     <li>Disconnecting an account in the App's settings immediately deletes that account's token.</li>
+    <li>D-Day settings and the cached holiday and event list are deleted together with the App.</li>
+    <li>Calendar events are not stored by the App, so there is nothing to delete; calendar access can be revoked in the system settings.</li>
+    <li>Anonymous event reactions carry nothing that links them to you, so it is technically impossible to single out
+    and delete one person's reactions. This data is not personal data and is kept only as long as needed for aggregation.</li>
   </ul>
   <p>Step-by-step instructions are on the <a class="inline" href="delete-data.html">Delete your data</a> page.</p>
 

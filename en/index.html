@@ -8,7 +8,7 @@
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
-  <link rel="stylesheet" href="../style.css?v=20260814">
+  <link rel="stylesheet" href="../style.css?v=20260908">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -36,6 +36,7 @@
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">Features<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">Usage dashboard</a>
+          <a href="features/dday.html">D-Day</a>
           <a class="all" href="./#features">All features</a>
         </div>
       </div>
@@ -100,7 +101,8 @@
       <ul>
         <li>Shows session, weekly and per-model usage limits of AI coding tools (Claude Code, Codex, Antigravity) as gauges</li>
         <li>Forecasts when you'll run out at the current pace, and tints the screen edges as quota runs low</li>
-        <li>A personal tool — no subscription, and no server that stores your data</li>
+        <li>Stands upcoming holidays, events and calendar items beside the cards as a D-Day timeline</li>
+        <li>A personal tool — no subscription, and no server that stores data that could identify you</li>
       </ul>
     </div>
   </section>
@@ -126,17 +128,26 @@
         Long-press a card and drag to put the subscription you use most on top.</p>
         <span class="more">Details →</span>
       </a>
+      <a class="card" href="features/dday.html">
+        <div class="icon" aria-hidden="true">●○★</div>
+        <h3>D-Day</h3>
+        <p>Upcoming holidays, events and your own calendar as dots on a timeline beside the cards.
+        Today on top, the near future spread wide. Tap to add a day to your calendar;
+        long-press to react anonymously.</p>
+        <span class="more">Details →</span>
+      </a>
     </div>
   </section>
 
   <section class="privacy-strip wrap">
     <h2>Privacy <span>// by design</span></h2>
     <div class="strip">
-      <p>DASH stores no user data on any server.</p>
+      <p>DASH stores nothing on any server that could identify you.</p>
       <ul>
-        <li>Usage data is processed and kept on your device only</li>
+        <li>Usage data and calendar events are processed and kept on your device only</li>
         <li>OAuth tokens are stored encrypted — in the iOS Keychain, and in Android EncryptedSharedPreferences</li>
-        <li>The app talks to nothing but each AI service's own usage API</li>
+        <li>The app talks only to each AI service's usage API, to dash-worklife.org for the holiday and event list, and to the server that counts anonymous reactions</li>
+        <li>Event 👍/👎 reactions are sent anonymously, with no account or device identifiers</li>
         <li>No ads, no tracking, no analytics SDKs</li>
       </ul>
     </div>
