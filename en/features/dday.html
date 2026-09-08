@@ -55,7 +55,7 @@
   <section class="fsec wrap">
     <h2>The screen <span>// dots on a time axis, beside the cards</span></h2>
     <p>The vertical line on the left of the sidebar is <b>time</b>. Today is at the top; the ticks read
-    <b>today · 1 week · 1 month · 3 months</b>. The axis is non-linear: the coming week takes half the screen and
+    <b>Today · 1 week · 1 month · 3 months</b>. The axis is non-linear: the coming week takes half the screen and
     three months out folds into a few pixels. Each day is one dot on the axis, and the dot's shape is its category —
     <b>● holiday · ○ event · ★ my calendar</b>. The card column does not move by a single pixel.</p>
 
@@ -87,7 +87,7 @@
               <div class="axis"></div>
               <div class="now">today<i></i></div><div class="now-date">Wed 9/9</div>
               <div class="dd-row cal" style="top:22px"><span class="g"><i></i></span><span class="txt"><span class="nm">Team weekly</span><span class="w">tomorrow 14:00</span></span><span class="d today">D-1</span></div>
-              <div class="dd-row agg" style="top:66px"><span class="g"><i></i></span><span class="txt"><span class="nm">Events <span class="cnt">4</span></span><span class="w">Fireworks tomorrow · Scholarship D-9 · Pepero Day …</span></span><button class="open" type="button" data-ddmode="list">Open schedule ›</button></div>
+              <div class="dd-row agg" style="top:66px"><span class="g"><i></i></span><span class="txt"><span class="nm">Events <span class="cnt">4</span></span><span class="w">Fireworks tomorrow · Scholarship D-9 · Pepero Day …</span></span><button class="open" type="button" data-ddmode="list">See all ›</button></div>
               <div class="tick" style="top:140px"><span>1 wk</span></div>
               <div class="dd-row hol" style="top:164px"><span class="g"><i></i></span><span class="txt"><span class="nm">Chuseok</span><span class="w">Thu 9/24 – Sat 9/26</span></span><span class="d">D-15</span></div>
               <div class="tick" style="top:209px"><span>1 mo</span></div>
@@ -99,12 +99,12 @@
             </div>
           </div>
 
-          <!-- list mode ("Open schedule") -->
+          <!-- list mode ("See all") -->
           <div class="dd-pane" id="dd-pane-list" hidden>
             <div class="dd-head"><button class="back" type="button" data-ddmode="tl" aria-label="Back to the timeline">‹</button><span class="t">Schedule</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
             <div class="dd-list">
               <div class="inner">
-                <div class="sec">today · tomorrow</div>
+                <div class="sec">Today · Tomorrow</div>
                 <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">Fireworks festival</span><span class="w">Thu 9/10</span></span><span class="d today">D-1</span></div>
                 <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Team weekly</span><span class="w">tomorrow 14:00</span></span><span class="d today">D-1</span></div>
                 <div class="sec">1 week</div>
@@ -117,7 +117,7 @@
                 <div class="sec">3 months</div>
                 <div class="dd-row ev"><span class="g"><i></i></span><span class="txt"><span class="nm">Pepero Day</span><span class="w">Wed 11/11</span></span><span class="d">D-63</span></div>
                 <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Club retreat</span><span class="w">Sat 11/21 all day</span></span><span class="d">D-73</span></div>
-                <div class="sec">later</div>
+                <div class="sec">Later</div>
                 <div class="dd-row hol far"><span class="g"><i></i></span><span class="txt"><span class="nm">Christmas</span><span class="w">Fri 12/25</span></span><span class="d">D-107</span></div>
                 <div class="dd-row hol far"><span class="g"><i></i></span><span class="txt"><span class="nm">Seollal</span><span class="w">Sat 2/6 – Mon 2/8</span></span><span class="d">D-150</span></div>
               </div>
@@ -128,7 +128,7 @@
 
         <div class="sb-rail"><button type="button" data-collapse="false" aria-label="Expand the sidebar">‹</button></div>
       </div>
-      <p class="caption">The toggle, the › button and "Open schedule ›" really work. Same gestures as the app — the cards stay put, only the sidebar changes.</p>
+      <p class="caption">The toggle, the › button and "See all ›" really work. Same gestures as the app — the cards stay put, only the sidebar changes.</p>
     </div>
 
     <ul class="klist">
@@ -152,7 +152,7 @@
     is covered — so a dot's vertical position means "around then", and the second line gives the exact date.</p>
     <p><b>Events are folded.</b> The dots on the default screen are holidays and your calendar; events gather
     into a single ○ at the position of the nearest one — "Events 4" plus the names of the closest two or three
-    are visible at a glance, and the rest are one tap away behind <b>"Open schedule ›"</b>.</p>
+    are visible at a glance, and the rest are one tap away behind <b>"See all ›"</b>.</p>
     <p><b>The break bridge.</b> When only one to three workdays separate two holidays and bridging them with
     leave gives you five or more days off in a row, the axis between the two dots thickens and a line appears
     underneath: <code>Leave 10/6–8 → 9 days off</code>. DASH did the arithmetic; you only decide.</p>
@@ -167,8 +167,8 @@
 
   <section class="fsec wrap">
     <h2>Open schedule <span>// the same ticks become section headers</span></h2>
-    <p>Tap "Open schedule ›" and the axis disappears; the same ticks — <b>today · tomorrow / 1 week / 1 month /
-    3 months / later</b> — become section headers, and all three categories interleave by date in one list.
+    <p>Tap "See all ›" and the axis disappears; the same ticks — <b>Today · Tomorrow / 1 week / 1 month /
+    3 months / Later</b> — become section headers, and all three categories interleave by date in one list.
     There's no limit on items, and it scrolls <b>inside the sidebar only</b>; the card column stays where it is.
     The fade at the bottom means "more below", and <b>‹</b> in the header takes you back to the timeline.</p>
     <p>The "Schedule" toggle in the demo above is this screen. The long-press menu described further down lives here.</p>
@@ -176,10 +176,9 @@
 
   <section class="fsec wrap">
     <h2>Tap <span>// the detail card, and adding to your calendar</span></h2>
-    <p>Tap a holiday or event dot and a <b>detail card</b> opens inside the sidebar: category and country, name
+    <p>Tap a holiday dot or an event row in the schedule list and a <b>detail card</b> opens inside the sidebar: category and country, name
     and D-n, the date range, and two buttons — <b>Add to Calendar</b> and Close. Tap one of your own calendar
-    items (★) and, instead of a card, the event opens in the <b>calendar event view</b> — the operating system's
-    own screen, so location, attendees and alerts look exactly as they do in the Calendar app.</p>
+    items (★) and, instead of a card, the event opens in <b>the operating system's own event screen (Apple's event view on iOS, the Calendar app on Android)</b> — never a private URL scheme.</p>
 
     <ol class="steps">
       <li><div class="stepbox"><span class="n">01</span><span class="t">Tap a holiday or event</span></div><span class="arrow" aria-hidden="true">→</span></li>
@@ -217,7 +216,7 @@
             calendar access. On iOS this is an <i>add-only</i> permission, so even if you haven't connected your
             calendar in Settings, DASH can add without reading any existing events. If you already connected
             your calendar, you aren't asked again.</li>
-            <li><b>Tapping a calendar item</b> → the calendar event view. Editing or deleting happens there,
+            <li><b>Tapping a calendar item</b> → the operating system's own event screen (Apple's event view on iOS, the Calendar app on Android). Editing or deleting happens there,
             the same way as in the Calendar app.</li>
             <li>Tapping the card column on the left does nothing to the sidebar. The sidebar is operated only from inside itself.</li>
           </ul>
@@ -228,8 +227,9 @@
 
   <section class="fsec wrap" id="reactions">
     <h2>Long-press <span>// 👍 Useful · 👎 Not for me · turn off an interest</span></h2>
-    <p>In the schedule list, long-press an <b>○ event</b> row and a three-item menu appears. Holiday and calendar
-    rows have no menu — holidays belong to everyone and your calendar is already yours, so there's nothing to ask.</p>
+    <p>In the schedule list only, after tapping <b>See all ›</b>, long-press an <b>○ event</b> row. The menu always has
+    <b>👍 Useful</b> and <b>👎 Not for me</b>, plus one <b>Turn off …</b> item (for example <i>Turn off Festivals</i>) for each active interest chip that also tags
+    that event. Common events with no interest tag show only the two votes. Holiday and ★ calendar rows have no menu.</p>
 
     <div class="panel">
       <div class="demo2col">
@@ -238,7 +238,7 @@
             <div class="dd-head"><span class="back" aria-hidden="true" style="font-size:18px;color:var(--dd-sec)">‹</span><span class="t">Schedule</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
             <div class="dd-list" style="height:230px" aria-hidden="true">
               <div class="inner">
-                <div class="sec">today · tomorrow</div>
+                <div class="sec">Today · Tomorrow</div>
                 <div class="dd-row ev held"><span class="g"><i></i></span><span class="txt"><span class="nm">Fireworks festival</span><span class="w">Thu 9/10</span></span><span class="d today">D-1</span></div>
                 <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Team weekly</span><span class="w">tomorrow 14:00</span></span><span class="d today">D-1</span></div>
                 <div class="sec">1 week</div>
@@ -258,9 +258,9 @@
             <li><b>👍 Useful</b> — one vote saying "glad I was told about this day".</li>
             <li><b>👎 Not for me</b> — one vote saying "this has nothing to do with me".</li>
             <li><b>Turn off Festivals</b> — switches off the interest that event belongs to ("Festivals" here).
-            It's the same as switching it off under <a class="inline" href="#interests">Settings › Interests</a>:
-            events of that kind leave the timeline and the list. You can switch it back on in Settings any time.</li>
-            <li>One device counts <b>once per event</b>. Pressing again doesn't add another vote.</li>
+            An event tagged only with that interest disappears; one with another active interest stays. You can switch it back on in Settings any time.</li>
+            <li>One device sends each <b>👍/👎 vote once per event</b>. Pressing the same vote again does nothing;
+            turning an interest off is not limited this way.</li>
           </ul>
         </div>
       </div>
@@ -272,8 +272,7 @@
       <ul>
         <li>No account, e-mail, name, device ID, advertising ID or install ID — nothing that could say who you are
         goes along. Not even the developer can tell which reaction came from whom.</li>
-        <li>It is used for one thing: as input for deciding which kinds of days to show more of, and which less.
-        It is never used to target you with ads or to build a profile of you.</li>
+        <li>Reactions are used only as aggregate input for deciding which kinds of events to show more or less. They are never used to target you with ads or to build a profile of you.</li>
         <li>There's no switch to turn it on or off, because anonymity is a rule, not a setting. If you don't react, nothing is sent.</li>
         <li>Holidays, your calendar items, and nothing whatsoever from your calendar ever go to the server.
         The details are in the <a class="inline" href="../privacy.html#dday">Privacy Policy</a>.</li>
@@ -317,7 +316,7 @@
           <ul class="klist" style="margin-top:0">
             <li><b>Pre-selected chip</b> — if at least one AI tool account is connected, "Workers" starts switched
             on. It's only a suggestion; turn it off if it's wrong. That guess is made on the device too.</li>
-            <li><b>Changing later</b> — the toggles under Settings › D-Day › Interests, or long-press an event in the list and choose "Turn off …".</li>
+            <li><b>Changing later</b> — the toggles under Settings › D-Day › Interests, or long-press an event in the list and choose <b>Turn off …</b>.</li>
             <li><b>You can pick nothing.</b> You get a sidebar with holidays, your calendar and the common events only.</li>
           </ul>
         </div>
@@ -365,9 +364,10 @@
             the countries on the list.</li>
             <li><b>Calendar access</b> — this is where read access to your calendar is requested. Allow it and the
             upcoming events from every account on the device appear as ★. It is read-only and <b>never leaves the
-            device</b>. iOS asks with: <i>"Reads your calendar to show upcoming events in the D-Day sidebar. Events
-            never leave the device."</i> If you decline, holidays and events still show. You can revoke it any time
+            device</b>. If you decline, holidays and events still show. You can revoke it any time
             in the system settings (iOS: Settings › Privacy &amp; Security › Calendars · Android: Settings › Apps › DASH › Permissions).</li>
+            <li><b>See your calendar as ★ · Allow</b> — if calendar access has not been granted, this one-line row appears at the bottom of the sidebar.
+            Tap <b>Allow</b> to ask iOS for read access; if access was denied earlier, the button opens system Settings.</li>
             <li><b>Category order</b> — change with ↑↓, the same way as the usage card order. It only decides which
             category folds into the "···" line first when the timeline overflows; the list is unaffected (always by date).
             A setting that works only where you can't see it.</li>
@@ -417,7 +417,7 @@
 <script src="../../nav.js?v=20260811" defer></script>
 <script>
 (function () {
-  // The demo mirrors the app's three gestures: "Open schedule ›" and ‹ swap the
+  // The demo mirrors the app's three gestures: "See all ›" and ‹ swap the
   // timeline and the list, › in the header collapses to the rail. The card
   // column is a fixed ghost on purpose — "the cards never move" is shown, not
   // just claimed.

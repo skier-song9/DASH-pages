@@ -102,8 +102,8 @@
     <tr>
       <td data-th="Item">Anonymous event reactions</td>
       <td data-th="Details">Only when you long-press an event and choose 👍 Useful · 👎 Not for me · turn off an interest —
-      five fields: event ID, reaction type, country code, platform (ios/android), app version. Nothing that could identify
-      you — no account, e-mail, device ID, advertising ID or install ID</td>
+      five fields: event ID, reaction type, country code, platform (ios/android), and app version; the server adds only
+      the UTC day of receipt. Nothing that could identify you — no account, e-mail, device ID, advertising ID or install ID</td>
       <td data-th="Stored in">The Developer's counting server (Cloudflare)</td>
     </tr>
   </table>
@@ -116,8 +116,8 @@
     <li>Only when you tap "Add to Calendar" on a detail card, opening the operating system's event editor to write an
     event to your calendar. Nothing is saved unless you tap Save there; the App never creates or changes events on its own.</li>
     <li>Checking the Developer's site once a day for an updated holiday and event list, and downloading it.</li>
-    <li>Using anonymous event reactions solely as aggregate input for deciding which kinds of events to show more or
-    less. Reactions cannot be linked to an individual and are never used for profiling, advertising or any other purpose.</li>
+    <li>Using anonymous event reactions only as aggregate input for deciding which kinds of events to show more or less.
+    Reactions cannot be linked to an individual and are never used for profiling, advertising or any other purpose.</li>
   </ul>
 
   <h2>3. Storage and security</h2>
@@ -133,10 +133,12 @@
     (iOS: Settings › Privacy &amp; Security › Calendars · Android: Settings › Apps › DASH › Permissions); doing so only
     removes "my calendar" items — everything else keeps working.</li>
     <li>Anonymous event reactions contain no value that identifies you, your account or your device. To limit abusive
-    repeat submissions the counting server uses only a one-way hash of the connecting IP address combined with a random
-    value that changes daily; the raw IP address is never logged or stored. The hash differs the next day even for the
-    same device, so it cannot be used to track anyone.</li>
-    <li>A device sends at most one reaction per event. To enforce this, the IDs of events you already reacted to are recorded on the device only.</li>
+    repeat submissions, the counting server derives a hash from the sender's IP address mixed with the current UTC date
+    and a server secret, and keeps it only for that day. A nightly job nulls it; the raw IP address is never stored, and
+    request logs are never written.</li>
+    <li>Reaction rows themselves (event ID, signal, country code, platform, app version, day) are kept for 12 months.
+    A device sends each 👍/👎 vote at most once per event; turning an interest off is not limited this way. The IDs of
+    events you already reacted to are recorded on the device only.</li>
   </ul>
 
   <h2>4. Third parties and processors</h2>
@@ -156,10 +158,11 @@
   <ul>
     <li>On-device data is deleted when you delete the App.</li>
     <li>Disconnecting an account in the App's settings immediately deletes that account's token.</li>
-    <li>D-Day settings and the cached holiday and event list are deleted together with the App.</li>
+    <li>D-Day settings (region, interests, category order, collapsed state), cached feed files, and the IDs of events
+    you already reacted to are deleted together with the App.</li>
     <li>Calendar events are not stored by the App, so there is nothing to delete; calendar access can be revoked in the system settings.</li>
-    <li>Anonymous event reactions carry nothing that links them to you, so it is technically impossible to single out
-    and delete one person's reactions. This data is not personal data and is kept for at most 12 months for aggregation, then deleted.</li>
+    <li>Anonymous reaction counts cannot be linked to you, so it is technically impossible to single out and delete one
+    person's reactions. Reaction rows expire and are deleted after 12 months.</li>
   </ul>
   <p>Step-by-step instructions are on the <a class="inline" href="delete-data.html">Delete your data</a> page.</p>
 
