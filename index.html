@@ -20,7 +20,9 @@
     "operatingSystem": "iOS, Android",
     "applicationCategory": "ProductivityApplication",
     "description": "DASH는 AI 코딩 도구(Claude Code, Codex, Antigravity)의 사용량 한도를 한 화면에 보여주는 개인 생산성 대시보드 iOS · Android 앱입니다.",
-    "url": "https://dash-worklife.org/"
+    "url": "https://dash-worklife.org/",
+    "installUrl": "https://apps.apple.com/kr/app/dash-worklife-dashboard/id6799811788",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
   }
   </script>
   <script>document.documentElement.classList.add("js");</script>
@@ -60,7 +62,7 @@
     모니터 옆에 세워 두면, 고개를 돌리지 않고도 "남은 게 충분한가"에 답합니다.
     데이터는 기기에만 머뭅니다.</p>
     <div class="cta">
-      <button class="btn primary store-btn" type="button">App Store에서 보기</button>
+      <a class="btn primary" href="https://apps.apple.com/kr/app/dash-worklife-dashboard/id6799811788" target="_blank" rel="noopener">App Store에서 받기</a>
       <button class="btn primary store-btn" type="button">Google Play에서 보기</button>
       <a class="btn" href="#features">기능 살펴보기</a>
     </div>
@@ -159,6 +161,7 @@
   <div class="wrap foot">
     <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
     <span class="links">
+      <a href="https://apps.apple.com/kr/app/dash-worklife-dashboard/id6799811788" target="_blank" rel="noopener">App Store</a>
       <a href="privacy.html">개인정보처리방침</a>
       <a href="terms.html">서비스 약관</a>
       <a href="delete-data.html">데이터 삭제</a>
@@ -171,7 +174,7 @@
 <script>
 document.documentElement.classList.add("js");
 
-// App Store / Google Play CTAs — coming soon toast
+// Google Play CTA — coming soon toast (the App Store button is a real link)
 const toast = document.getElementById("toast");
 let toastTimer;
 document.querySelectorAll(".store-btn").forEach((btn) => {

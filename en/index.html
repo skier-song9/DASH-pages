@@ -20,7 +20,9 @@
     "operatingSystem": "iOS, Android",
     "applicationCategory": "ProductivityApplication",
     "description": "DASH is a personal productivity dashboard iOS and Android app showing AI coding tool (Claude Code, Codex, Antigravity) usage limits on one screen.",
-    "url": "https://dash-worklife.org/en/"
+    "url": "https://dash-worklife.org/en/",
+    "installUrl": "https://apps.apple.com/kr/app/dash-worklife-dashboard/id6799811788?l=en-GB",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
   <script>document.documentElement.classList.add("js");</script>
@@ -60,7 +62,7 @@
     and it answers "is what's left enough?" without you turning your head.
     Your data never leaves your device.</p>
     <div class="cta">
-      <button class="btn primary store-btn" type="button">View on the App Store</button>
+      <a class="btn primary" href="https://apps.apple.com/kr/app/dash-worklife-dashboard/id6799811788?l=en-GB" target="_blank" rel="noopener">Get it on the App Store</a>
       <button class="btn primary store-btn" type="button">View on Google Play</button>
       <a class="btn" href="#features">Explore features</a>
     </div>
@@ -160,6 +162,7 @@
   <div class="wrap foot">
     <span>© 2026 DASH · <a href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></span>
     <span class="links">
+      <a href="https://apps.apple.com/kr/app/dash-worklife-dashboard/id6799811788?l=en-GB" target="_blank" rel="noopener">App Store</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
       <a href="delete-data.html">Delete data</a>
@@ -172,7 +175,7 @@
 <script>
 document.documentElement.classList.add("js");
 
-// App Store / Google Play CTAs — coming soon toast
+// Google Play CTA — coming soon toast (the App Store button is a real link)
 const toast = document.getElementById("toast");
 let toastTimer;
 document.querySelectorAll(".store-btn").forEach((btn) => {
