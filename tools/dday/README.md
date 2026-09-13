@@ -89,7 +89,7 @@ logged and the run continues with library data only, so a portal outage never bl
 `generate.py --check` validates `manifest.json` and every listed file: key sets, `id` regex
 `^[a-z]{2}-[a-z0-9-]+$` with the country prefix, `tier` 1-3, `cat` holiday|event, exactly one of
 `start`/`rule`, ISO dates inside the file's year, `end >= start`, `rule` as `MM-DD` that exists
-every year (no 02-29), boolean flags, `interests` only on events and only from the seven known
+every year (no 02-29), boolean flags, `interests` only on events and only from the six known
 values, `src` as an http(s) URL and mandatory on tier 3, unique ids, tier-1 ids ending in the year,
 recurring ids without one, and manifest `updated` stamps not older than their files. The same
 validator runs inside generation, so a bad curated entry fails the run before anything is written.

@@ -266,7 +266,7 @@ class ValidatorTests(unittest.TestCase):
             {"id": "kr-pepero-day", "tier": 2, "cat": "event", "name": "빼빼로데이", "name_en": "Pepero Day",
              "rule": "11-11", "interests": []},
             {"id": "kr-suneung-2026", "tier": 3, "cat": "event", "name": "수능", "name_en": "CSAT",
-             "start": "2026-11-19", "interests": ["undergrad", "other"], "src": "https://www.moe.go.kr/x"},
+             "start": "2026-11-19", "interests": ["undergrad"], "src": "https://www.moe.go.kr/x"},
         ]}
 
     def test_good_document_passes(self):
@@ -280,7 +280,7 @@ class ValidatorTests(unittest.TestCase):
             "neither start nor rule": lambda d: d["events"][0].pop("start"),
             "interests on holiday": lambda d: d["events"][0].update(interests=[]),
             "missing interests on event": lambda d: d["events"][1].pop("interests"),
-            "unknown interest": lambda d: d["events"][1].update(interests=["gamer"]),
+            "unknown interest": lambda d: d["events"][1].update(interests=["bogus_interest"]),
             "feb 29 rule": lambda d: d["events"][1].update(rule="02-29"),
             "rule id with year": lambda d: d["events"][1].update(id="kr-pepero-day-2026"),
             "tier 3 without src": lambda d: d["events"][2].pop("src"),

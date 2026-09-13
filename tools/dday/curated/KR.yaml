@@ -38,7 +38,7 @@ events:
     name: 수능
     name_en: CSAT
     start: 2026-11-19
-    interests: [undergrad, other]
+    interests: [undergrad]
     src: https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&lev=0&statusYN=W&s=moe&m=020402&opType=N&boardSeq=100526
   # 2028학년도 수능 - 대한민국 정책브리핑 (2027-11-18 목; the KICE basic plan follows in March 2027).
   - id: kr-suneung-2027
@@ -46,7 +46,7 @@ events:
     name: 수능
     name_en: CSAT
     start: 2027-11-18
-    interests: [undergrad, other]
+    interests: [undergrad]
     src: https://www.korea.kr/news/policyNewsView.do?newsId=148943916
   # 2026학년도 2학기 국가장학금 2차 신청 - 8/12 09:00 ~ 9/9 18:00 (한국장학재단 보도자료 경유).
   - id: kr-national-scholarship-2nd-deadline-2026

@@ -59,7 +59,7 @@ COUNTRY_RE = re.compile(r"^[A-Z]{2}$")
 
 CATEGORIES = ("holiday", "event")
 TIERS = (1, 2, 3)
-INTERESTS = ("festival", "worker", "undergrad", "grad", "jobseeker", "romance", "other")
+INTERESTS = ("festival", "worker", "undergrad", "grad", "jobseeker", "romance")
 FLAGS = ("dayoff", "substitute", "temporary", "tentative")
 # The canonical key order makes diffs readable and keeps regenerated files byte-identical.
 EVENT_KEY_ORDER = (
