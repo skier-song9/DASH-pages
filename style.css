@@ -151,15 +151,6 @@ header[data-nav-open="true"] .navtoggle-bars::after { transform: translateY(-5px
 .about a.inline { color: var(--accent); }
 .about a.inline:hover { text-decoration: underline; }
 
-/* demo video */
-.demo { padding-top: 96px; border-top: 1px solid var(--line); }
-.demo h2 { font-size: 22px; margin-bottom: 40px; }
-.demo h2 span { color: var(--muted); font-weight: 400; }
-.video-frame {
-  border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
-  background: var(--bg-soft); box-shadow: 0 24px 80px rgba(0,0,0,.5);
-}
-.video-frame video { display: block; width: 100%; height: auto; }
 
 /* features */
 .features { padding-top: 96px; padding-bottom: 96px; }
@@ -611,10 +602,10 @@ a.card:hover .more { text-decoration: underline; }
   .mail { flex-wrap: wrap; gap: 4px 10px; }
   .mail .subj { flex: 1 1 100%; white-space: normal; }
 
-  .about, .demo { padding-top: 64px; }
+  .about { padding-top: 64px; }
   .features { padding-top: 64px; padding-bottom: 64px; }
   .privacy-strip { padding-bottom: 64px; }
-  .about h2, .demo h2, .features h2, .privacy-strip h2 { font-size: 19px; margin-bottom: 26px; }
+  .about h2, .features h2, .privacy-strip h2 { font-size: 19px; margin-bottom: 26px; }
   .strip { padding: 22px 18px; }
 
   .doc { padding-top: 48px; padding-bottom: 72px; }
