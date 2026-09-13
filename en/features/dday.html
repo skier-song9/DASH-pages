@@ -7,7 +7,7 @@
   <meta name="description" content="Upcoming holidays, events and your own calendar as dots on a timeline beside the usage cards. Today on top, the near future spread wide. Tap to add to your calendar; long-press to react anonymously.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="D-Day — DASH">
-  <link rel="stylesheet" href="../../style.css?v=20260908">
+  <link rel="stylesheet" href="../../style.css?v=20260914">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dday.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dday.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -82,7 +82,7 @@
         <aside class="sb dd" aria-label="D-Day sidebar preview">
           <!-- timeline mode -->
           <div class="dd-pane" id="dd-pane-tl">
-            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-head"><span class="region" aria-hidden="true">KR</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
             <div class="dd-tl">
               <div class="axis"></div>
               <div class="now">today<i></i></div><div class="now-date">Wed 9/9</div>
@@ -101,7 +101,7 @@
 
           <!-- list mode ("See all") -->
           <div class="dd-pane" id="dd-pane-list" hidden>
-            <div class="dd-head"><button class="back" type="button" data-ddmode="tl" aria-label="Back to the timeline">‹</button><span class="t">Schedule</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-head"><button class="back" type="button" data-ddmode="tl" aria-label="Back to the timeline">‹</button><span class="t">Schedule</span><span class="cnt">12</span></div>
             <div class="dd-list">
               <div class="inner">
                 <div class="sec">Today · Tomorrow</div>
@@ -191,7 +191,7 @@
       <div class="demo2col">
         <div>
           <div class="dd-frame dim" aria-label="Holiday detail card preview">
-            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-head"><span class="region" aria-hidden="true">KR</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
             <div class="dd-tl" style="height:220px" aria-hidden="true">
               <div class="axis"></div>
               <div class="now">today<i></i></div><div class="now-date">Wed 9/9</div>
@@ -226,16 +226,16 @@
   </section>
 
   <section class="fsec wrap" id="reactions">
-    <h2>Long-press <span>// 👍 Useful · 👎 Not for me · turn off an interest</span></h2>
+    <h2>Long-press <span>// Useful · Not for me · turn off an interest</span></h2>
     <p>In the schedule list only, after tapping <b>See all ›</b>, long-press an <b>○ event</b> row. The menu always has
-    <b>👍 Useful</b> and <b>👎 Not for me</b>, plus one <b>Turn off …</b> item (for example <i>Turn off Festivals</i>) for each active interest chip that also tags
+    <b>Useful</b> and <b>Not for me</b>, plus one <b>Turn off …</b> item (for example <i>Turn off Festivals</i>) for each active interest chip that also tags
     that event. Common events with no interest tag show only the two votes. Holiday and ★ calendar rows have no menu.</p>
 
     <div class="panel">
       <div class="demo2col">
         <div>
           <div class="dd-frame" aria-label="Long-press menu preview">
-            <div class="dd-head"><span class="back" aria-hidden="true" style="font-size:18px;color:var(--dd-sec)">‹</span><span class="t">Schedule</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-head"><span class="back" aria-hidden="true" style="font-size:18px;color:var(--dd-sec)">‹</span><span class="t">Schedule</span><span class="cnt">12</span></div>
             <div class="dd-list" style="height:230px" aria-hidden="true">
               <div class="inner">
                 <div class="sec">Today · Tomorrow</div>
@@ -245,9 +245,9 @@
                 <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">Dentist</span><span class="w">Sat 9/12 10:30</span></span><span class="d">D-3</span></div>
               </div>
             </div>
-            <div class="dd-menu" style="top:92px" role="img" aria-label="Menu: 👍 Useful, 👎 Not for me, Turn off Festivals">
-              <div>👍 Useful</div>
-              <div>👎 Not for me</div>
+            <div class="dd-menu" style="top:92px" role="img" aria-label="Menu: Useful, Not for me, Turn off Festivals">
+              <div>Useful</div>
+              <div>Not for me</div>
               <div class="off">Turn off Festivals</div>
             </div>
           </div>
@@ -255,11 +255,11 @@
         </div>
         <div>
           <ul class="klist" style="margin-top:0">
-            <li><b>👍 Useful</b> — one vote saying "glad I was told about this day".</li>
-            <li><b>👎 Not for me</b> — one vote saying "this has nothing to do with me".</li>
+            <li><b>Useful</b> — one vote saying "glad I was told about this day".</li>
+            <li><b>Not for me</b> — one vote saying "this has nothing to do with me".</li>
             <li><b>Turn off Festivals</b> — switches off the interest that event belongs to ("Festivals" here).
             An event tagged only with that interest disappears; one with another active interest stays. You can switch it back on in Settings any time.</li>
-            <li>One device sends each <b>👍/👎 vote once per event</b>. Pressing the same vote again does nothing;
+            <li>One device sends each <b>Useful/Not for me vote once per event</b>. Pressing the same vote again does nothing;
             turning an interest off is not limited this way.</li>
           </ul>
         </div>
@@ -268,7 +268,7 @@
 
     <div class="strip" style="margin-top:22px">
       <p><b>Reactions are always anonymous.</b> Exactly five things go to the server —
-      event ID · reaction (👍 / 👎 / off) · country code · platform (iOS / Android) · app version.</p>
+      event ID · reaction (Useful / Not for me / off) · country code · platform (iOS / Android) · app version.</p>
       <ul>
         <li>No account, e-mail, name, device ID, advertising ID or install ID — nothing that could say who you are
         goes along. Not even the developer can tell which reaction came from whom.</li>
@@ -283,7 +283,7 @@
   <section class="fsec wrap" id="interests">
     <h2>Interests <span>// asked once on first open, changeable any time</span></h2>
     <p>The first time you expand the sidebar it asks one thing — <b>"What events are you interested in?"</b>
-    Pick any number of the seven chips <b>Festivals · Workers · Undergrad · Grad school · Job seekers · Dating · Other</b>
+    Pick any number of the six chips <b>Festivals · Workers · Undergrad · Grad school · Job seekers · Dating</b>
     and tap <b>Start</b>. The question is "what interests you", not "who are you": you can be a worker and a job
     seeker at once, and a grad student can switch on dating events.</p>
     <p><b>Holidays and your calendar are never asked about.</b> They always show. Nationwide fun days that belong to
@@ -294,7 +294,7 @@
       <div class="demo2col">
         <div>
           <div class="dd-frame" style="min-height:280px">
-            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-head"><span class="region" aria-hidden="true">KR</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
             <div class="dd-ask">
               <div class="q">What events are you interested in?</div>
               <div class="chips" id="dd-chips" role="group" aria-label="Interests">
@@ -304,13 +304,12 @@
                 <button class="chip" type="button" aria-pressed="false">Grad school</button>
                 <button class="chip" type="button" aria-pressed="false">Job seekers</button>
                 <button class="chip" type="button" aria-pressed="false">Dating</button>
-                <button class="chip" type="button" aria-pressed="false">Other</button>
               </div>
               <div class="h">Holidays and your calendar always show. You can change this later in Settings; it's stored on this device only.</div>
               <button class="go" type="button" tabindex="-1">Start</button>
             </div>
           </div>
-          <p class="caption">The chips really toggle. They are the same seven switches as Settings › D-Day › Interests in the app.</p>
+          <p class="caption">The chips really toggle. They are the same six switches as Settings › D-Day › Interests in the app.</p>
         </div>
         <div>
           <ul class="klist" style="margin-top:0">
@@ -326,7 +325,7 @@
 
   <section class="fsec wrap" id="settings">
     <h2>Settings <span>// region · calendar access · category order</span></h2>
-    <p>Gear (⚙︎) › <b>D-Day</b>. Four items, and under them one line noting that reactions are anonymous.
+    <p>The gear in the top bar, next to the clock › <b>D-Day</b>. Four items, and under them one line noting that reactions are anonymous.
     There is no feedback section and no "suggest an event" form.</p>
 
     <div class="panel">
@@ -334,7 +333,7 @@
         <div class="dd-form" aria-label="Settings › D-Day preview">
           <div class="sec">D-DAY</div>
           <div class="group">
-            <div class="cell"><span class="name">Region</span><span class="val">🇰🇷 South Korea · Auto</span></div>
+            <div class="cell"><span class="name">Region</span><span class="val">South Korea · Auto</span></div>
             <div class="cell"><span class="name">Calendar access</span><span class="val on">Connected</span></div>
           </div>
           <div class="foot">Reads every account added to this device (Google, iCloud, Outlook, …).</div>
@@ -353,9 +352,8 @@
             <div class="cell"><span class="name">Grad school</span><span></span></div>
             <div class="cell"><span class="name">Job seekers</span><span></span></div>
             <div class="cell"><span class="name">Dating</span><span></span></div>
-            <div class="cell"><span class="name">Other</span><span></span></div>
           </div>
-          <div class="foot">Event reactions (👍/👎) are always anonymous. No account or device identifiers are ever collected.</div>
+          <div class="foot">Event reactions (Useful/Not for me) are always anonymous. No account, e-mail, device ID, advertising ID or install ID is ever sent; the Developer cannot tell who sent one, and there is no switch because nothing identifying is ever sent.</div>
         </div>
         <div>
           <ul class="klist" style="margin-top:0">
@@ -366,12 +364,13 @@
             upcoming events from every account on the device appear as ★. It is read-only and <b>never leaves the
             device</b>. If you decline, holidays and events still show. You can revoke it any time
             in the system settings (iOS: Settings › Privacy &amp; Security › Calendars · Android: Settings › Apps › DASH › Permissions).</li>
+            <li><b>Holidays appear once</b> — if a calendar you linked already carries a holiday the App knows (the device's built-in holiday calendar, say, with Chuseok), it is not shown twice as ★ and ●; only the ● remains. Only when the title matches and the days overlap is the lower-priority item (holiday &gt; my calendar &gt; event) left off the screen. Nothing looser: "Chuseok holiday" and "Chuseok" both stay, and so do two of your own events with the same name on the same day. Your calendar is not modified, and the comparison runs on the device only.</li>
             <li><b>See your calendar as ★ · Allow</b> — if calendar access has not been granted, this one-line row appears at the bottom of the sidebar.
             Tap <b>Allow</b> to ask iOS for read access; if access was denied earlier, the button opens system Settings.</li>
             <li><b>Category order</b> — change with ↑↓, the same way as the usage card order. It only decides which
             category folds into the "···" line first when the timeline overflows; the list is unaffected (always by date).
             A setting that works only where you can't see it.</li>
-            <li><b>Interests</b> — the same seven switches as the chips on first open.</li>
+            <li><b>Interests</b> — the same six switches as the chips on first open.</li>
             <li><b>Refresh</b> — the holiday and event list is checked once a day, and only a few KB are downloaded on
             days it changed. Offline, the last downloaded list (initially the current year's list bundled with the app) keeps working.</li>
           </ul>

@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>사용량 대시보드 — DASH</title>
-  <meta name="description" content="Claude Code와 Codex의 세션·주간 한도를 눈금 게이지로 보여줍니다. 사용량과 잔여량을 바꿔 볼 수 있고, 지금 속도라면 언제 소진되는지 예상치로 알려줍니다.">
+  <meta name="description" content="Claude Code·Codex·Antigravity의 세션·주간·모델별 한도를 눈금 게이지로 보여줍니다. 사용량과 잔여량을 바꿔 볼 수 있고, 지금 속도라면 언제 소진되는지 예상치로 알려줍니다.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="사용량 대시보드 — DASH">
-  <link rel="stylesheet" href="../style.css?v=20260908">
+  <link rel="stylesheet" href="../style.css?v=20260914">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -47,7 +47,7 @@
   <section class="fhero wrap">
     <p class="eyebrow">기능 01</p>
     <h1>사용량 대시보드</h1>
-    <p class="sub">Claude Code와 Codex의 한도를 도구별 카드로 나눠 보여줍니다.
+    <p class="sub">Claude Code · Codex · Antigravity의 한도를 도구별 카드로 나눠 보여줍니다.
     창(window)마다 한 줄, 줄마다 눈금 게이지 하나. 숫자를 읽지 않아도
     막대 색만 보면 지금 여유가 있는지 알 수 있습니다.</p>
   </section>
@@ -132,6 +132,11 @@
             <span class="ustat">5일 2시간 후 초기화</span>
           </div>
         </div>
+        <div class="ucard">
+          <div class="ucard-head"><h3>Antigravity</h3><span class="ulegend" data-legend>% 사용</span></div>
+          <div class="urow" data-used="26" data-fc="0"><span class="uwin">Gemini 3.1 Pro</span><span class="gauge" role="img" data-gauge aria-label="Gemini 3.1 Pro 창, 26% 사용"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>26%</span><span class="ustat">6일 23시간 후 초기화</span></div>
+          <div class="urow" data-used="41" data-fc="0"><span class="uwin">Claude Opus 4.6</span><span class="gauge" role="img" data-gauge aria-label="Claude Opus 4.6 창, 41% 사용"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>41%</span><span class="ustat">6일 23시간 후 초기화</span></div>
+        </div>
       </div>
       <p class="caption">위 토글은 실제로 동작합니다. 앱의 설정 화면에 있는 것과 같은 항목입니다.</p>
     </div>
@@ -143,6 +148,7 @@
       숫자를 읽기 전에 색이 먼저 보입니다.</li>
       <li><b>창 이름</b> — <code>5시간</code>, <code>1주</code>처럼 한도가 걸리는 단위 그대로 쓰고,
       모델별 한도는 모델 이름(<code>Fable</code>)으로 표시합니다.</li>
+      <li><b>모델별 줄</b> — Antigravity는 모델마다 한 줄입니다. 설정 ▸ 표시할 모델에서 고른 모델만 보이고, 기본은 세 개입니다.</li>
     </ul>
   </section>
 
@@ -163,6 +169,17 @@
         <li><b>잔여량</b> — 남은 만큼 채워집니다. 잔여량이 충분하면 길고 초록색, 바닥나면 짧고 빨간색입니다.</li>
       </ul>
     </div>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>카드 순서와 스크롤 <span>// 주로 쓰는 것을 맨 위에</span></h2>
+    <p>카드 순서는 사용자가 정합니다. 세션 내내 들여다보는 도구를 맨 위에 두면 곁눈질 한 번으로 끝납니다.
+    카드가 화면보다 길어지면 줄이지 않고 스크롤합니다 — 책상 건너편에서 읽히지 않는 게이지는 대시보드가 아니기 때문입니다.</p>
+    <ul class="klist">
+      <li>카드를 약 0.4초 길게 눌러 들어 올리고, 끌어 순서를 바꾼 뒤 놓으면 저장됩니다. 토스트에 <b>순서 저장됨</b>이 표시됩니다.</li>
+      <li>그냥 밀면 스크롤입니다. 도구 세 개를 연결하면 줄을 줄이는 대신 카드 열이 스크롤되고, 위·아래 가장자리가 어두워져 "더 있음"을 알립니다.</li>
+      <li>VoiceOver 사용자는 <b>위로 이동</b> / <b>아래로 이동</b> 동작을 사용할 수 있습니다.</li>
+    </ul>
   </section>
 
   <section class="fsec wrap">

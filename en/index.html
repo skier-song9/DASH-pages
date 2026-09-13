@@ -8,7 +8,7 @@
   <meta name="application-name" content="DASH">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="DASH">
-  <link rel="stylesheet" href="../style.css?v=20260908">
+  <link rel="stylesheet" href="../style.css?v=20260914">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -144,10 +144,11 @@
     <div class="strip">
       <p>DASH stores nothing on any server that could identify you.</p>
       <ul>
-        <li>Usage data and calendar events are processed and kept on your device only</li>
+        <li>Calendar events are only read for display; the App never stores or transmits them</li>
         <li>OAuth tokens are stored encrypted — in the iOS Keychain, and in Android EncryptedSharedPreferences</li>
         <li>The app talks only to each AI service's usage API, to dash-worklife.org for the holiday and event list, and to the server that counts anonymous reactions</li>
-        <li>Event 👍/👎 reactions are sent anonymously, with no account or device identifiers</li>
+        <li>All data stays in the App's own storage on the device</li>
+        <li>Event reactions (Useful/Not for me) are always anonymous. No account, e-mail, device ID, advertising ID or install ID is sent; the Developer cannot tell who sent one, and there is no switch because nothing identifying is ever sent</li>
         <li>No ads, no tracking, no analytics SDKs</li>
       </ul>
     </div>

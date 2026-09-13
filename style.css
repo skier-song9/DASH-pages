@@ -819,6 +819,7 @@ html[lang="en"] .sb.dd, html[lang="en"] .dd-frame { --dd-text: 15px; --dd-w: 292
 .dd-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; min-height: 24px; }
 .dd-head h3, .dd-head .t { font-size: 15px; font-weight: 700; margin: 0; margin-right: auto; }
 .dd-head .flag { font-size: 14px; margin-right: -2px; }
+.dd-head .region { font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--dd-sec); margin-right: -2px; }
 .dd-head .cnt { font-size: 12px; color: var(--dd-sec); margin-left: -4px; margin-right: auto; }
 .dd-head .back {
   border: 0; background: none; color: var(--dd-sec); font-family: var(--mono);

@@ -7,7 +7,7 @@
   <meta name="description" content="다가오는 휴일·이벤트·내 일정을 사용량 카드 옆 타임라인에 점으로 세웁니다. 오늘이 맨 위, 가까운 날이 넓게. 탭하면 캘린더에 추가하고, 길게 누르면 익명으로 반응을 남깁니다.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="D-Day — DASH">
-  <link rel="stylesheet" href="../style.css?v=20260908">
+  <link rel="stylesheet" href="../style.css?v=20260914">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dday.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dday.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -82,7 +82,7 @@
         <aside class="sb dd" aria-label="D-Day 사이드바 미리 보기">
           <!-- 타임라인 모드 -->
           <div class="dd-pane" id="dd-pane-tl">
-            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-head"><span class="region" aria-hidden="true">KR</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
             <div class="dd-tl">
               <div class="axis"></div>
               <div class="now">오늘<i></i></div><div class="now-date">9/9(수)</div>
@@ -101,7 +101,7 @@
 
           <!-- 리스트 모드 ("일정 열기") -->
           <div class="dd-pane" id="dd-pane-list" hidden>
-            <div class="dd-head"><button class="back" type="button" data-ddmode="tl" aria-label="타임라인으로 돌아가기">‹</button><span class="t">일정</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-head"><button class="back" type="button" data-ddmode="tl" aria-label="타임라인으로 돌아가기">‹</button><span class="t">일정</span><span class="cnt">12</span></div>
             <div class="dd-list">
               <div class="inner">
                 <div class="sec">오늘 · 내일</div>
@@ -185,7 +185,7 @@
       <div class="demo2col">
         <div>
           <div class="dd-frame dim" aria-label="휴일 상세 카드 미리 보기">
-            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">⚙</span><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-head"><span class="region" aria-hidden="true">KR</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
             <div class="dd-tl" style="height:220px" aria-hidden="true">
               <div class="axis"></div>
               <div class="now">오늘<i></i></div><div class="now-date">9/9(수)</div>
@@ -218,9 +218,9 @@
   </section>
 
   <section class="fsec wrap" id="reactions">
-    <h2>길게 누르기 <span>// 👍 유용해요 · 👎 관심 없어요 · 관심 해제</span></h2>
+    <h2>길게 누르기 <span>// 유용해요 · 관심 없어요 · 관심 해제</span></h2>
     <p>일정 리스트에서만, 즉 <b>일정 열기 ›</b>를 누른 뒤 이벤트 행을 길게 누르면 메뉴가 뜹니다. 기본 메뉴는
-    <b>👍 유용해요</b>와 <b>👎 관심 없어요</b>입니다. 그 이벤트에도 붙어 있고 사용자가 켠 관심 칩마다
+    <b>유용해요</b>와 <b>관심 없어요</b>입니다. 그 이벤트에도 붙어 있고 사용자가 켠 관심 칩마다
     <b>&lt;관심&gt; 관심 해제</b> (예: <i>축제 관심 해제</i>) 항목이 하나씩 더 생깁니다. 관심 태그가 없는 공통 이벤트에는 두 투표만 보입니다.
     휴일과 ★ 내 일정 행에는 메뉴가 없습니다.</p>
 
@@ -228,7 +228,7 @@
       <div class="demo2col">
         <div>
           <div class="dd-frame" aria-label="길게 누르기 메뉴 미리 보기">
-            <div class="dd-head"><span class="back" aria-hidden="true" style="font-size:18px;color:var(--dd-sec)">‹</span><span class="t">일정</span><span class="cnt">12</span><span class="iconbtn" aria-hidden="true">⚙</span></div>
+            <div class="dd-head"><span class="back" aria-hidden="true" style="font-size:18px;color:var(--dd-sec)">‹</span><span class="t">일정</span><span class="cnt">12</span></div>
             <div class="dd-list" style="height:230px" aria-hidden="true">
               <div class="inner">
                 <div class="sec">오늘 · 내일</div>
@@ -238,9 +238,9 @@
                 <div class="dd-row cal"><span class="g"><i></i></span><span class="txt"><span class="nm">치과</span><span class="w">9/12(토) 10:30</span></span><span class="d">D-3</span></div>
               </div>
             </div>
-            <div class="dd-menu" style="top:92px" role="img" aria-label="메뉴: 👍 유용해요, 👎 관심 없어요, 축제 관심 해제">
-              <div>👍 유용해요</div>
-              <div>👎 관심 없어요</div>
+            <div class="dd-menu" style="top:92px" role="img" aria-label="메뉴: 유용해요, 관심 없어요, 축제 관심 해제">
+              <div>유용해요</div>
+              <div>관심 없어요</div>
               <div class="off">축제 관심 해제</div>
             </div>
           </div>
@@ -248,11 +248,11 @@
         </div>
         <div>
           <ul class="klist" style="margin-top:0">
-            <li><b>👍 유용해요</b> — "이런 날을 알려줘서 좋았다"는 한 표입니다.</li>
-            <li><b>👎 관심 없어요</b> — "이건 나와 상관없다"는 한 표입니다.</li>
+            <li><b>유용해요</b> — "이런 날을 알려줘서 좋았다"는 한 표입니다.</li>
+            <li><b>관심 없어요</b> — "이건 나와 상관없다"는 한 표입니다.</li>
             <li><b>&lt;관심&gt; 관심 해제</b> (예: <i>축제 관심 해제</i>) — 그 이벤트가 속한 관심 카테고리(여기서는 "축제")를 끕니다.
             그 관심만 붙은 이벤트는 숨겨지지만, 다른 활성 관심도 붙은 이벤트는 남습니다. 언제든 설정에서 다시 켤 수 있습니다.</li>
-            <li>한 기기에서는 이벤트 하나에 <b>👍/👎 투표를 한 번만</b> 보냅니다. 같은 투표를 다시 눌러도 아무 일도 없고,
+            <li>한 기기에서는 이벤트 하나에 <b>유용해요/관심 없어요 투표를 한 번만</b> 보냅니다. 같은 투표를 다시 눌러도 아무 일도 없고,
             관심 해제는 이 제한을 받지 않습니다.</li>
           </ul>
         </div>
@@ -261,7 +261,7 @@
 
     <div class="strip" style="margin-top:22px">
       <p><b>반응은 언제나 익명입니다.</b> 서버로 가는 것은 다섯 가지뿐입니다 —
-      이벤트 ID · 반응(👍 / 👎 / 해제) · 국가 코드 · 플랫폼(iOS / Android) · 앱 버전.</p>
+      이벤트 ID · 반응(유용해요 / 관심 없어요 / 해제) · 국가 코드 · 플랫폼(iOS / Android) · 앱 버전.</p>
       <ul>
         <li>계정, 이메일, 이름, 기기 ID, 광고 ID, 설치 ID — 누구인지 알 수 있는 정보는 어떤 것도 함께 가지 않습니다.
         어느 반응이 누구에게서 왔는지는 개발자도 알 수 없습니다.</li>
@@ -276,7 +276,7 @@
   <section class="fsec wrap" id="interests">
     <h2>관심 이벤트 <span>// 첫 펼침에 한 번, 설정에서 언제든</span></h2>
     <p>사이드바를 처음 펼치면 한 가지만 묻습니다 — <b>"어떤 이벤트에 관심 있나요?"</b>
-    칩 일곱 개 <b>축제 · 직장인 · 대학생 · 대학원생 · 취준생 · 연애 · 기타</b> 가운데 여러 개를 고르고 <b>시작</b>을 누릅니다.
+    칩 여섯 개 <b>축제 · 직장인 · 대학생 · 대학원생 · 취준생 · 연애</b> 가운데 여러 개를 고르고 <b>시작</b>을 누릅니다.
     "누구인가"가 아니라 "무엇에 관심 있는가"를 묻는 것이라, 직장인이면서 취준생일 수 있고 대학원생이 연애 이벤트를 켤 수 있습니다.</p>
     <p><b>휴일과 내 일정은 묻지 않습니다.</b> 언제나 보입니다. 빼빼로데이·만우절·할로윈처럼 어떤 칩에도 속하지 않는
     전국민 공통 이벤트도 언제나 보입니다. 선택은 <b>이 기기에만</b> 저장되고, 서버로 가지 않습니다.</p>
@@ -285,7 +285,7 @@
       <div class="demo2col">
         <div>
           <div class="dd-frame" style="min-height:280px">
-            <div class="dd-head"><span class="flag" aria-hidden="true">🇰🇷</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
+            <div class="dd-head"><span class="region" aria-hidden="true">KR</span><h3>D-Day</h3><span class="iconbtn" aria-hidden="true">›</span></div>
             <div class="dd-ask">
               <div class="q">어떤 이벤트에 관심 있나요?</div>
               <div class="chips" id="dd-chips" role="group" aria-label="관심 이벤트">
@@ -295,13 +295,12 @@
                 <button class="chip" type="button" aria-pressed="false">대학원생</button>
                 <button class="chip" type="button" aria-pressed="false">취준생</button>
                 <button class="chip" type="button" aria-pressed="false">연애</button>
-                <button class="chip" type="button" aria-pressed="false">기타</button>
               </div>
               <div class="h">휴일과 내 일정은 항상 보여요. 나중에 설정에서 바꿀 수 있고, 이 기기에만 저장됩니다.</div>
               <button class="go" type="button" tabindex="-1">시작</button>
             </div>
           </div>
-          <p class="caption">칩은 실제로 눌립니다. 앱의 설정 ▸ D-Day ▸ 관심 이벤트에 있는 토글 일곱 개와 같은 항목입니다.</p>
+          <p class="caption">칩은 실제로 눌립니다. 앱의 설정 ▸ D-Day ▸ 관심 이벤트에 있는 토글 여섯 개와 같은 항목입니다.</p>
         </div>
         <div>
           <ul class="klist" style="margin-top:0">
@@ -317,7 +316,7 @@
 
   <section class="fsec wrap" id="settings">
     <h2>설정 <span>// 지역 · 캘린더 연동 · 카테고리 순서</span></h2>
-    <p>톱니바퀴(⚙︎) ▸ <b>D-Day</b>. 네 가지가 있고, 그 아래 반응이 익명이라는 안내 한 줄이 있습니다.
+    <p>상단 바의 시계 옆 톱니바퀴 ▸ <b>D-Day</b>. 네 가지가 있고, 그 아래 반응이 익명이라는 안내 한 줄이 있습니다.
     피드백 섹션이나 이벤트 제안 폼은 없습니다.</p>
 
     <div class="panel">
@@ -325,7 +324,7 @@
         <div class="dd-form" aria-label="설정 ▸ D-Day 미리 보기">
           <div class="sec">D-DAY</div>
           <div class="group">
-            <div class="cell"><span class="name">지역</span><span class="val">🇰🇷 대한민국 · 자동</span></div>
+            <div class="cell"><span class="name">지역</span><span class="val">대한민국 · 자동</span></div>
             <div class="cell"><span class="name">캘린더 연동</span><span class="val on">연결됨</span></div>
           </div>
           <div class="foot">캘린더는 이 기기에 추가된 계정(Google·iCloud·Outlook 등)을 모두 읽습니다.</div>
@@ -344,22 +343,22 @@
             <div class="cell"><span class="name">대학원생</span><span></span></div>
             <div class="cell"><span class="name">취준생</span><span></span></div>
             <div class="cell"><span class="name">연애</span><span></span></div>
-            <div class="cell"><span class="name">기타</span><span></span></div>
           </div>
-          <div class="foot">이벤트 반응(👍/👎)은 항상 익명으로 처리됩니다. 계정·기기 식별 정보는 어떤 경우에도 수집하지 않습니다.</div>
+          <div class="foot">이벤트 반응(유용해요/관심 없어요)은 항상 익명입니다. 계정·이메일·기기 ID·광고 ID·설치 ID를 보내지 않으며 개발자는 누가 보냈는지 알 수 없습니다. 식별 정보를 보내지 않으므로 켜고 끄는 스위치도 없습니다.</div>
         </div>
         <div>
           <ul class="klist" style="margin-top:0">
-            <li><b>지역</b> — 기본은 기기의 지역 설정을 따르는 <i>자동</i>입니다. 다른 나라를 고르면 그 나라의 휴일과 이벤트로
+            <li><b>지역</b> — 기본은 기기의 지역 설정을 따르는 <i>자동</i>입니다. 헤더에는 활성 지역의 두 글자 코드(예: KR)가 표시됩니다. 다른 나라를 고르면 그 나라의 휴일과 이벤트로
             바뀌고, 다시 돌아오면 기다림 없이 바로 나옵니다. 고를 수 있는 나라는 목록에 있는 나라입니다.</li>
             <li><b>캘린더 연동</b> — 여기서 캘린더 읽기 권한을 요청합니다. 허용하면 기기에 추가된 모든 계정의 다가오는 일정이
             ★로 나타납니다. 읽기만 하고 <b>기기 밖으로 나가지 않습니다</b>. 허용하지 않아도 휴일과 이벤트는 그대로 보입니다. 권한은 언제든 운영체제 설정에서 되돌릴 수 있습니다
             (iOS: 설정 ▸ 개인정보 보호 및 보안 ▸ 캘린더 · Android: 설정 ▸ 앱 ▸ DASH ▸ 권한).</li>
+            <li><b>휴일은 한 번만</b> — 연결한 캘린더에 앱이 이미 아는 휴일(예: 기기에 내장된 공휴일 캘린더의 추석)이 있으면 ★와 ●로 두 번 뜨지 않고 ● 하나만 남습니다. 제목이 같고 날짜가 겹칠 때만, 우선순위가 낮은 쪽(휴일 &gt; 내 일정 &gt; 이벤트)을 화면에서만 뺍니다. 더 느슨하게는 하지 않아서 "추석 연휴"와 "추석"은 둘 다 남고, 같은 이름의 내 일정 둘도 남습니다. 캘린더의 일정은 건드리지 않고, 비교는 기기 안에서만 합니다.</li>
             <li><b>내 일정을 ★로 보려면 · 허용</b> — 캘린더 접근 권한이 없으면 사이드바 아래에 이 한 줄이 나타납니다.
             <b>허용</b>을 누르면 iOS가 읽기 권한을 묻고, 이전에 거부했다면 시스템 설정을 엽니다.</li>
             <li><b>카테고리 순서</b> — ↑↓로 바꿉니다. 사용량 카드 순서와 같은 방식입니다. 타임라인이 넘칠 때 아래 카테고리부터
             "···" 줄로 접히는 우선순위이고, 리스트 모드에는 영향이 없습니다(늘 날짜순). 보이지 않는 곳에서만 작동하는 설정입니다.</li>
-            <li><b>관심 이벤트</b> — 첫 펼침에서 고른 칩과 같은 일곱 개의 토글입니다.</li>
+            <li><b>관심 이벤트</b> — 첫 펼침에서 고른 칩과 같은 여섯 개의 토글입니다.</li>
             <li><b>갱신</b> — 휴일·이벤트 목록은 하루 한 번, 바뀐 날만 몇 KB를 받습니다. 인터넷이 없으면 마지막으로 받은
             목록(처음에는 앱에 내장된 올해 목록)으로 그대로 동작합니다.</li>
           </ul>

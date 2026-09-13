@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Usage dashboard — DASH</title>
-  <meta name="description" content="Session and weekly limits for Claude Code and Codex, drawn as ticked gauges. Flip between usage and remaining, and see when you'll run out at your current pace.">
+  <meta name="description" content="Session, weekly and model limits for Claude Code, Codex and Antigravity, drawn as ticked gauges. Flip between usage and remaining, and see when you'll run out at your current pace.">
   <meta property="og:site_name" content="DASH">
   <meta property="og:title" content="Usage dashboard — DASH">
-  <link rel="stylesheet" href="../../style.css?v=20260908">
+  <link rel="stylesheet" href="../../style.css?v=20260914">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/features/dashboard.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/features/dashboard.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -47,7 +47,7 @@
   <section class="fhero wrap">
     <p class="eyebrow">Feature 01</p>
     <h1>Usage dashboard</h1>
-    <p class="sub">Claude Code and Codex limits, split into one card per tool.
+    <p class="sub">Claude Code · Codex · Antigravity limits, split into one card per tool.
     One line per window, one ticked gauge per line. You don't have to read the
     numbers — the colour of the bar already tells you whether you have room.</p>
   </section>
@@ -113,7 +113,6 @@
             <span class="ustat">resets in 9h 7m</span>
           </div>
         </div>
-
         <div class="ucard">
           <div class="ucard-head">
             <h3>Codex</h3>
@@ -132,6 +131,11 @@
             <span class="ustat">resets in 5d 2h</span>
           </div>
         </div>
+        <div class="ucard">
+          <div class="ucard-head"><h3>Antigravity</h3><span class="ulegend" data-legend>% used</span></div>
+          <div class="urow" data-used="26" data-fc="0"><span class="uwin">Gemini 3.1 Pro</span><span class="gauge" role="img" data-gauge aria-label="Gemini 3.1 Pro window, 26% used"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>26%</span><span class="ustat">resets in 6d 23h</span></div>
+          <div class="urow" data-used="41" data-fc="0"><span class="uwin">Claude Opus 4.6</span><span class="gauge" role="img" data-gauge aria-label="Claude Opus 4.6 window, 41% used"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>41%</span><span class="ustat">resets in 6d 23h</span></div>
+        </div>
       </div>
       <p class="caption">The toggle above really works. It is the same setting you'll find in the app.</p>
     </div>
@@ -144,6 +148,7 @@
       <li><b>Window name</b> — the unit the limit actually applies to, written plainly
       (<code>5 hours</code>, <code>1 week</code>); per-model limits are labelled with the
       model name (<code>Fable</code>).</li>
+      <li><b>One line per model</b> — Antigravity shows one row per model. Only the models you pick under Settings ▸ Models to show appear; three by default.</li>
     </ul>
   </section>
 
@@ -166,6 +171,17 @@
         <li><b>Remaining</b> — fills with what's left. Plenty left is long and green; nearly empty is short and red.</li>
       </ul>
     </div>
+  </section>
+
+  <section class="fsec wrap">
+    <h2>Card order and scrolling <span>// Put the one you live in on top</span></h2>
+    <p>You decide the order. Put the tool you watch all session on top and one glance is enough.
+    When the cards outgrow the screen they scroll rather than shrink — a gauge you cannot read from across the desk is not a dashboard.</p>
+    <ul class="klist">
+      <li>Long-press a card for about 0.4 seconds to lift it, drag to reorder, then release to save. A toast says <b>Order saved</b>.</li>
+      <li>A plain swipe scrolls. With three tools connected the column scrolls instead of shrinking the rows, and the top and bottom edges darken to say there is more.</li>
+      <li>VoiceOver users get <b>Move up</b> / <b>Move down</b> actions.</li>
+    </ul>
   </section>
 
   <section class="fsec wrap">

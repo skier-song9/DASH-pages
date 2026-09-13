@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — DASH</title>
-  <link rel="stylesheet" href="../style.css?v=20260908">
+  <link rel="stylesheet" href="../style.css?v=20260914">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/privacy.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/privacy.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -38,7 +38,7 @@
 
 <main class="wrap doc">
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective: August 6, 2026 · Revised: September 8, 2026 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
+  <p class="meta">Effective: August 6, 2026 · Revised: September 14, 2026 · Contact: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 
   <p>DASH (the "App") is an iOS and Android application provided by an individual
   developer (GitHub: skier-song9, the "Developer"). This policy explains what
@@ -49,24 +49,15 @@
   This is a translation provided for convenience; if it conflicts with the
   <a class="inline" href="../privacy.html">Korean version</a>, the Korean version prevails.</p>
 
-  <div class="note">Summary — the App stores nothing on the Developer's servers that could identify you.
-  Usage data and calendar events are processed and kept on your device only. The App talks to
-  three places: each AI service's own usage API, the Developer's site (dash-worklife.org) for the
-  D-Day holiday and event list, and the Developer's server that counts anonymous event reactions.</div>
+  <div class="note">Summary — everything the App stores (OAuth tokens, usage readings, forecasts, card order, D-Day settings, the cached holiday/event list, and the record of events you already reacted to) stays in the App's own storage on your device. The Developer runs no server that stores user data. The only outbound data is (1) quota requests to the three providers, (2) the public feed download from dash-worklife.org, and (3) an anonymous reaction sent only when you tap one.</div>
 
   <div class="note" id="dday"><b>Revised September 8, 2026 (D-Day sidebar added)</b> — a D-Day sidebar showing
   upcoming holidays, events and your own calendar has been added. Accordingly: ① the App reads your device
   calendar only if you allow it (events never leave the device), ② it writes to your calendar only when you tap
-  "Add to Calendar", and ③ only when you react to an event with 👍/👎 does it send five fields, none of them
+  "Add to Calendar", and ③ only when you react to an event with Useful/Not for me does it send five fields, none of them
   identifying, to a counting server. Sections 1–5 below reflect this.</div>
 
-  <div class="note"><b>Revised September 6, 2026 (version 1.0.1)</b> — Gmail linking and the
-  Unread sidebar have been removed from the App. From this version on, the App
-  processes no Google account information or Gmail data, sends nothing anywhere
-  for mail triage, and sends no error reports to the Developer. If you linked a
-  Google account in an earlier version, the token only ever lived on your device
-  and is no longer used after updating; you can revoke DASH's access yourself in
-  your <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google account security settings</a>.</div>
+  <div class="note"><b>Revised September 14, 2026 (version 1.0.4)</b> — removed the obsolete mail-feature transition clause, clarified Antigravity's scope, stated that all data stays in the App's own storage, reconfirmed anonymous D-Day reactions, and clarified that holiday de-duplication runs on the device only.</div>
 
   <h2>1. Information processed</h2>
   <table>
@@ -101,7 +92,7 @@
     </tr>
     <tr>
       <td data-th="Item">Anonymous event reactions</td>
-      <td data-th="Details">Only when you long-press an event and choose 👍 Useful · 👎 Not for me · turn off an interest —
+      <td data-th="Details">Only when you long-press an event and choose Useful · Not for me · turn off an interest —
       five fields: event ID, reaction type, country code, platform (ios/android), and app version; the server adds only
       the UTC day of receipt. Nothing that could identify you — no account, e-mail, device ID, advertising ID or install ID</td>
       <td data-th="Stored in">The Developer's counting server (Cloudflare)</td>
@@ -111,8 +102,9 @@
   <h2>2. Purposes of use</h2>
   <ul>
     <li>Reading each service's usage API to display AI coding tool limits.</li>
+    <li>Antigravity sign-in uses the same Google account used by the Antigravity app, through the system browser. DASH receives only an OAuth token scoped to reading quota; it does not read mail, Drive, Calendar or any other Google data through that token.</li>
     <li>Forecasting when quota runs out from how usage changes. This is computed on the device only.</li>
-    <li>If you allow it, reading upcoming events from the device calendar to show them in the D-Day sidebar. What is read is never sent off the device.</li>
+    <li>If you allow it, reading upcoming events from the device calendar to show them in the D-Day sidebar. What is read is never sent off the device. If a calendar you linked already carries a holiday the App knows (for example the device's built-in holiday calendar), it is shown once — of two items with the same title and overlapping days, the lower-priority one (holiday &gt; my calendar &gt; event) is left off the screen. The comparison runs on the device only, is sent nowhere, and never modifies the calendar itself.</li>
     <li>Only when you tap "Add to Calendar" on a detail card, opening the operating system's event editor to write an
     event to your calendar. Nothing is saved unless you tap Save there; the App never creates or changes events on its own.</li>
     <li>Checking the Developer's site once a day for an updated holiday and event list, and downloading it.</li>
@@ -122,7 +114,7 @@
 
   <h2>3. Storage and security</h2>
   <ul>
-    <li>All data is stored on your device. The Developer operates no server that stores user data.</li>
+    <li>Everything the App stores — OAuth tokens, usage readings, forecasts, card order, D-Day settings, cached holiday/event list, and records of events you already reacted to — stays in the App's own storage on the device. The Developer operates no server that stores user data. The only outbound data is quota requests, the public feed download, and an anonymous reaction when you tap one.</li>
     <li>OAuth tokens are held in the encrypted store the operating system provides —
     the Keychain on iOS, and EncryptedSharedPreferences, keyed by hardware-backed
     keys, on Android.</li>
@@ -137,16 +129,14 @@
     and a server secret, and keeps it only for that day. A nightly job nulls it; the raw IP address is never stored, and
     request logs are never written.</li>
     <li>Reaction rows themselves (event ID, signal, country code, platform, app version, day) are kept for 12 months.
-    A device sends each 👍/👎 vote at most once per event; turning an interest off is not limited this way. The IDs of
-    events you already reacted to are recorded on the device only.</li>
+    A device sends each Useful/Not for me vote at most once per event; turning an interest off is not limited this way. Reactions are always anonymous: no account, e-mail, device ID, advertising ID or install ID is sent; the Developer cannot tell who sent one, and there is no switch because nothing identifying is ever sent. The IDs of events you already reacted to are recorded on the device only.</li>
   </ul>
 
   <h2>4. Third parties and processors</h2>
   <p>The Developer does not provide or sell user data to third parties. The App communicates with
   exactly three parties, and sends none of them anything that could identify you.</p>
   <ul>
-    <li>The usage APIs of the AI services you linked yourself (Anthropic, OpenAI, Google) — each request carries
-    nothing beyond the token that service issued.</li>
+    <li>Anthropic (Claude Code), OpenAI (Codex), and Google (Antigravity) usage APIs — each request carries only the token that service issued. The App never sends prompts, code, or conversation content and never calls a text-generation API; it only reads quota.</li>
     <li>The Developer's site dash-worklife.org (hosted on GitHub Pages) — the holiday and event list files are downloaded
     from here. As with any web request the connecting IP reaches the hosting provider (GitHub), but the App sends no
     credentials or identifiers.</li>
