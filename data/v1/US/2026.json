@@ -1,0 +1,164 @@
+{
+  "country": "US",
+  "year": 2026,
+  "updated": "2026-09-08",
+  "events": [
+    {
+      "id": "us-new-years-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "New Year's Day",
+      "name_en": "New Year's Day",
+      "start": "2026-01-01",
+      "dayoff": true
+    },
+    {
+      "id": "us-martin-luther-king-jr-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Martin Luther King Jr. Day",
+      "name_en": "Martin Luther King Jr. Day",
+      "start": "2026-01-19",
+      "dayoff": true
+    },
+    {
+      "id": "us-super-bowl-2026",
+      "tier": 2,
+      "cat": "event",
+      "name": "Super Bowl LX",
+      "name_en": "Super Bowl LX",
+      "start": "2026-02-08",
+      "interests": [],
+      "src": "https://levisstadium.com/event/super-bowl-lx/"
+    },
+    {
+      "id": "us-washingtons-birthday-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Washington's Birthday",
+      "name_en": "Washington's Birthday",
+      "start": "2026-02-16",
+      "dayoff": true
+    },
+    {
+      "id": "us-tax-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "Tax Day",
+      "name_en": "Tax Day",
+      "rule": "04-15",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "us-memorial-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Memorial Day",
+      "name_en": "Memorial Day",
+      "start": "2026-05-25",
+      "dayoff": true
+    },
+    {
+      "id": "us-juneteenth-national-independence-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Juneteenth National Independence Day",
+      "name_en": "Juneteenth National Independence Day",
+      "start": "2026-06-19",
+      "dayoff": true
+    },
+    {
+      "id": "us-independence-day-sub-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Independence Day (observed)",
+      "name_en": "Independence Day (observed)",
+      "start": "2026-07-03",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "us-independence-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Independence Day",
+      "name_en": "Independence Day",
+      "start": "2026-07-04",
+      "dayoff": true
+    },
+    {
+      "id": "us-labor-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Labor Day",
+      "name_en": "Labor Day",
+      "start": "2026-09-07",
+      "dayoff": true
+    },
+    {
+      "id": "us-columbus-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Columbus Day",
+      "name_en": "Columbus Day",
+      "start": "2026-10-12",
+      "dayoff": true
+    },
+    {
+      "id": "us-halloween",
+      "tier": 2,
+      "cat": "event",
+      "name": "Halloween",
+      "name_en": "Halloween",
+      "rule": "10-31",
+      "interests": []
+    },
+    {
+      "id": "us-veterans-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Veterans Day",
+      "name_en": "Veterans Day",
+      "start": "2026-11-11",
+      "dayoff": true
+    },
+    {
+      "id": "us-thanksgiving-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Thanksgiving Day",
+      "name_en": "Thanksgiving Day",
+      "start": "2026-11-26",
+      "dayoff": true
+    },
+    {
+      "id": "us-black-friday-2026",
+      "tier": 2,
+      "cat": "event",
+      "name": "Black Friday",
+      "name_en": "Black Friday",
+      "start": "2026-11-27",
+      "interests": []
+    },
+    {
+      "id": "us-cyber-monday-2026",
+      "tier": 2,
+      "cat": "event",
+      "name": "Cyber Monday",
+      "name_en": "Cyber Monday",
+      "start": "2026-11-30",
+      "interests": []
+    },
+    {
+      "id": "us-christmas-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Christmas Day",
+      "name_en": "Christmas Day",
+      "start": "2026-12-25",
+      "dayoff": true
+    }
+  ]
+}

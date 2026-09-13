@@ -1,0 +1,5 @@
+# Pinned so the weekly job regenerates byte-identical files until someone bumps a version on
+# purpose. `holidays` is the tier-1 source; a new release can rename or add holidays, so review
+# the data/v1 diff when upgrading it.
+holidays==0.104
+PyYAML==6.0.3

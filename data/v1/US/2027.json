@@ -1,0 +1,194 @@
+{
+  "country": "US",
+  "year": 2027,
+  "updated": "2026-09-08",
+  "events": [
+    {
+      "id": "us-new-years-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "New Year's Day",
+      "name_en": "New Year's Day",
+      "start": "2027-01-01",
+      "dayoff": true
+    },
+    {
+      "id": "us-martin-luther-king-jr-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Martin Luther King Jr. Day",
+      "name_en": "Martin Luther King Jr. Day",
+      "start": "2027-01-18",
+      "dayoff": true
+    },
+    {
+      "id": "us-super-bowl-2027",
+      "tier": 2,
+      "cat": "event",
+      "name": "Super Bowl LXI",
+      "name_en": "Super Bowl LXI",
+      "start": "2027-02-14",
+      "interests": [],
+      "src": "https://www.sofistadium.com/events/detail/super-bowl-lxi"
+    },
+    {
+      "id": "us-washingtons-birthday-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Washington's Birthday",
+      "name_en": "Washington's Birthday",
+      "start": "2027-02-15",
+      "dayoff": true
+    },
+    {
+      "id": "us-tax-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "Tax Day",
+      "name_en": "Tax Day",
+      "rule": "04-15",
+      "interests": [
+        "worker"
+      ]
+    },
+    {
+      "id": "us-memorial-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Memorial Day",
+      "name_en": "Memorial Day",
+      "start": "2027-05-31",
+      "dayoff": true
+    },
+    {
+      "id": "us-juneteenth-national-independence-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Juneteenth National Independence Day (observed)",
+      "name_en": "Juneteenth National Independence Day (observed)",
+      "start": "2027-06-18",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "us-juneteenth-national-independence-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Juneteenth National Independence Day",
+      "name_en": "Juneteenth National Independence Day",
+      "start": "2027-06-19",
+      "dayoff": true
+    },
+    {
+      "id": "us-independence-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Independence Day",
+      "name_en": "Independence Day",
+      "start": "2027-07-04",
+      "dayoff": true
+    },
+    {
+      "id": "us-independence-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Independence Day (observed)",
+      "name_en": "Independence Day (observed)",
+      "start": "2027-07-05",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "us-labor-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Labor Day",
+      "name_en": "Labor Day",
+      "start": "2027-09-06",
+      "dayoff": true
+    },
+    {
+      "id": "us-columbus-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Columbus Day",
+      "name_en": "Columbus Day",
+      "start": "2027-10-11",
+      "dayoff": true
+    },
+    {
+      "id": "us-halloween",
+      "tier": 2,
+      "cat": "event",
+      "name": "Halloween",
+      "name_en": "Halloween",
+      "rule": "10-31",
+      "interests": []
+    },
+    {
+      "id": "us-veterans-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Veterans Day",
+      "name_en": "Veterans Day",
+      "start": "2027-11-11",
+      "dayoff": true
+    },
+    {
+      "id": "us-thanksgiving-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Thanksgiving Day",
+      "name_en": "Thanksgiving Day",
+      "start": "2027-11-25",
+      "dayoff": true
+    },
+    {
+      "id": "us-black-friday-2027",
+      "tier": 2,
+      "cat": "event",
+      "name": "Black Friday",
+      "name_en": "Black Friday",
+      "start": "2027-11-26",
+      "interests": []
+    },
+    {
+      "id": "us-cyber-monday-2027",
+      "tier": 2,
+      "cat": "event",
+      "name": "Cyber Monday",
+      "name_en": "Cyber Monday",
+      "start": "2027-11-29",
+      "interests": []
+    },
+    {
+      "id": "us-christmas-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Christmas Day (observed)",
+      "name_en": "Christmas Day (observed)",
+      "start": "2027-12-24",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "us-christmas-day-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "Christmas Day",
+      "name_en": "Christmas Day",
+      "start": "2027-12-25",
+      "dayoff": true
+    },
+    {
+      "id": "us-new-years-day-sub-2027",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "New Year's Day (observed)",
+      "name_en": "New Year's Day (observed)",
+      "start": "2027-12-31",
+      "dayoff": true,
+      "substitute": true
+    }
+  ]
+}

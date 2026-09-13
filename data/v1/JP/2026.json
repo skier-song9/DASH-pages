@@ -1,0 +1,219 @@
+{
+  "country": "JP",
+  "year": 2026,
+  "updated": "2026-09-08",
+  "events": [
+    {
+      "id": "jp-new-years-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "元日",
+      "name_en": "New Year's Day",
+      "start": "2026-01-01",
+      "dayoff": true
+    },
+    {
+      "id": "jp-coming-of-age-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "成人の日",
+      "name_en": "Coming of Age Day",
+      "start": "2026-01-12",
+      "dayoff": true
+    },
+    {
+      "id": "jp-setsubun",
+      "tier": 2,
+      "cat": "event",
+      "name": "節分",
+      "name_en": "Setsubun",
+      "rule": "02-03",
+      "interests": []
+    },
+    {
+      "id": "jp-foundation-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "建国記念の日",
+      "name_en": "Foundation Day",
+      "start": "2026-02-11",
+      "dayoff": true
+    },
+    {
+      "id": "jp-valentines-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "バレンタインデー",
+      "name_en": "Valentine's Day",
+      "rule": "02-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "jp-emperors-birthday-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "天皇誕生日",
+      "name_en": "Emperor's Birthday",
+      "start": "2026-02-23",
+      "dayoff": true
+    },
+    {
+      "id": "jp-white-day",
+      "tier": 2,
+      "cat": "event",
+      "name": "ホワイトデー",
+      "name_en": "White Day",
+      "rule": "03-14",
+      "interests": [
+        "romance"
+      ]
+    },
+    {
+      "id": "jp-vernal-equinox-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "春分の日",
+      "name_en": "Vernal Equinox Day",
+      "start": "2026-03-20",
+      "dayoff": true
+    },
+    {
+      "id": "jp-showa-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "昭和の日",
+      "name_en": "Showa Day",
+      "start": "2026-04-29",
+      "dayoff": true
+    },
+    {
+      "id": "jp-constitution-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "憲法記念日",
+      "name_en": "Constitution Day",
+      "start": "2026-05-03",
+      "dayoff": true
+    },
+    {
+      "id": "jp-greenery-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "みどりの日",
+      "name_en": "Greenery Day",
+      "start": "2026-05-04",
+      "dayoff": true
+    },
+    {
+      "id": "jp-childrens-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "こどもの日",
+      "name_en": "Children's Day",
+      "start": "2026-05-05",
+      "dayoff": true
+    },
+    {
+      "id": "jp-constitution-day-sub-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "振替休日",
+      "name_en": "Substitute Holiday",
+      "start": "2026-05-06",
+      "dayoff": true,
+      "substitute": true
+    },
+    {
+      "id": "jp-tanabata",
+      "tier": 2,
+      "cat": "event",
+      "name": "七夕",
+      "name_en": "Tanabata",
+      "rule": "07-07",
+      "interests": []
+    },
+    {
+      "id": "jp-marine-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "海の日",
+      "name_en": "Marine Day",
+      "start": "2026-07-20",
+      "dayoff": true
+    },
+    {
+      "id": "jp-mountain-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "山の日",
+      "name_en": "Mountain Day",
+      "start": "2026-08-11",
+      "dayoff": true
+    },
+    {
+      "id": "jp-respect-for-the-aged-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "敬老の日",
+      "name_en": "Respect for the Aged Day",
+      "start": "2026-09-21",
+      "dayoff": true
+    },
+    {
+      "id": "jp-national-holiday-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "国民の休日",
+      "name_en": "National Holiday",
+      "start": "2026-09-22",
+      "dayoff": true
+    },
+    {
+      "id": "jp-autumnal-equinox-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "秋分の日",
+      "name_en": "Autumnal Equinox Day",
+      "start": "2026-09-23",
+      "dayoff": true
+    },
+    {
+      "id": "jp-sports-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "スポーツの日",
+      "name_en": "Sports Day",
+      "start": "2026-10-12",
+      "dayoff": true
+    },
+    {
+      "id": "jp-halloween",
+      "tier": 2,
+      "cat": "event",
+      "name": "ハロウィン",
+      "name_en": "Halloween",
+      "rule": "10-31",
+      "interests": []
+    },
+    {
+      "id": "jp-culture-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "文化の日",
+      "name_en": "Culture Day",
+      "start": "2026-11-03",
+      "dayoff": true
+    },
+    {
+      "id": "jp-labor-thanksgiving-day-2026",
+      "tier": 1,
+      "cat": "holiday",
+      "name": "勤労感謝の日",
+      "name_en": "Labor Thanksgiving Day",
+      "start": "2026-11-23",
+      "dayoff": true
+    }
+  ]
+}

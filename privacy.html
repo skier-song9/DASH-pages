@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>개인정보처리방침 — DASH</title>
-  <link rel="stylesheet" href="style.css?v=20260814">
+  <link rel="stylesheet" href="style.css?v=20260914b">
   <link rel="alternate" hreflang="ko" href="https://dash-worklife.org/privacy.html">
   <link rel="alternate" hreflang="en" href="https://dash-worklife.org/en/privacy.html">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
@@ -16,13 +16,11 @@
   <div class="wrap nav">
     <a class="logo" href="./">DASH</a>
     <nav class="nav-links" id="site-nav">
-      <a href="./#demo">데모</a>
       <div class="navdrop">
         <a class="navdrop-btn" href="./#features" aria-haspopup="true" aria-expanded="false">기능<span class="chev" aria-hidden="true">▾</span></a>
         <div class="navdrop-menu">
           <a href="features/dashboard.html">사용량 대시보드</a>
-          <a href="features/unread.html">Unread 사이드바</a>
-          <a href="features/learning.html">내 기준으로 학습</a>
+          <a href="features/dday.html">D-Day</a>
           <a class="all" href="./#features">기능 전체 보기</a>
         </div>
       </div>
@@ -39,7 +37,7 @@
 
 <main class="wrap doc">
   <h1>개인정보처리방침</h1>
-  <p class="meta">시행일: 2026년 8월 6일 · 문의: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
+  <p class="meta">시행일: 2026년 8월 6일 · 개정일: 2026년 9월 14일 · 문의: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 
   <p>DASH(이하 "앱")는 개인 개발자(GitHub: skier-song9, 이하 "개발자")가 제공하는
   iOS · Android 애플리케이션입니다.
@@ -47,107 +45,113 @@
   두 플랫폼은 같은 기능을 제공하며, 처리하는 정보와 목적도 동일합니다.
   차이가 있는 부분(암호화 저장소의 이름 등)은 아래에 각각 표기합니다.</p>
 
-  <div class="note">요약 — 앱은 개발자의 서버에 사용자 데이터를 저장하지 않습니다.
-  메일과 사용량 데이터는 사용자의 기기 안에서만 처리·보관되며,
-  AI 분류에 필요한 최소한의 메일 정보만 처리 목적에 한해 일시적으로 전송됩니다.</div>
+  <div class="note">요약 — 앱이 저장하는 모든 것(OAuth 토큰, 사용량 읽기값, 예측치, 카드 순서, D-Day 설정, 캐시된 휴일·이벤트 목록, 이미 반응한 이벤트 기록)은 기기의 앱 자체 저장소 안에만 있습니다. 개발자는 사용자 데이터를 저장하는 서버를 운영하지 않습니다. 앱 밖으로 나가는 것은 (1) 세 제공자의 사용량 요청, (2) dash-worklife.org의 공개 피드 다운로드, (3) 사용자가 탭했을 때만 보내는 익명 반응뿐입니다.</div>
+
+  <div class="note" id="dday"><b>2026년 9월 8일 개정 (D-Day 사이드바 추가)</b> — 다가오는 휴일·이벤트·내 일정을
+  보여주는 D-Day 사이드바가 추가되었습니다. 이에 따라 ① 사용자가 허용한 경우에만 기기의 캘린더를 읽고(일정은 기기 밖으로
+  나가지 않습니다), ② 사용자가 "캘린더에 추가"를 누른 경우에만 캘린더에 일정을 쓰며, ③ 사용자가 이벤트에 유용해요/관심 없어요 반응을
+  남긴 경우에만 식별 정보가 없는 다섯 항목을 집계 서버로 보내는 내용이 추가되었습니다. 아래 1·2·3·4·5절에 반영되어 있습니다.</div>
+
+  <div class="note"><b>2026년 9월 14일 개정 (버전 1.0.4)</b> — 이전 메일 기능 관련 경과 조항 삭제(더 이상 해당 사항 없음), Antigravity 연동 범위 명시, 모든 데이터가 앱 내부 저장소에만 있음을 명시, D-Day 반응의 익명 처리 재확인, 휴일 중복 제거가 기기 안에서만 이루어짐을 명시.</div>
 
   <h2>1. 처리하는 정보</h2>
   <table>
     <tr><th>항목</th><th>내용</th><th>보관 위치</th></tr>
     <tr>
-      <td data-th="항목">Google 계정 정보</td>
-      <td data-th="내용">이메일 주소 (openid, email 스코프)</td>
-      <td data-th="보관 위치">기기 내부</td>
-    </tr>
-    <tr>
-      <td data-th="항목">Gmail 데이터</td>
-      <td data-th="내용">안읽은 메일의 발신자, 제목, 수신 시각, 라벨, 본문 일부(스니펫)
-      — <code>gmail.modify</code> 스코프</td>
-      <td data-th="보관 위치">기기 내부 (캐시)</td>
-    </tr>
-    <tr>
       <td data-th="항목">OAuth 토큰</td>
-      <td data-th="내용">Google 계정 및 AI 코딩 도구(Claude Code, Codex) 계정 연결 토큰</td>
+      <td data-th="내용">AI 코딩 도구(Claude Code, Codex, Antigravity) 계정 연결 토큰</td>
       <td data-th="보관 위치">iOS Keychain · Android EncryptedSharedPreferences (암호화)</td>
     </tr>
     <tr>
       <td data-th="항목">AI 서비스 사용량</td>
-      <td data-th="내용">Claude Code · Codex의 사용량 한도 및 잔여량</td>
+      <td data-th="내용">Claude Code · Codex · Antigravity의 사용량 한도 및 잔여량</td>
       <td data-th="보관 위치">기기 내부</td>
+    </tr>
+    <tr>
+      <td data-th="항목">캘린더 일정</td>
+      <td data-th="내용">사용자가 캘린더 접근을 허용한 경우에만 — 기기 캘린더 앱에 있는 다가오는 일정의 제목·날짜·시각·캘린더 색.
+      D-Day 사이드바의 "내 일정" 표시에만 사용</td>
+      <td data-th="보관 위치">기기 내부 (표시를 위해 읽기만 함)</td>
+    </tr>
+    <tr>
+      <td data-th="항목">D-Day 설정</td>
+      <td data-th="내용">지역, 관심 이벤트 선택, 카테고리 순서, 사이드바 접힘 상태, 이미 반응한 이벤트의 ID(중복 반응 방지용)</td>
+      <td data-th="보관 위치">기기 내부</td>
+    </tr>
+    <tr>
+      <td data-th="항목">휴일·이벤트 목록</td>
+      <td data-th="내용">개발자의 사이트에서 내려받는 공개 목록(국가별 휴일과 기념일·행사의 날짜). 개인정보가 아니며,
+      내려받는 요청에 인증 정보나 식별자가 포함되지 않음</td>
+      <td data-th="보관 위치">기기 내부 (캐시)</td>
+    </tr>
+    <tr>
+      <td data-th="항목">익명 이벤트 반응</td>
+      <td data-th="내용">사용자가 이벤트를 길게 눌러 유용해요 · 관심 없어요 · 관심 해제를 선택한 경우에만 —
+      이벤트 ID, 반응 종류, 국가 코드, 플랫폼(ios/android), 앱 버전의 다섯 항목. 서버는 반응을 받은 UTC 날짜만 추가로 기록합니다.
+      계정·이메일·기기 ID·광고 ID·설치 ID 등 사용자를 식별할 수 있는 정보는 포함되지 않음</td>
+      <td data-th="보관 위치">개발자의 집계 서버 (Cloudflare)</td>
     </tr>
   </table>
 
   <h2>2. 이용 목적</h2>
   <ul>
-    <li>안읽은 메일 목록과 개수를 표시하기 위해 Gmail 메타데이터를 조회합니다.</li>
-    <li>메일의 중요도를 분류하기 위해 규칙 및 AI 분류를 수행합니다.</li>
-    <li>사용자가 확인한 메일을 Gmail에서 읽음 처리하기 위해 <code>gmail.modify</code> 권한을 사용합니다.
-    앱은 메일을 보내거나, 삭제하거나, 읽음 처리 외의 어떤 변경도 하지 않습니다.</li>
     <li>AI 코딩 도구의 사용량 한도를 표시하기 위해 각 서비스의 사용량 API를 조회합니다.</li>
+    <li>Antigravity 로그인은 시스템 브라우저에서 Antigravity 앱이 사용하는 것과 같은 Google 계정을 사용합니다. DASH가 받는 것은 할당량 읽기 범위의 OAuth 토큰뿐이며, 그 토큰으로 메일·Drive·Calendar 또는 다른 Google 데이터는 읽지 않습니다.</li>
+    <li>사용량 변화를 바탕으로 소진 시점을 예측합니다. 이 계산은 기기 안에서만 이루어집니다.</li>
+    <li>사용자가 허용한 경우 기기 캘린더의 다가오는 일정을 읽어 D-Day 사이드바에 표시합니다. 읽은 일정은 기기 밖으로 전송되지 않습니다. 연결한 캘린더에 앱이 이미 아는 휴일(예: 기기에 내장된 공휴일 캘린더)이 들어 있으면 한 번만 표시합니다 — 제목이 같고 날짜가 겹치는 항목 중 우선순위가 낮은 쪽(휴일 &gt; 내 일정 &gt; 이벤트)을 화면에서만 제외합니다. 이 비교는 기기 안에서만 이루어지며 어디에도 전송되지 않고, 캘린더의 일정 자체는 바꾸지 않습니다.</li>
+    <li>사용자가 상세 카드에서 "캘린더에 추가"를 누른 경우에만 운영체제의 일정 편집 화면을 열어 캘린더에 일정을 씁니다.
+    사용자가 그 화면에서 저장을 눌러야 저장되며, 앱이 임의로 일정을 만들거나 바꾸지 않습니다.</li>
+    <li>휴일·이벤트 목록은 하루 한 번 개발자의 사이트에서 갱신 여부를 확인해 내려받습니다.</li>
+    <li>익명 이벤트 반응은 어떤 종류의 이벤트를 더 많이 또는 더 적게 보여줄지 결정하기 위한 익명 집계 입력으로만 사용합니다.
+    반응은 개별 사용자와 연결할 수 없으며, 특정 사용자를 프로파일링하거나 광고 등 다른 목적에 사용하지 않습니다.</li>
   </ul>
 
-  <h2>3. AI 분류를 위한 일시적 전송</h2>
-  <p>메일 중요도 분류를 위해, 아래 정보가 사용자의 기기를 떠나
-  개발자가 운영하는 중계 서버를 거쳐 외부 AI 처리 시스템으로 일시적으로 전송됩니다:</p>
+  <h2>3. 저장과 보안</h2>
   <ul>
-    <li>발신자 이름·주소, 제목, 본문 앞부분(최대 220자), 대량발송 여부 등의 신호</li>
-  </ul>
-  <p>이 전송은 분류 응답을 받는 동안에만 존재하는 일시적 처리입니다.
-  중계 서버는 무상태(stateless)로 어떤 내용도 기록·보관하지 않으며,
-  전송된 정보는 저장되지 않고 모델 학습에도 사용되지 않습니다.
-  메일 본문 전체나 첨부파일은 전송되지 않습니다.</p>
-
-  <h2>4. Google 사용자 데이터에 관한 준수 사항 (Limited Use)</h2>
-  <p>앱의 Google API로부터 받은 정보의 사용은
-  <a class="inline" href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>의
-  Limited Use 요구사항을 포함하여 해당 정책을 준수합니다. 구체적으로:</p>
-  <ul>
-    <li>Gmail 데이터는 위 2조의 사용자 대면 기능 제공에만 사용합니다.</li>
-    <li>Gmail 데이터를 광고 목적으로 사용하지 않습니다.</li>
-    <li>Gmail 데이터를 제3자에게 판매하거나 양도하지 않습니다.</li>
-    <li>Gmail 데이터를 일반화된(generalized) AI/ML 모델의 개발·개선·학습에 사용하지 않습니다.
-    3조의 AI 분류는 사용자가 요청한 기능을 제공하기 위한 일시적 처리일 뿐입니다.</li>
-    <li>사람이 Gmail 데이터를 열람하지 않습니다. 단, 사용자의 명시적 동의가 있는 경우,
-    보안 목적, 법적 의무 이행의 경우는 예외로 합니다.</li>
-  </ul>
-
-  <h2>5. 저장과 보안</h2>
-  <ul>
-    <li>모든 데이터는 사용자의 기기 안에 저장됩니다. 개발자는 사용자 데이터를 저장하는 서버를 운영하지 않습니다.</li>
+    <li>OAuth 토큰, 사용량 읽기값, 예측치, 카드 순서, D-Day 설정, 캐시된 휴일·이벤트 목록, 이미 반응한 이벤트 기록을 포함한 모든 데이터는 기기의 앱 자체 저장소에만 저장됩니다. 개발자는 사용자 데이터를 저장하는 서버를 운영하지 않습니다. 앱 밖으로 나가는 것은 세 제공자의 사용량 요청, 공개 피드 다운로드, 사용자가 탭했을 때의 익명 반응뿐입니다.</li>
     <li>OAuth 토큰은 운영체제가 제공하는 암호화 저장소에 보관됩니다 —
     iOS는 Keychain, Android는 하드웨어 지원 키로 암호화되는 EncryptedSharedPreferences를 사용합니다.</li>
     <li>모든 네트워크 통신은 TLS(HTTPS)로 암호화됩니다.</li>
     <li>앱에는 광고·트래킹·분석 SDK가 포함되어 있지 않습니다.</li>
+    <li>캘린더 일정은 운영체제의 캘린더 권한을 통해 기기 안에서만 읽으며, 개발자의 서버나 제3자에게 전송되지 않습니다.
+    권한은 언제든 운영체제 설정(iOS: 설정 ▸ 개인정보 보호 및 보안 ▸ 캘린더 · Android: 설정 ▸ 앱 ▸ DASH ▸ 권한)에서
+    회수할 수 있으며, 회수하면 "내 일정" 표시만 사라지고 나머지 기능은 그대로 동작합니다.</li>
+    <li>익명 이벤트 반응에는 사용자·계정·기기를 식별하는 값이 없습니다. 반복 전송 악용을 막기 위해 집계 서버는
+    발신자의 IP 주소를 현재 UTC 날짜 및 서버 비밀값과 섞어 해시한 값을 그날만 사용합니다. 야간 작업으로 이 값은 null 처리되며,
+    원본 IP 주소는 저장하지 않고 요청 로그도 전혀 남기지 않습니다.</li>
+    <li>반응 행은 이벤트 ID·신호·국가 코드·플랫폼·앱 버전·날짜로 구성되며 12개월 보관합니다. 기기에서는 이벤트마다
+    유용해요/관심 없어요 투표를 한 번만 보내고, 이미 반응한 이벤트 ID를 기록합니다. 관심 해제는 이 제한을 받지 않습니다. 반응은 항상 익명이며 계정·이메일·기기 ID·광고 ID·설치 ID가 없고, 개발자는 누가 보냈는지 알 수 없습니다. 식별 정보를 보내지 않으므로 켜고 끄는 스위치도 없습니다.</li>
   </ul>
 
-  <h2>6. 제3자 제공 및 처리 위탁</h2>
-  <p>개발자는 사용자 데이터를 제3자에게 제공·판매하지 않습니다.
-  기능 제공을 위한 처리 위탁은 다음과 같습니다:</p>
-  <table>
-    <tr><th>수탁자</th><th>목적</th><th>내용</th></tr>
-    <tr><td data-th="수탁자">클라우드 인프라 제공사</td><td data-th="목적">분류 요청의 무상태 전달 (저장 없음)</td><td data-th="내용">3조에 기재된 최소 정보를 저장하지 않고 전달</td></tr>
-    <tr><td data-th="수탁자">AI 처리 서비스</td><td data-th="목적">메일 중요도 분류 (일시적 처리)</td><td data-th="내용">3조에 기재된 최소 정보의 일시적 처리, 저장·모델 학습 없음</td></tr>
-  </table>
-  <p>오류 발생 시 개발자에게 전송되는 오류 알림에는 이메일 주소·토큰 등
-  개인정보가 자동으로 마스킹(redaction)됩니다.</p>
+  <h2>4. 제3자 제공 및 처리 위탁</h2>
+  <p>개발자는 사용자 데이터를 제3자에게 제공·판매하지 않습니다. 앱이 통신하는 상대는 다음 셋뿐이며,
+  어느 쪽에도 사용자를 식별할 수 있는 정보를 보내지 않습니다.</p>
+  <ul>
+    <li>Anthropic(Claude Code), OpenAI(Codex), Google(Antigravity)의 사용량 API — 각 요청에는 해당 서비스가 발급한 토큰만 실립니다. 앱은 프롬프트·코드·대화 내용을 보내지 않으며 텍스트 생성 API를 호출하지 않고 할당량만 읽습니다.</li>
+    <li>개발자의 사이트 dash-worklife.org(GitHub Pages로 호스팅) — 휴일·이벤트 목록 파일을 내려받습니다. 일반적인 웹 요청과
+    같이 접속 IP가 호스팅 사업자(GitHub)에게 전달되지만, 앱은 어떤 인증 정보나 식별자도 보내지 않습니다.</li>
+    <li>개발자의 집계 서버(Cloudflare Workers · D1에서 운영) — 익명 이벤트 반응을 받습니다. Cloudflare는 개발자가 배포한
+    코드를 실행하는 인프라 제공자이며, 저장되는 데이터에는 식별 정보가 없습니다.</li>
+  </ul>
 
-  <h2>7. 보유 기간 및 삭제</h2>
+  <h2>5. 보유 기간 및 삭제</h2>
   <ul>
     <li>기기 내 데이터는 앱을 삭제하면 함께 삭제됩니다.</li>
-    <li>앱 설정에서 계정 연결을 해제하면 해당 계정의 토큰과 캐시가 즉시 삭제됩니다.</li>
-    <li>Google 계정 권한은
-    <a class="inline" href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 보안 설정</a>에서
-    언제든지 직접 철회할 수 있습니다.</li>
+    <li>앱 설정에서 계정 연결을 해제하면 해당 계정의 토큰이 즉시 삭제됩니다.</li>
+    <li>D-Day 설정(지역·관심 이벤트·카테고리 순서·접힘 상태), 캐시된 피드 파일, 이미 반응한 이벤트 ID는 앱을 삭제하면 함께 삭제됩니다.</li>
+    <li>캘린더 일정은 앱이 저장하지 않으므로 삭제할 것이 없습니다. 캘린더 접근 권한은 운영체제 설정에서 회수할 수 있습니다.</li>
+    <li>익명 이벤트 반응 수는 서버에서 개인과 연결할 수 없으므로 특정 사용자의 반응만 골라 삭제할 수 없습니다.
+    집계된 반응 행은 12개월 후 만료되어 삭제됩니다.</li>
   </ul>
   <p>단계별 안내는 <a class="inline" href="delete-data.html">데이터 삭제 안내</a>를 참고하세요.</p>
 
-  <h2>8. 아동의 개인정보</h2>
+  <h2>6. 아동의 개인정보</h2>
   <p>앱은 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
 
-  <h2>9. 방침의 변경</h2>
+  <h2>7. 방침의 변경</h2>
   <p>본 방침이 변경되는 경우 이 페이지를 통해 게시하며, 중요한 변경은 앱 내에서 고지합니다.</p>
 
-  <h2>10. 문의</h2>
+  <h2>8. 문의</h2>
   <p>개인정보 처리에 관한 문의: <a class="inline" href="mailto:0603paul@gmail.com">0603paul@gmail.com</a></p>
 </main>
 
