@@ -85,7 +85,7 @@
           <div class="bar"><i class="warn" data-width="87%"></i></div>
         </div>
         <div class="term-row" data-step="3">
-          <div class="term-label"><b>Antigravity</b><span>Gemini 3.1 Pro · 74% — 6일 후 리셋</span></div>
+          <div class="term-label"><b>Antigravity</b><span>Gemini 계열 주간 · 74% — 6일 후 리셋</span></div>
           <div class="bar"><i class="warn" data-width="74%"></i></div>
         </div>
       </div>
@@ -100,6 +100,8 @@
       DASH의 목적은 그 확인을 이미 갖고 있는 폰 화면 하나로 옮기는 것입니다.</p>
       <ul>
         <li>AI 코딩 도구(Claude Code, Codex, Antigravity)의 세션·주간·모델별 사용 한도를 게이지로 보여줍니다</li>
+        <li>홈 화면 위젯으로 앱을 열지 않고도 남은 양을 원형 게이지로 읽습니다</li>
+        <li>한 도구에 계정을 여러 개 연결해 개인 구독과 회사 구독을 카드로 나눠 봅니다</li>
         <li>지금 속도라면 언제 소진되는지 예측하고, 남은 양이 줄면 화면 가장자리가 물듭니다</li>
         <li>다가오는 휴일·이벤트·캘린더 일정을 D-Day 타임라인으로 카드 옆에 세워 둡니다</li>
         <li>구독·설치형 서비스가 아닌 개인 도구이며, 사용자를 식별할 수 있는 데이터를 서버에 저장하지 않습니다</li>
@@ -127,6 +129,13 @@
         길게 누르면 익명으로 반응을 남깁니다.</p>
         <span class="more">자세히 →</span>
       </a>
+      <a class="card" href="features/dashboard.html#widget">
+        <div class="icon" aria-hidden="true">◕</div>
+        <h3>홈 화면 위젯</h3>
+        <p>남은 양을 원형 게이지로 홈 화면에 올립니다. 위젯 크기에 따라 게이지 두 개에서 네 개,
+        한 줄에 도구 하나. 길게 눌러 어느 계정을 어느 줄에 둘지 고릅니다.</p>
+        <span class="more">자세히 →</span>
+      </a>
     </div>
   </section>
 
@@ -135,7 +144,7 @@
     <div class="strip">
       <p>DASH는 사용자를 식별할 수 있는 데이터를 서버에 저장하지 않습니다.</p>
       <ul>
-        <li>모든 데이터는 앱 내부 저장소에만 있습니다</li>
+        <li>모든 데이터는 앱 내부 저장소에만 있습니다. 홈 화면 위젯은 앱이 마지막으로 가져온 값의 사본을 같은 기기의 앱 전용 저장소에서 읽습니다</li>
         <li>캘린더 일정은 표시를 위해 읽기만 하고, 앱이 저장하거나 전송하지 않습니다</li>
         <li>OAuth 토큰은 iOS Keychain · Android EncryptedSharedPreferences에 암호화 저장됩니다</li>
         <li>앱이 통신하는 곳은 각 AI 서비스의 사용량 API, 휴일·이벤트 목록을 내려받는 dash-worklife.org, 그리고 익명 반응을 받는 집계 서버뿐입니다</li>
