@@ -48,13 +48,19 @@
   This is a translation provided for convenience; if it conflicts with the
   <a class="inline" href="../privacy.html">Korean version</a>, the Korean version prevails.</p>
 
-  <div class="note">Summary — everything the App stores (OAuth tokens, usage readings, forecasts, card order, D-Day settings, the cached holiday/event list, and the record of events you already reacted to) stays in the App's own storage on your device. The Developer runs no server that stores user data. The only outbound data is (1) quota requests to the three providers, (2) the public feed download from dash-worklife.org, and (3) an anonymous reaction sent only when you tap one.</div>
+  <div class="note">Summary — everything the App stores (OAuth tokens, usage readings, forecasts, card order, D-Day settings, the cached holiday/event list, and the record of events you already reacted to) stays in the App's own storage on your device. The home-screen widget only reads a copy of the last usage reading from that same storage. The Developer runs no server that stores user data. The only outbound data is (1) quota requests to the three providers, (2) the public feed download from dash-worklife.org, and (3) an anonymous reaction sent only when you tap one.</div>
 
   <div class="note" id="dday"><b>Revised September 8, 2026 (D-Day sidebar added)</b> — a D-Day sidebar showing
   upcoming holidays, events and your own calendar has been added. Accordingly: ① the App reads your device
   calendar only if you allow it (events never leave the device), ② it writes to your calendar only when you tap
   "Add to Calendar", and ③ only when you react to an event with Useful/Not for me does it send five fields, none of them
   identifying, to a counting server. Sections 1–5 below reflect this.</div>
+
+  <div class="note" id="v112"><b>Revised September 18, 2026 (version 1.1.2)</b> — a home-screen widget has been
+  added. It never fetches on its own: it draws a copy of the last usage reading the App fetched, held in the App's
+  own storage on the same device. That copy never leaves the device and nothing new is collected. More than one
+  account can now be connected to the same tool; what is stored and where is unchanged, each account's token is
+  encrypted separately, and disconnecting one clears that account's token and e-mail with it.</div>
 
   <div class="note"><b>Revised September 14, 2026 (version 1.0.4)</b> — removed the obsolete mail-feature transition clause, clarified Antigravity's scope, stated that all data stays in the App's own storage, reconfirmed anonymous D-Day reactions, and clarified that holiday de-duplication runs on the device only.</div>
 
@@ -69,7 +75,7 @@
     <tr>
       <td data-th="Item">AI service usage</td>
       <td data-th="Details">Usage limits and remaining quota for Claude Code · Codex · Antigravity</td>
-      <td data-th="Stored in">On device</td>
+      <td data-th="Stored in">On device (including the App's own storage it shares with the home-screen widget)</td>
     </tr>
     <tr>
       <td data-th="Item">Calendar events</td>
@@ -113,7 +119,7 @@
 
   <h2>3. Storage and security</h2>
   <ul>
-    <li>Everything the App stores — OAuth tokens, usage readings, forecasts, card order, D-Day settings, cached holiday/event list, and records of events you already reacted to — stays in the App's own storage on the device. The Developer operates no server that stores user data. The only outbound data is quota requests, the public feed download, and an anonymous reaction when you tap one.</li>
+    <li>Everything the App stores — OAuth tokens, usage readings, forecasts, card order, D-Day settings, cached holiday/event list, and records of events you already reacted to — stays in the App's own storage on the device. The home-screen widget only draws the last usage reading left in that storage; it does not talk to anything itself. The Developer operates no server that stores user data. The only outbound data is quota requests, the public feed download, and an anonymous reaction when you tap one.</li>
     <li>OAuth tokens are held in the encrypted store the operating system provides —
     the Keychain on iOS, and EncryptedSharedPreferences, keyed by hardware-backed
     keys, on Android.</li>

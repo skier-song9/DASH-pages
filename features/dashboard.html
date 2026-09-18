@@ -133,8 +133,9 @@
         </div>
         <div class="ucard">
           <div class="ucard-head"><h3>Antigravity</h3><span class="ulegend" data-legend>% 사용</span></div>
-          <div class="urow" data-used="26" data-fc="0"><span class="uwin">Gemini 3.1 Pro</span><span class="gauge" role="img" data-gauge aria-label="Gemini 3.1 Pro 창, 26% 사용"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>26%</span><span class="ustat">6일 23시간 후 초기화</span></div>
-          <div class="urow" data-used="41" data-fc="0"><span class="uwin">Claude Opus 4.6</span><span class="gauge" role="img" data-gauge aria-label="Claude Opus 4.6 창, 41% 사용"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>41%</span><span class="ustat">6일 23시간 후 초기화</span></div>
+          <div class="urow" data-used="26" data-fc="0"><span class="uwin">1주 Gemini</span><span class="gauge" role="img" data-gauge aria-label="Gemini 계열 주간 창, 26% 사용"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>26%</span><span class="ustat">6일 23시간 후 초기화</span></div>
+          <div class="urow" data-used="41" data-fc="0"><span class="uwin">1주 Claude·GPT</span><span class="gauge" role="img" data-gauge aria-label="Claude·GPT 주간 창, 41% 사용"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>41%</span><span class="ustat">6일 23시간 후 초기화</span></div>
+          </div>
         </div>
       </div>
       <p class="caption">위 토글은 실제로 동작합니다. 앱의 설정 화면에 있는 것과 같은 항목입니다.</p>
@@ -147,7 +148,9 @@
       숫자를 읽기 전에 색이 먼저 보입니다.</li>
       <li><b>창 이름</b> — <code>5시간</code>, <code>1주</code>처럼 한도가 걸리는 단위 그대로 쓰고,
       모델별 한도는 모델 이름(<code>Fable</code>)으로 표시합니다.</li>
-      <li><b>모델별 줄</b> — Antigravity는 모델마다 한 줄입니다. 설정 ▸ 표시할 모델에서 고른 모델만 보이고, 기본은 세 개입니다.</li>
+      <li><b>계열별 줄</b> — Antigravity는 한도를 모델 하나가 아니라 계열 단위로 셉니다. Gemini 계열과 그 외 모델의
+      주간 한도를 각각 한 줄로 보여줍니다. 계열별 집계를 주지 않는 계정에서는 예전처럼 모델마다 한 줄이 되고,
+      그때는 설정 ▸ 표시할 모델에서 고른 모델만 보입니다.</li>
     </ul>
   </section>
 
@@ -178,6 +181,32 @@
       <li>카드를 약 0.4초 길게 눌러 들어 올리고, 끌어 순서를 바꾼 뒤 놓으면 저장됩니다. 토스트에 <b>순서 저장됨</b>이 표시됩니다.</li>
       <li>그냥 밀면 스크롤입니다. 도구 세 개를 연결하면 줄을 줄이는 대신 카드 열이 스크롤되고, 위·아래 가장자리가 어두워져 "더 있음"을 알립니다.</li>
       <li>VoiceOver 사용자는 <b>위로 이동</b> / <b>아래로 이동</b> 동작을 사용할 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap" id="accounts">
+    <h2>여러 계정 <span>// 개인 구독과 회사 구독을 나란히</span></h2>
+    <p>한 도구를 계정 두 개로 쓰는 경우가 있습니다. 개인 Google 계정으로 구독하고 회사 계정으로도 구독하는 식입니다.
+    설정 ▸ 계정 추가로 같은 도구에 두 번째 계정을 연결하면, 그 계정은 카드를 하나 더 얻습니다.</p>
+    <ul class="klist">
+      <li>계정마다 카드가 따로 생깁니다. 카드 순서에서도 따로 움직이고, 예상치와 경고도 계정별로 계산됩니다.</li>
+      <li>이름은 직접 짓습니다. 기본값은 <code>Claude Code 1</code>, <code>Claude Code 2</code>처럼 번호가 붙고,
+      설정에서 <b>회사</b>, <b>개인</b>처럼 바꾸면 카드 제목이 그대로 바뀝니다.</li>
+      <li>어떤 계정이 어떤 이메일로 연결되었는지 설정의 각 줄 아래에 표시됩니다. 연결을 해제하면 토큰과 함께 지워집니다.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap" id="widget">
+    <h2>홈 화면 위젯 <span>// 앱을 열지 않고 읽기</span></h2>
+    <p>앱 안의 막대 게이지 대신 <b>원형 게이지</b>로 그립니다. 홈 화면에서는 한 번에 몇 개만 보이면 되고,
+    원형 쪽이 작은 크기에서 백분율을 더 크게 담기 때문입니다. 한 줄에는 도구 하나만 들어갑니다.</p>
+    <ul class="klist">
+      <li><b>크기별 개수</b> — 작은 위젯은 계정 하나에 게이지 두 개, 중간은 세 개, 큰 위젯은 계정 두 개에 각각 두 개입니다.</li>
+      <li><b>무엇을 남길지</b> — 카드에 줄이 더 많으면 5시간 창을 먼저, 그다음 모델별 줄, 주간 창을 마지막에 접습니다.
+      Claude Code는 게이지 두 개면 <code>5시간 · Fable</code>, 세 개면 <code>5시간 · 1주 · Fable</code>이 됩니다.</li>
+      <li><b>어느 계정을 볼지</b> — 위젯을 길게 눌러 편집하면 줄마다 계정을 고를 수 있습니다.</li>
+      <li><b>갱신</b> — 위젯은 스스로 조회하지 않고 앱이 마지막으로 가져온 값을 그립니다. 아래에 그 시각을 함께 적고,
+      탭하면 앱이 열립니다.</li>
     </ul>
   </section>
 

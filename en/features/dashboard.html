@@ -132,8 +132,9 @@
         </div>
         <div class="ucard">
           <div class="ucard-head"><h3>Antigravity</h3><span class="ulegend" data-legend>% used</span></div>
-          <div class="urow" data-used="26" data-fc="0"><span class="uwin">Gemini 3.1 Pro</span><span class="gauge" role="img" data-gauge aria-label="Gemini 3.1 Pro window, 26% used"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>26%</span><span class="ustat">resets in 6d 23h</span></div>
-          <div class="urow" data-used="41" data-fc="0"><span class="uwin">Claude Opus 4.6</span><span class="gauge" role="img" data-gauge aria-label="Claude Opus 4.6 window, 41% used"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>41%</span><span class="ustat">resets in 6d 23h</span></div>
+          <div class="urow" data-used="26" data-fc="0"><span class="uwin">1 Week Gemini</span><span class="gauge" role="img" data-gauge aria-label="Gemini models weekly window, 26% used"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>26%</span><span class="ustat">resets in 6d 23h</span></div>
+          <div class="urow" data-used="41" data-fc="0"><span class="uwin">1 Week Claude·GPT</span><span class="gauge" role="img" data-gauge aria-label="Claude and GPT weekly window, 41% used"><span class="gauge-track"><span class="gauge-fill"></span><span class="gauge-fc"></span><span class="gauge-ticks"></span></span></span><span class="upct" data-pct>41%</span><span class="ustat">resets in 6d 23h</span></div>
+          </div>
         </div>
       </div>
       <p class="caption">The toggle above really works. It is the same setting you'll find in the app.</p>
@@ -147,7 +148,10 @@
       <li><b>Window name</b> — the unit the limit actually applies to, written plainly
       (<code>5 hours</code>, <code>1 week</code>); per-model limits are labelled with the
       model name (<code>Fable</code>).</li>
-      <li><b>One line per model</b> — Antigravity shows one row per model. Only the models you pick under Settings ▸ Models to show appear; three by default.</li>
+      <li><b>One line per series</b> — Antigravity counts a limit against a family of models rather than
+      a single one, so the weekly limit for Gemini models and the one for everything else each get a row.
+      On an account that reports no series totals it falls back to a row per model, and then only the
+      models you pick under Settings ▸ Models to show appear.</li>
     </ul>
   </section>
 
@@ -180,6 +184,34 @@
       <li>Long-press a card for about 0.4 seconds to lift it, drag to reorder, then release to save. A toast says <b>Order saved</b>.</li>
       <li>A plain swipe scrolls. With three tools connected the column scrolls instead of shrinking the rows, and the top and bottom edges darken to say there is more.</li>
       <li>VoiceOver users get <b>Move up</b> / <b>Move down</b> actions.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap" id="accounts">
+    <h2>More than one account <span>// a personal and a work subscription, side by side</span></h2>
+    <p>Some people run one tool on two accounts — subscribed on a personal Google account and again on a
+    company one. Settings ▸ Add account connects a second login for the same tool, and that login gets a
+    card of its own.</p>
+    <ul class="klist">
+      <li>Each account is its own card. It moves independently in the card order, and its forecast and warning are its own.</li>
+      <li>You name them. They arrive numbered — <code>Claude Code 1</code>, <code>Claude Code 2</code> — and renaming one
+      in Settings to <b>Work</b> or <b>Personal</b> retitles its card.</li>
+      <li>Settings shows which e-mail each account is connected with, under its row. Disconnecting clears it along with the token.</li>
+    </ul>
+  </section>
+
+  <section class="fsec wrap" id="widget">
+    <h2>Home-screen widget <span>// reading it without opening the app</span></h2>
+    <p>Drawn as <b>circular gauges</b> rather than the bars the app uses. A home screen only needs a few at a
+    time, and a ring fits a bigger percentage into a small square. One tool per row.</p>
+    <ul class="klist">
+      <li><b>How many fit</b> — the small widget gives one account two gauges, the medium one three, and the large one two accounts with two each.</li>
+      <li><b>What survives</b> — when a card has more rows than the widget has rings, the 5-hour window is kept first,
+      then the per-model rows, and the weekly window folds away last. Claude Code reads
+      <code>5h · Fable</code> on two rings and <code>5h · 1 Week · Fable</code> on three.</li>
+      <li><b>Which account</b> — long-press the widget to edit it and pick the account for each row.</li>
+      <li><b>Freshness</b> — the widget never fetches on its own; it draws what the app last fetched and says
+      when that was. Tapping it opens DASH.</li>
     </ul>
   </section>
 

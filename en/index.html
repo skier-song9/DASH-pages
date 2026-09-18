@@ -85,7 +85,7 @@
           <div class="bar"><i class="warn" data-width="87%"></i></div>
         </div>
         <div class="term-row" data-step="3">
-          <div class="term-label"><b>Antigravity</b><span>Gemini 3.1 Pro · 74% — resets in 6 days</span></div>
+          <div class="term-label"><b>Antigravity</b><span>Gemini models, weekly · 74% — resets in 6 days</span></div>
           <div class="bar"><i class="warn" data-width="74%"></i></div>
         </div>
       </div>
@@ -101,6 +101,8 @@
       screen you already own.</p>
       <ul>
         <li>Shows session, weekly and per-model usage limits of AI coding tools (Claude Code, Codex, Antigravity) as gauges</li>
+        <li>Puts what you have left on the home screen as circular gauges, without opening the app</li>
+        <li>Connects more than one account to the same tool, so a personal and a work subscription each get a card</li>
         <li>Forecasts when you'll run out at the current pace, and tints the screen edges as quota runs low</li>
         <li>Stands upcoming holidays, events and calendar items beside the cards as a D-Day timeline</li>
         <li>A personal tool — no subscription, and no server that stores data that could identify you</li>
@@ -128,6 +130,13 @@
         long-press to react anonymously.</p>
         <span class="more">Details →</span>
       </a>
+      <a class="card" href="features/dashboard.html#widget">
+        <div class="icon" aria-hidden="true">◕</div>
+        <h3>Home-screen widget</h3>
+        <p>What you have left, as circular gauges on the home screen. Two to four gauges
+        depending on the size, one tool per row. Long-press to choose which account fills which row.</p>
+        <span class="more">Details →</span>
+      </a>
     </div>
   </section>
 
@@ -139,7 +148,7 @@
         <li>Calendar events are only read for display; the App never stores or transmits them</li>
         <li>OAuth tokens are stored encrypted — in the iOS Keychain, and in Android EncryptedSharedPreferences</li>
         <li>The app talks only to each AI service's usage API, to dash-worklife.org for the holiday and event list, and to the server that counts anonymous reactions</li>
-        <li>All data stays in the App's own storage on the device</li>
+        <li>All data stays in the App's own storage on the device; the home-screen widget reads a copy of what the app last fetched from that same storage</li>
         <li>Event reactions (Useful/Not for me) are always anonymous. No account, e-mail, device ID, advertising ID or install ID is sent; the Developer cannot tell who sent one, and there is no switch because nothing identifying is ever sent</li>
         <li>No ads, no tracking, no analytics SDKs</li>
       </ul>
